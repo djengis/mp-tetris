@@ -1,0 +1,16 @@
+
+
+{
+  "name": "Muliplayer Tetris",
+  "description": "Muliplayer Tetris documentation written in Javascript",
+  "version": "0.9",
+  "options": {
+	"nocode": true,
+    "linkNatives": "true",
+    "attributesEmit": "true",
+    "paths": [
+      "../../Development/public"
+    ],
+    "outdir": "./doc"
+  }
+}

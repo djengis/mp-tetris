@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>server.Server - Muliplayer Tetris</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.8.0pr2/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <script src="http://yui.yahooapis.com/combo?3.8.0pr2/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            <h1><a href="../index.html"><img src="../assets/css/logo.png">Muliplayer Tetris: server.Server</a></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.9</em>
+        </div>
+    </div>
+    <div class="yui3-g">
+
+        <div id="sidebar" class="yui3-u">
+            <div id="modules" class="sidebox">
+    <div class="hd">
+        <h2 class="no-toc">Modules</h2>
+    </div>
+    <div class="bd">
+        <ul>
+            
+                <li><a href="../modules/controller.html">controller</a>
+                
+                </li>
+            
+                <li><a href="../modules/display.html">display</a>
+                
+                </li>
+            
+                <li><a href="../modules/global.html">global</a>
+                
+                </li>
+            
+                <li><a href="../modules/server.html">server</a>
+                
+                </li>
+            
+        </ul>
+    </div>
+</div>
+
+<div id="classes" class="sidebox">
+    <div class="hd">
+        <h2 class="no-toc">Classes</h2>
+    </div>
+    <div class="bd">
+        <ul>
+            
+                <li><a href="../classes/controller.Auswahl.html">controller.Auswahl</a></li>
+            
+                <li><a href="../classes/controller.Chat.html">controller.Chat</a></li>
+            
+                <li><a href="../classes/controller.Controller.html">controller.Controller</a></li>
+            
+                <li><a href="../classes/display.AfterGame.html">display.AfterGame</a></li>
+            
+                <li><a href="../classes/display.Display.html">display.Display</a></li>
+            
+                <li><a href="../classes/display.Lounge.html">display.Lounge</a></li>
+            
+                <li><a href="../classes/display.MyAudio.html">display.MyAudio</a></li>
+            
+                <li><a href="../classes/display.Spieler.html">display.Spieler</a></li>
+            
+                <li><a href="../classes/global.API_SCHEMA.html">global.API_SCHEMA</a></li>
+            
+                <li><a href="../classes/global.BUTTON.html">global.BUTTON</a></li>
+            
+                <li><a href="../classes/global.BUTTONTYPE.html">global.BUTTONTYPE</a></li>
+            
+                <li><a href="../classes/global.CONFIG.html">global.CONFIG</a></li>
+            
+                <li><a href="../classes/global.GAME_EVENT.html">global.GAME_EVENT</a></li>
+            
+                <li><a href="../classes/global.LIST_EVENT.html">global.LIST_EVENT</a></li>
+            
+                <li><a href="../classes/global.pre_defs.html">global.pre_defs</a></li>
+            
+                <li><a href="../classes/global.Util.html">global.Util</a></li>
+            
+                <li><a href="../classes/server.Api.html">server.Api</a></li>
+            
+                <li><a href="../classes/server.Chat.html">server.Chat</a></li>
+            
+                <li><a href="../classes/server.CommandLine.html">server.CommandLine</a></li>
+            
+                <li><a href="../classes/server.Controller.html">server.Controller</a></li>
+            
+                <li><a href="../classes/server.Database.html">server.Database</a></li>
+            
+                <li><a href="../classes/server.Display.html">server.Display</a></li>
+            
+                <li><a href="../classes/server.Game.html">server.Game</a></li>
+            
+                <li><a href="../classes/server.games.AbstractGame.html">server.games.AbstractGame</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.html">server.games.SpielAufZeit</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Block.html">server.games.SpielAufZeit.Block</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Blockelement.html">server.games.SpielAufZeit.Blockelement</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Spieler.html">server.games.SpielAufZeit.Spieler</a></li>
+            
+                <li><a href="../classes/server.Main.html">server.Main</a></li>
+            
+                <li><a href="../classes/server.Profil.html">server.Profil</a></li>
+            
+                <li><a href="../classes/server.Router.html">server.Router</a></li>
+            
+                <li><a href="../classes/server.RouterChache.html">server.RouterChache</a></li>
+            
+                <li><a href="../classes/server.Server.html">server.Server</a></li>
+            
+                <li><a href="../classes/server.SpielTyp.html">server.SpielTyp</a></li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div id="methods-on-page" class="sidebox on-page">
+    <div class="hd">
+        <h2 class="no-toc">Methods On Page</h2>
+    </div>
+    <div class="bd">
+        <ul>
+            
+                <li><a href="#methods_addProfil">addProfil</a></li>
+            
+                <li><a href="#methods_addSpiel">addSpiel</a></li>
+            
+                <li><a href="#methods_createGame">createGame</a></li>
+            
+                <li><a href="#methods_createProfil">createProfil</a></li>
+            
+                <li><a href="#methods_deleteSpiel">deleteSpiel</a></li>
+            
+                <li><a href="#methods_emitToAllControllers">emitToAllControllers</a></li>
+            
+                <li><a href="#methods_getAllGames">getAllGames</a></li>
+            
+                <li><a href="#methods_getAllProfils">getAllProfils</a></li>
+            
+                <li><a href="#methods_getDB">getDB</a></li>
+            
+                <li><a href="#methods_getProfilById">getProfilById</a></li>
+            
+                <li><a href="#methods_getSpielById">getSpielById</a></li>
+            
+                <li><a href="#methods_getSpielTypById">getSpielTypById</a></li>
+            
+                <li><a href="#methods_receiveEvent">receiveEvent</a></li>
+            
+                <li><a href="#methods_removeSpiel">removeSpiel</a></li>
+            
+                <li><a href="#methods_restart">restart</a></li>
+            
+                <li><a href="#methods_start">start</a></li>
+            
+                <li><a href="#methods_stop">stop</a></li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="fileTree" class="sidebox">
+    <div class="hd">
+        <h2 class="no-toc">Files</h2>
+    </div>
+    <div class="bd">
+        <ul><li>../<ul><li>../<ul><li>Development/<ul><li>public/<ul><li>controller/<ul><li><a href="../files/.._.._Development_public_controller_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_controller_Auswahl.js.html">Auswahl.js</a></li><li><a href="../files/.._.._Development_public_controller_Chat.js.html">Chat.js</a></li><li><a href="../files/.._.._Development_public_controller_Controller.js.html">Controller.js</a></li></ul></li><li>display/<ul><li><a href="../files/.._.._Development_public_display_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_display_AfterGame.js.html">AfterGame.js</a></li><li><a href="../files/.._.._Development_public_display_Display.js.html">Display.js</a></li><li><a href="../files/.._.._Development_public_display_Lounge.js.html">Lounge.js</a></li><li><a href="../files/.._.._Development_public_display_MyAudio.js.html">MyAudio.js</a></li><li><a href="../files/.._.._Development_public_display_Spieler.js.html">Spieler.js</a></li></ul></li><li>global/<ul><li><a href="../files/.._.._Development_public_global_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_global_Util.js.html">Util.js</a></li><li><a href="../files/.._.._Development_public_global_api-schema.js.html">api-schema.js</a></li><li><a href="../files/.._.._Development_public_global_config.js.html">config.js</a></li><li><a href="../files/.._.._Development_public_global_db.js.html">db.js</a></li><li><a href="../files/.._.._Development_public_global_enum_controller_buttons.js.html">enum_controller_buttons.js</a></li><li><a href="../files/.._.._Development_public_global_events.js.html">events.js</a></li></ul></li><li>highscore/<ul><li><a href="../files/.._.._Development_public_highscore_highscore.js.html">highscore.js</a></li></ul></li><li>profil/<ul><li><a href="../files/.._.._Development_public_profil_profil.js.html">profil.js</a></li></ul></li><li>server/<ul><li><a href="../files/.._.._Development_public_server_Api.js.html">Api.js</a></li><li><a href="../files/.._.._Development_public_server_Chat.js.html">Chat.js</a></li><li><a href="../files/.._.._Development_public_server_CommandLine.js.html">CommandLine.js</a></li><li><a href="../files/.._.._Development_public_server_Controller.js.html">Controller.js</a></li><li><a href="../files/.._.._Development_public_server_Database.js.html">Database.js</a></li><li><a href="../files/.._.._Development_public_server_Display.js.html">Display.js</a></li><li><a href="../files/.._.._Development_public_server_Game.js.html">Game.js</a></li><li>Games/<ul><li><a href="../files/.._.._Development_public_server_Games_AbstractGame.js.html">AbstractGame.js</a></li><li>SpielAufZeit/<ul><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_Block.js.html">Block.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_Blockelement.js.html">Blockelement.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_SpielAufZeit.js.html">SpielAufZeit.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html">Spieler.js</a></li></ul></li></ul></li><li><a href="../files/.._.._Development_public_server_Main.js.html">Main.js</a></li><li><a href="../files/.._.._Development_public_server_Profil.js.html">Profil.js</a></li><li><a href="../files/.._.._Development_public_server_Router.js.html">Router.js</a></li><li><a href="../files/.._.._Development_public_server_RouterChache.js.html">RouterChache.js</a></li><li><a href="../files/.._.._Development_public_server_Server.js.html">Server.js</a></li><li><a href="../files/.._.._Development_public_server_SpielTyp.js.html">SpielTyp.js</a></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul>
+    </div>
+</div>
+
+
+
+        </div>
+
+        <div id="main" class="yui3-u">
+            <div class="content"><h4>Class server.Server</h4>
+
+
+
+<span class="foundat">Class defined in: <a href="../../files/.._.._Development_public_server_Server.js.html#l13"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:13</code></a></span>
+<div class="intro"><p>Konstruktor für Server</p>
+</div>
+
+
+    
+    <a name="methods_server.Server"></a>
+<div class="method item">
+     <strong class="name"><code>server.Server</code></strong>( <code>httpserver </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Server.js.html#l13"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:13</code></a>
+    </span><br>
+    
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>httpserver</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+    
+
+
+<div id="classdocs">
+    <ul>
+        
+        <li><a href="#methods">Methods</a></li>
+        
+        
+        <li><a href="#props">Properties</a></li>
+        
+        
+        
+    </ul>
+    <div>
+        
+            <div id="methods">
+            
+                <a name="methods_addProfil"></a>
+<div class="method item">
+     <strong class="name"><code>addProfil</code></strong>( <code>profil </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Server.js.html#l249"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:249</code></a>
+    </span><br>
+    <p>Fügt einen Profil der Profilliste hinzu und hörcht. (receiveEvent)</p>
+
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>profil</code> <strong>&lt;Profil&gt;</strong>
+        
+        
+        <p>Instanz der Klasse Profil</p>
+
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_addSpiel"></a>
+<div class="method item">
+     <strong class="name"><code>addSpiel</code></strong>( <code>game </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Server.js.html#l236"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:236</code></a>
+    </span><br>
+    <p>Fügt einen Spiel der Spielliste hinzu und hörcht. (receiveEvent)</p>
+
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>game</code> <strong>&lt;<a href="../classes/server.Game.html" class="crosslink">server.Game</a>&gt;</strong>
+        
+        
+        <p>Instanz der Klasse Spiel</p>
+
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_createGame"></a>
+<div class="method item">
+     <strong class="name"><code>createGame</code></strong>( <code>data, [fn] </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Server.js.html#l306"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:306</code></a>
+    </span><br>
+    <p>Erstellt einen neuen Spiel, fügt diesen der Spielliste hinzu und horcht.</p>
+
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>data</code> <strong>&lt;JSON&gt;</strong>
+        
+        
+        <p>Die Daten des Spiels.</p>
+
+            
+        </li>
+    
+        <li>
+        
+            <code>[fn]</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a>&gt;</strong>
+        
+        
+        <p>Callback, welches von einem socket ausgehen kann.</p>
+
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_createProfil"></a>
+<div class="method item">
+     <strong class="name"><code>createProfil</code></strong>( <code>data, fn, controller </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Server.js.html#l262"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:262</code></a>
+    </span><br>
+    <p>Erstellt einen neuen Profil, fügt diesen der Profilliste hinzu und horcht.</p>
+
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>data</code> <strong>&lt;JSON&gt;</strong>
+        
+        
+        <p>Die Daten des Profils.</p>
+
+            
+        </li>
+    
+        <li>
+        
+            <code>fn</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a>&gt;</strong>
+        
+        
+        <p>(optional) Callback, welches von einem socket ausgehen kann.</p>
+
+            
+        </li>
+    
+        <li>
+        
+            <code>controller</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a>&gt;</strong>
+        
+        
+        <p>(optional) der Controller, der das Event ausgeführt hat. ruft dessen setProfil auf.</p>
+
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_deleteSpiel"></a>
+<div class="method item">
+     <strong class="name"><code>deleteSpiel</code></strong>( <code>spiel </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Server.js.html#l334"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:334</code></a>
+    </span><br>
+    <p>LÖSCHT Spiel aus der DB</p>
+
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>spiel</code> <strong>&lt;<a href="../classes/server.Game.html" class="crosslink">server.Game</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_emitToAllControllers"></a>
+<div class="method item">
+     <strong class="name"><code>emitToAllControllers</code></strong>( <code>eventName, obj </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Server.js.html#l142"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:142</code></a>
+    </span><br>
+    <p>Senden Nachrichten an <em>alle</em> Verbundenen Controller.</p>
+
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>eventName</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>&gt;</strong>
+        
+        
+        <p>der Event-Name</p>
+
+            
+        </li>
+    
+        <li>
+        
+            <code>obj</code> <strong>&lt;JSON&gt;</strong>
+        
+        
+        <p>das geänderte Object/die Daten</p>
+
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getAllGames"></a>
+<div class="method item">
+    <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a> <strong class="name"><code>getAllGames</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Server.js.html#l168"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:168</code></a>
+    </span><br>
+    <p>Gibt alle Spiele wieder.</p>
+
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a>&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getAllProfils"></a>
+<div class="method item">
+    <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a> <strong class="name"><code>getAllProfils</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Server.js.html#l158"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:158</code></a>
+    </span><br>
+    <p>Gibt alle Profile wieder.</p>
+
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a>&gt; <p>Array mit allen Profilen</p>
+</div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getDB"></a>
+<div class="method item">
+    <strong class="name"><code>getDB</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Server.js.html#l115"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:115</code></a>
+    </span><br>
+    <p>Gibt die Datenbakverbindung wieder.</p>
+
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> <p>server.Database die Datenbank</p>
+</div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getProfilById"></a>
+<div class="method item">
+    <a href="../classes/server.Profil.html" class="crosslink">server.Profil</a> | Null <strong class="name"><code>getProfilById</code></strong>( <code>id </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Server.js.html#l214"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:214</code></a>
+    </span><br>
+    <p>Gibt den Profil mit der übergebene id wieder.
+Stimmt die übergebene ID mit keiner Profil ID über ein, wird null zurück gegeben.</p>
+
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>id</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt;</strong>
+        
+        
+        <p>die ProfilID</p>
+
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="../classes/server.Profil.html" class="crosslink">server.Profil</a> | Null&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getSpielById"></a>
+<div class="method item">
+    <a href="../classes/server.Game.html" class="crosslink">server.Game</a> | Null <strong class="name"><code>getSpielById</code></strong>( <code>id </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Server.js.html#l196"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:196</code></a>
+    </span><br>
+    <p>Gibt ein Spiel anhand der ID wieder.
+Stimmt die übergebene ID mit keiner SpieleID über ein, wird null zurück gegeben.</p>
+
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>id</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt;</strong>
+        
+        
+        <p>die SpielID</p>
+
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="../classes/server.Game.html" class="crosslink">server.Game</a> | Null&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getSpielTypById"></a>
+<div class="method item">
+    <a href="../classes/server.SpielTyp.html" class="crosslink">server.SpielTyp</a> | Null <strong class="name"><code>getSpielTypById</code></strong>( <code>id </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Server.js.html#l178"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:178</code></a>
+    </span><br>
+    <p>Gibt ein SpielTyp anhand der ID wieder.
+Stimmt die übergebene ID mit keiner SpielTyp ID über ein, wird null zurück gegeben.</p>
+
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>id</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt;</strong>
+        
+        
+        <p>die SpielTypID</p>
+
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="../classes/server.SpielTyp.html" class="crosslink">server.SpielTyp</a> | Null&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_receiveEvent"></a>
+<div class="method item">
+     <strong class="name"><code>receiveEvent</code></strong>( <code>eventName, obj </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Server.js.html#l125"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:125</code></a>
+    </span><br>
+    <p>Listenerimplementierung</p>
+
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>eventName</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+        <li>
+        
+            <code>obj</code> <strong>&lt;JSON&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_removeSpiel"></a>
+<div class="method item">
+     <strong class="name"><code>removeSpiel</code></strong>( <code>spiel </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Server.js.html#l347"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:347</code></a>
+    </span><br>
+    <p>Entfernt Spiel aus der Liste, NICHT aus der DB</p>
+
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>spiel</code> <strong>&lt;<a href="../classes/server.Game.html" class="crosslink">server.Game</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_restart"></a>
+<div class="method item">
+     <strong class="name"><code>restart</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Server.js.html#l481"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:481</code></a>
+    </span><br>
+    <p>Startet den Server neu.</p>
+
+    
+    
+    
+</div>
+
+            
+                <a name="methods_start"></a>
+<div class="method item">
+     <strong class="name"><code>start</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Server.js.html#l360"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:360</code></a>
+    </span><br>
+    <p>Start des Servers.</p>
+
+    
+    
+    
+</div>
+
+            
+                <a name="methods_stop"></a>
+<div class="method item">
+     <strong class="name"><code>stop</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Server.js.html#l471"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:471</code></a>
+    </span><br>
+    <p>Stoppt des Servers.</p>
+
+    
+    
+    
+</div>
+
+            
+            </div>
+        
+        
+            <div id="props">
+            
+                <a name="props__controllers"></a>
+<div class="props item">
+    <code>_controllers</code> &lt;<strong><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Server.js.html#l94"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:94</code></a></span>
+    <p>Hält eine Liste mit ALLEN Controllern.</p>
+
+    
+</div>
+
+            
+                <a name="props__db"></a>
+<div class="props item">
+    <code>_db</code> &lt;<strong><a href="../classes/server.Database.html" class="crosslink">server.Database</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Server.js.html#l37"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:37</code></a></span>
+    <p>Instanz der Datenbank.</p>
+
+    
+</div>
+
+            
+                <a name="props__displays"></a>
+<div class="props item">
+    <code>_displays</code> &lt;<strong><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Server.js.html#l104"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:104</code></a></span>
+    <p>Hält eine Liste mit ALLEN Displays.</p>
+
+    
+</div>
+
+            
+                <a name="props__games"></a>
+<div class="props item">
+    <code>_games</code> &lt;<strong><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Server.js.html#l64"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:64</code></a></span>
+    <p>Hält eine Liste mit ALLEN Spielen.</p>
+
+    
+</div>
+
+            
+                <a name="props__httpserver"></a>
+<div class="props item">
+    <code>_httpserver</code> &lt;<strong>Httpserver</strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Server.js.html#l23"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:23</code></a></span>
+    
+    
+</div>
+
+            
+                <a name="props__idPool"></a>
+<div class="props item">
+    <code>_idPool</code> &lt;<strong><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Server.js.html#l46"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:46</code></a></span>
+    <p>Wert, die bei jeder Vergabe weiter hochgezählt wird im eindeutige ID während des Betriebes zu schaffen.</p>
+
+    
+</div>
+
+            
+                <a name="props__io"></a>
+<div class="props item">
+    <code>_io</code> &lt;<strong>socket.io-instance</strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Server.js.html#l56"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:56</code></a></span>
+    
+    
+</div>
+
+            
+                <a name="props__profils"></a>
+<div class="props item">
+    <code>_profils</code> &lt;<strong><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Server.js.html#l74"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:74</code></a></span>
+    <p>Hält eine Liste mit ALLEN Profilen.</p>
+
+    
+</div>
+
+            
+                <a name="props__socket"></a>
+<div class="props item">
+    <code>_socket</code> &lt;<strong>Socket@</strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Server.js.html#l30"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:30</code></a></span>
+    
+    
+</div>
+
+            
+                <a name="props__spielTyps"></a>
+<div class="props item">
+    <code>_spielTyps</code> &lt;<strong><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Server.js.html#l84"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Server.js:84</code></a></span>
+    <p>Hält eine Liste mit allen SpielTypen.</p>
+
+    
+</div>
+
+            
+            </div>
+        
+        
+        
+    </div>
+</div>
+</div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/js/tabs.js"></script>
+</body>
+</html>

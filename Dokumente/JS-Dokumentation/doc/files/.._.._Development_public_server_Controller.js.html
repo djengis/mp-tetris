@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>../../Development/public/server/Controller.js - Muliplayer Tetris</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.8.0pr2/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <script src="http://yui.yahooapis.com/combo?3.8.0pr2/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            <h1><a href="../index.html"><img src="../assets/css/logo.png">Muliplayer Tetris: ../../Development/public/server/Controller.js</a></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.9</em>
+        </div>
+    </div>
+    <div class="yui3-g">
+
+        <div id="sidebar" class="yui3-u">
+            <div id="modules" class="sidebox">
+    <div class="hd">
+        <h2 class="no-toc">Modules</h2>
+    </div>
+    <div class="bd">
+        <ul>
+            
+                <li><a href="../modules/controller.html">controller</a>
+                
+                </li>
+            
+                <li><a href="../modules/display.html">display</a>
+                
+                </li>
+            
+                <li><a href="../modules/global.html">global</a>
+                
+                </li>
+            
+                <li><a href="../modules/server.html">server</a>
+                
+                </li>
+            
+        </ul>
+    </div>
+</div>
+
+<div id="classes" class="sidebox">
+    <div class="hd">
+        <h2 class="no-toc">Classes</h2>
+    </div>
+    <div class="bd">
+        <ul>
+            
+                <li><a href="../classes/controller.Auswahl.html">controller.Auswahl</a></li>
+            
+                <li><a href="../classes/controller.Chat.html">controller.Chat</a></li>
+            
+                <li><a href="../classes/controller.Controller.html">controller.Controller</a></li>
+            
+                <li><a href="../classes/display.AfterGame.html">display.AfterGame</a></li>
+            
+                <li><a href="../classes/display.Display.html">display.Display</a></li>
+            
+                <li><a href="../classes/display.Lounge.html">display.Lounge</a></li>
+            
+                <li><a href="../classes/display.MyAudio.html">display.MyAudio</a></li>
+            
+                <li><a href="../classes/display.Spieler.html">display.Spieler</a></li>
+            
+                <li><a href="../classes/global.API_SCHEMA.html">global.API_SCHEMA</a></li>
+            
+                <li><a href="../classes/global.BUTTON.html">global.BUTTON</a></li>
+            
+                <li><a href="../classes/global.BUTTONTYPE.html">global.BUTTONTYPE</a></li>
+            
+                <li><a href="../classes/global.CONFIG.html">global.CONFIG</a></li>
+            
+                <li><a href="../classes/global.GAME_EVENT.html">global.GAME_EVENT</a></li>
+            
+                <li><a href="../classes/global.LIST_EVENT.html">global.LIST_EVENT</a></li>
+            
+                <li><a href="../classes/global.pre_defs.html">global.pre_defs</a></li>
+            
+                <li><a href="../classes/global.Util.html">global.Util</a></li>
+            
+                <li><a href="../classes/server.Api.html">server.Api</a></li>
+            
+                <li><a href="../classes/server.Chat.html">server.Chat</a></li>
+            
+                <li><a href="../classes/server.CommandLine.html">server.CommandLine</a></li>
+            
+                <li><a href="../classes/server.Controller.html">server.Controller</a></li>
+            
+                <li><a href="../classes/server.Database.html">server.Database</a></li>
+            
+                <li><a href="../classes/server.Display.html">server.Display</a></li>
+            
+                <li><a href="../classes/server.Game.html">server.Game</a></li>
+            
+                <li><a href="../classes/server.games.AbstractGame.html">server.games.AbstractGame</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.html">server.games.SpielAufZeit</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Block.html">server.games.SpielAufZeit.Block</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Blockelement.html">server.games.SpielAufZeit.Blockelement</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Spieler.html">server.games.SpielAufZeit.Spieler</a></li>
+            
+                <li><a href="../classes/server.Main.html">server.Main</a></li>
+            
+                <li><a href="../classes/server.Profil.html">server.Profil</a></li>
+            
+                <li><a href="../classes/server.Router.html">server.Router</a></li>
+            
+                <li><a href="../classes/server.RouterChache.html">server.RouterChache</a></li>
+            
+                <li><a href="../classes/server.Server.html">server.Server</a></li>
+            
+                <li><a href="../classes/server.SpielTyp.html">server.SpielTyp</a></li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="fileTree" class="sidebox">
+    <div class="hd">
+        <h2 class="no-toc">Files</h2>
+    </div>
+    <div class="bd">
+        <ul><li>../<ul><li>../<ul><li>Development/<ul><li>public/<ul><li>controller/<ul><li><a href="../files/.._.._Development_public_controller_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_controller_Auswahl.js.html">Auswahl.js</a></li><li><a href="../files/.._.._Development_public_controller_Chat.js.html">Chat.js</a></li><li><a href="../files/.._.._Development_public_controller_Controller.js.html">Controller.js</a></li></ul></li><li>display/<ul><li><a href="../files/.._.._Development_public_display_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_display_AfterGame.js.html">AfterGame.js</a></li><li><a href="../files/.._.._Development_public_display_Display.js.html">Display.js</a></li><li><a href="../files/.._.._Development_public_display_Lounge.js.html">Lounge.js</a></li><li><a href="../files/.._.._Development_public_display_MyAudio.js.html">MyAudio.js</a></li><li><a href="../files/.._.._Development_public_display_Spieler.js.html">Spieler.js</a></li></ul></li><li>global/<ul><li><a href="../files/.._.._Development_public_global_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_global_Util.js.html">Util.js</a></li><li><a href="../files/.._.._Development_public_global_api-schema.js.html">api-schema.js</a></li><li><a href="../files/.._.._Development_public_global_config.js.html">config.js</a></li><li><a href="../files/.._.._Development_public_global_db.js.html">db.js</a></li><li><a href="../files/.._.._Development_public_global_enum_controller_buttons.js.html">enum_controller_buttons.js</a></li><li><a href="../files/.._.._Development_public_global_events.js.html">events.js</a></li></ul></li><li>highscore/<ul><li><a href="../files/.._.._Development_public_highscore_highscore.js.html">highscore.js</a></li></ul></li><li>profil/<ul><li><a href="../files/.._.._Development_public_profil_profil.js.html">profil.js</a></li></ul></li><li>server/<ul><li><a href="../files/.._.._Development_public_server_Api.js.html">Api.js</a></li><li><a href="../files/.._.._Development_public_server_Chat.js.html">Chat.js</a></li><li><a href="../files/.._.._Development_public_server_CommandLine.js.html">CommandLine.js</a></li><li><a href="../files/.._.._Development_public_server_Controller.js.html">Controller.js</a></li><li><a href="../files/.._.._Development_public_server_Database.js.html">Database.js</a></li><li><a href="../files/.._.._Development_public_server_Display.js.html">Display.js</a></li><li><a href="../files/.._.._Development_public_server_Game.js.html">Game.js</a></li><li>Games/<ul><li><a href="../files/.._.._Development_public_server_Games_AbstractGame.js.html">AbstractGame.js</a></li><li>SpielAufZeit/<ul><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_Block.js.html">Block.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_Blockelement.js.html">Blockelement.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_SpielAufZeit.js.html">SpielAufZeit.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html">Spieler.js</a></li></ul></li></ul></li><li><a href="../files/.._.._Development_public_server_Main.js.html">Main.js</a></li><li><a href="../files/.._.._Development_public_server_Profil.js.html">Profil.js</a></li><li><a href="../files/.._.._Development_public_server_Router.js.html">Router.js</a></li><li><a href="../files/.._.._Development_public_server_RouterChache.js.html">RouterChache.js</a></li><li><a href="../files/.._.._Development_public_server_Server.js.html">Server.js</a></li><li><a href="../files/.._.._Development_public_server_SpielTyp.js.html">SpielTyp.js</a></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul>
+    </div>
+</div>
+
+
+
+        </div>
+
+        <div id="main" class="yui3-u">
+            <div class="content"><h4>../../Development/public/server/Controller.js</h4>
+
+<pre class="code prettyprint linenums">
+&#x27;use strict&#x27;;
+
+var BUTTON = require(&#x27;../global/enum_controller_buttons.js&#x27;).BUTTON;
+var CONFIG = require(&#x27;./../global/config.js&#x27;).CONFIG;
+var Profil = require(&#x27;./Profil.js&#x27;).Profil;
+var Game = require(&#x27;./Game.js&#x27;).Game;
+
+/**
+ * @module server
+ * @namespace server
+ *
+ * @class Controller
+ * @constructor
+  
+ * @param {Number} id
+ * @param {Socket} socket
+ */
+function Controller(id, socket){
+	/**
+	 * Zufällig vergabene ID um die jeweiligen Controller zu identifizieren.
+	 *
+	 * @property _id
+	 * @private
+	 * @type Number
+	 */
+	this._id = id;
+	
+	/**
+	 * @property _socket
+	 * @private
+	 * @type Socket
+	 */
+	this._socket = null;
+	this.setSocket(socket);
+	
+	/**
+	 * @property _server
+	 * @private
+	 * @type server.Server
+	 */
+	this._server = Controller.getServer();
+	
+	/**
+	 * @property _db
+	 * @private
+	 * @type server.Database
+	 */
+	this._db = this._server.getDB();
+	
+	/**
+	 * Instanz des Profils, welches mit dem Controller verknüpft ist, sofern verknüpft. 
+	 * 
+	 * @property _profil
+	 * @private
+	 * @type server.Profil
+	 * @default null
+	 */
+	this._profil = null;
+}
+
+/**
+ * @method setServer
+ * @static
+ *
+ * @param {server.Server} server
+ */
+Controller.setServer = function(server){
+	this._server = server;
+};
+
+/**
+ * @method getServer
+ *
+ * @return {server.Server}
+ */
+Controller.getServer = function(){
+	if(!this._server){
+		throw new Error(&quot;Server nicht gesetzt. class Controller&quot;);
+	}
+	return this._server;
+};
+
+/**
+ * Gibt die id des Controllers zurück.
+ *
+ * @method getId
+ * @return {Number} die id
+ */
+Controller.prototype.getId = function(){
+	return this._id;
+};
+
+/**
+ * Total nutzlose Methode die entfernt werden sollte.
+ *
+ * @deprecated
+ * @method tick
+ */
+Controller.prototype.tick = function(){
+	throw new Error(&quot;why i am here?&quot;);
+};
+
+/**
+ * @method emitToController
+ *
+ * @param {String} eventName
+ * @param {JSON} obj
+ */
+Controller.prototype.emitToController = function(eventName, obj){
+	if(obj instanceof Profil){
+		this._socket.emit(eventName, obj.getEmitData());
+		return;
+	}
+	if(obj instanceof Game){
+		this._socket.emit(eventName, obj.getEmitData());
+		return;
+	}
+	this._socket.emit(eventName, obj);
+};
+
+/**
+ * @method setSocket
+ *
+ * @param {Socket} socket
+ */
+Controller.prototype.setSocket = function(socket){
+	this._socket = socket;
+	
+	// Control
+	this._socket.on(&#x27;button&#x27;, function (data) {
+		if(this.hasProfil()){
+			this.getProfil().onButton(data);
+		}
+	}.bind(this));
+	
+	// Profil
+	
+	this._socket.on(&#x27;createPlayer&#x27;, function (data, fn){
+		this._server.createProfil(data, fn, this);
+	}.bind(this));
+		
+	this._socket.on(&#x27;updatePlayerlist&#x27;, function (data, fn) {
+		var all = this._server.getAllProfils();
+		var i;
+		var table = [];
+		
+		for(i in all){
+			table.push(all[i].getEmitData());
+		}
+		
+		fn(table); 
+	}.bind(this));
+		
+	this._socket.on(&#x27;selectPlayer&#x27;, function (data, fn) {
+	
+		var profil = this._server.getProfilById(data.profil_id);
+		if(profil!==null){
+   			this.setProfil(profil);
+	   		fn({ok: true, data: {id: profil.getId(), name: profil.getName()}});
+		}else{
+		   	fn({ok: false, message: &quot;message not defined&quot;});
+		}
+	}.bind(this));
+	
+	this._socket.on(&#x27;disselectPlayer&#x27;, function (data, fn) {
+	   	this.unsetProfil();
+	   	fn({ok: true, message: CONFIG.byebye_message});
+	}.bind(this));
+	
+	// Games
+	
+	this._socket.on(&#x27;createGame&#x27;, function (data, fn){
+		if(this.getProfil() === null){ throw new Error(&quot;Kein Profil im Controller. Konnte Spiel nicht erstellen.&quot;); }
+		data.ProfilID = this.getProfil().getId();
+		
+		this._server.createGame(data, fn);
+	}.bind(this));
+	
+	this._socket.on(&#x27;selectGame&#x27;, function (data, fn) {
+		var spiel = Controller.getServer().getSpielById(data.SpielID);
+		var profil = this.getProfil();
+		
+		if(spiel===null){
+			console.log(&quot;BOESE!&quot;);
+			return;
+		}
+		if(spiel.hasMitprofil(profil)){
+	   		fn({ok: true, data: spiel.getEmitData()}); 
+			return;
+		}
+		
+		if(spiel.addMitprofil(profil)){
+	   		fn({ok: true, data: spiel.getEmitData()}); 
+		}else{
+		   	fn({ok: false, message: &quot;Das Spiel ist leider schon Voll.&quot;});
+		}
+	}.bind(this));
+	
+	this._socket.on(&#x27;leaveGame&#x27;, function (data, fn) {
+		//var spiel = Controller.getServer().getSpielById(data.SpielID);
+		var profil = this.getProfil();
+		
+		if(!profil){
+		   	fn({ok: false, message: &quot;Sie sind nicht Angemeldet.&quot;});
+			return;
+		}
+		
+		var spiel = profil.getLoggedInGame();
+		
+		if(!spiel){
+		   	fn({ok: false, message: &quot;Sie waren in keinem Spiel.&quot;});
+			return;
+		}
+		
+		var ersteller = spiel.removeMitprofil(profil);
+		
+	   	fn({ok: true, data: null});
+		
+	
+	}.bind(this));
+	
+	this._socket.on(&#x27;startGame&#x27;, function (data, fn) {
+		var spiel = Controller.getServer().getSpielById(data.SpielID);
+		var profil = this.getProfil();
+		
+		if(spiel === null){
+		   	fn({ok: false, message: &quot;Sie befinden sich nicht in einem Spiel.&quot;});
+		   	return;
+		}
+		
+		if(spiel.getErstellerId() == profil.getId()){
+		
+	   		if(spiel.startGame()){
+		   		var game_data = spiel.getEmitData();
+		   		game_data.gameStartWaitTimer = CONFIG.gameStartWaitTimer;
+		   		
+			   	fn({ok: true, data: game_data}); 
+	   		}else{
+		   		fn({ok: false, message: &quot;Das Spiel befindet sich in einem ungültigen Zustand.&quot;});
+	   		}
+		}else{
+		   	fn({ok: false, message: &quot;Nur der Spiel-Ersteller kann das Spiel starten.&quot;});
+		}
+		
+	
+	}.bind(this));
+		
+	this._socket.on(&#x27;updateGamelist&#x27;, function (data, fn) {
+		var all = this._server.getAllGames();
+		var i;
+		var table = [];
+		
+		for(i in all){
+			// beendete Spiele nicht übertragen
+			if(all[i]._gameStatus !== &quot;ended&quot;){
+				table.push(all[i].getEmitData());
+			}
+		}
+		
+		fn(table); 
+	}.bind(this));
+	
+	this._socket.on(&#x27;ChatWrite&#x27;, function (data, fn) {
+		if(this.hasProfil()){
+			var profil = this.getProfil();
+			if(profil.hasChat()){
+				profil.getChat().write(profil, data.chatText);
+			}
+			
+		}
+		
+	}.bind(this));
+	
+	
+	//hasChat
+};
+
+/**
+ * Gibt die Instanz des Profils wieder, mitder der Controller verknüpft ist. Sofern verknüpft.
+ *
+ * @method getProfil
+ *
+ * @return {server.Profil}
+ */
+Controller.prototype.getProfil = function(){
+	return this._profil;
+};
+
+/**
+ * Setzte die Instanz des Profil zu diesem Controller und umgekehrt.
+ * 
+ * @method setProfil
+ * @chainable
+ *
+ * @param {server.Profil} profil
+ */
+Controller.prototype.setProfil = function(profil){
+	//console.log(&quot;[NEW] Profil &quot;+profil.getName()+&quot; (&quot;+profil.getId()+&quot;) hat sich verbunden.&quot;);
+	this.unsetProfil();
+	
+	this._profil = profil;
+	
+	if(this.getProfil().getController() !== this){
+		this.getProfil().setController(this);
+	}
+	
+	profil.setOnline(true);
+	
+	return this;
+};
+
+/**
+ * Unsetzt die Instanz des Profil zu diesem Controller und umgekehrt.
+ *
+ * @method unsetProfil
+ * @chainable
+ *
+ * @param {Boolean} bubble
+ */
+Controller.prototype.unsetProfil = function(bubble){
+	if(bubble === undefined) bubble = true;
+
+	if(this.hasProfil()){
+		//console.log(&quot;[DEL] Profil &quot;+this.getProfil().getName()+&quot; hat sich getrennt.&quot;);
+		if(bubble){
+			this.getProfil().unsetController(false);		
+		}
+		
+		this._profil.setOnline(false);
+		this._profil = null;	
+	}
+	
+	return this;
+};
+
+/**
+ * Gibt wieder, ob dieser Controller mit einem Profil verknüpft ist.
+ *
+ * @method hasProfil
+ *
+ * @return {Boolean}
+ */
+Controller.prototype.hasProfil = function(){
+	return (this._profil !== null);
+}
+
+/**
+ * @method destructor
+ */
+Controller.prototype.destructor = function(){
+	this.unsetProfil();
+};
+
+exports.Controller = Controller;
+</pre>
+
+</div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/js/tabs.js"></script>
+</body>
+</html>

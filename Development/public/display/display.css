@@ -1,0 +1,115 @@
+html{
+	font-size: 12px;
+	font-family: Helvetica Neue, Helvetica , Arial, sans-serif;
+	background-color: #415568;
+}
+a#bigBackButton{
+	z-index: 99999999;
+}
+
+#connection_lost{
+	display: none;
+	position: absolute;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom:0;
+	z-index: 9999999;
+	background-color: rgba(0,0,0,0.6);
+	color:#fff;
+	padding: 10px;
+}
+
+#display{
+	display: none;
+}
+
+/* AuswahlSpielSpieler{ */
+form#AuswahlSpielSpieler{
+	display: none;
+	width: 200px;
+	position: absolute;
+	left:50%;
+	top:50%;
+	margin-left: -110px;
+	margin-top: -120px;
+	color: #838d97;
+	padding: 10px;
+	text-shadow: 0px 0px 7px rgba(0,0,0,0.25);
+	background-color: rgba(255,255,255,0.05);
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
+	
+}
+form#AuswahlSpielSpieler button{
+	width: 200px;
+	height: 50px;
+	margin-bottom: 5px;
+}
+form#AuswahlSpielSpieler button:nth-child(4){
+	margin-bottom: 0px;
+}
+form#AuswahlSpielSpieler input{
+	width: 200px;
+}
+#AuswahlSpielSpieler_info{
+	display: none;
+	display: block;
+	
+	position: absolute;
+	bottom:-40px;
+	left: 0;
+	right: 0;
+	
+	color: #8d6e6b;
+	padding: 10px;
+	height: 15px;
+	line-height: 15px;
+	text-shadow: 0px 0px 7px rgba(0,0,0,0.25);
+	background-color: rgba(255,255,255,0.05);
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
+}
+#AuswahlSpielSpieler_info:empty{
+	display: none;
+}
+/* }AuswahlSpielSpieler */
+
+
+/* message{ */
+.message{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 10000;
+	text-shadow: 0px 0px 7px rgba(0,0,0,0.25);
+	box-shadow:  0px 0px 15px rgba(0,0,0,0.25);
+	background-color: #415565;
+	color: #838d97;
+	padding: 20px;
+	border:4px solid rgba(255,255,255,0.05);
+	line-height: 135%;
+}
+.message h1{
+}
+.message h2{
+	font-size: 30px;
+	line-height: 30px;
+	height: 30px;
+	margin-bottom: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 8px;
+	padding-left: 8px;
+	background-color: rgba(255,255,255,0.25);
+	color:#415568;
+	font-weight: bold;
+	cursor: default;
+	text-shadow: none;
+	position: relative;
+}
+.message p{
+	margin-bottom: 5px;
+}
+.message *:last-child{
+	margin-bottom: 0;
+}
+/* }message */

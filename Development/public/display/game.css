@@ -1,0 +1,117 @@
+#gamefield{
+	position: absolute;
+	z-index: 10;
+	top:50%;
+	left: 50%;
+	width: 1920px;
+	height: 1080px;
+	margin-left: -960px;
+	margin-top: -540px;
+	box-shadow: 0px 0px 33px rgba(0,0,0,0.2);
+	background-color: #526477;
+	overflow: hidden;
+}
+#gameInfos{
+	position: absolute;
+	right: 25px;
+	height: 1030px;
+	width: 970px;
+	top:0px;
+	font-size: 35px;
+}
+#gameInfos h2{
+	padding-top:30px;
+	font-size: 45px;
+	font-weight: bold;
+	padding-bottom:25px;
+}
+#gameInfos ul{
+	padding-top: 10px;
+	font-weight: normal;
+}
+#gameInfos ul li{
+	padding-bottom: 20px;
+}
+
+#gameInfos ul li.out{
+	opacity: 0.5;
+}
+#gameInfos ul strong{
+	line-height: 45px;
+	height: 45px;
+	display: inline-block;
+	width: 335px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	vertical-align: middle;
+}
+#gameInfos ul span{
+	display: inline-block;
+	line-height: 45px;
+	height: 45px;
+	vertical-align: middle;
+}
+#gameInfos ul span.playerPlatz{
+	width: 45px;
+	text-align: center;
+}
+#gameInfos ul span.playerColor{
+	width: 45px;
+	margin-right: 10px;
+	background-color: grey;
+	border: 2px solid rgba(255,255,255,0.05);
+	box-shadow: inset 0px 0px 15px rgba(0,0,0,0.2);
+}
+#gameInfos ul span.playerPunkte{
+	text-align: right;
+	width: 70px;
+	text-align: right;
+}
+
+#gameInfos ul span.playerLevel{
+	text-align: right;
+	width: 70px;
+	text-align: right;
+}
+#gameInfos ul span.playerLines{
+	text-align: right;
+	width: 70px;
+	text-align: right;
+}
+span.playerLevel
+span.playerLines
+
+#effektfield{
+	z-index: 10;
+},
+#blockfield{
+	z-index: 1;
+}
+#effektfield,
+#blockfield{
+	position: absolute;
+	left:25px;
+	right:25px;
+	bottom:25px;
+	top:25px;
+}
+#effektfield .block,
+#blockfield .block{
+	position: absolute;
+	background-color: rgba(0,0,0,0.2);
+	margin: 1px;
+	box-sizing: border-box;
+	border: 2px solid rgba(255,255,255,0.05);
+	
+	box-shadow: inset 0px 0px 15px rgba(0,0,0,0.2);
+}
+.cursor{
+	height: 10px;
+	background-color: rgba(0,0,0,0.5);
+	position: absolute;
+	display: block;
+	top:-15px;
+	left: 0;
+	border: 1px solid #526477;
+	display: none;
+}

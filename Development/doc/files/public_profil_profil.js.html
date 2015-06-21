@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>public/profil/profil.js - Muliplayer Tetris</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="../assets/css/logo.png" title="Muliplayer Tetris"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.9</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/controller.Auswahl.html">controller.Auswahl</a></li>
+            
+                <li><a href="../classes/controller.Chat.html">controller.Chat</a></li>
+            
+                <li><a href="../classes/controller.Controller.html">controller.Controller</a></li>
+            
+                <li><a href="../classes/display.AfterGame.html">display.AfterGame</a></li>
+            
+                <li><a href="../classes/display.Display.html">display.Display</a></li>
+            
+                <li><a href="../classes/display.Lounge.html">display.Lounge</a></li>
+            
+                <li><a href="../classes/display.MyAudio.html">display.MyAudio</a></li>
+            
+                <li><a href="../classes/display.Spieler.html">display.Spieler</a></li>
+            
+                <li><a href="../classes/global.API_SCHEMA.html">global.API_SCHEMA</a></li>
+            
+                <li><a href="../classes/global.BUTTON.html">global.BUTTON</a></li>
+            
+                <li><a href="../classes/global.BUTTONTYPE.html">global.BUTTONTYPE</a></li>
+            
+                <li><a href="../classes/global.CONFIG.html">global.CONFIG</a></li>
+            
+                <li><a href="../classes/global.GAME_EVENT.html">global.GAME_EVENT</a></li>
+            
+                <li><a href="../classes/global.LIST_EVENT.html">global.LIST_EVENT</a></li>
+            
+                <li><a href="../classes/global.pre_defs.html">global.pre_defs</a></li>
+            
+                <li><a href="../classes/global.Util.html">global.Util</a></li>
+            
+                <li><a href="../classes/server.Api.html">server.Api</a></li>
+            
+                <li><a href="../classes/server.Chat.html">server.Chat</a></li>
+            
+                <li><a href="../classes/server.CommandLine.html">server.CommandLine</a></li>
+            
+                <li><a href="../classes/server.Controller.html">server.Controller</a></li>
+            
+                <li><a href="../classes/server.Database.html">server.Database</a></li>
+            
+                <li><a href="../classes/server.Display.html">server.Display</a></li>
+            
+                <li><a href="../classes/server.Game.html">server.Game</a></li>
+            
+                <li><a href="../classes/server.games.AbstractGame.html">server.games.AbstractGame</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.html">server.games.SpielAufZeit</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Block.html">server.games.SpielAufZeit.Block</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Blockelement.html">server.games.SpielAufZeit.Blockelement</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Spieler.html">server.games.SpielAufZeit.Spieler</a></li>
+            
+                <li><a href="../classes/server.Main.html">server.Main</a></li>
+            
+                <li><a href="../classes/server.Profil.html">server.Profil</a></li>
+            
+                <li><a href="../classes/server.Router.html">server.Router</a></li>
+            
+                <li><a href="../classes/server.RouterChache.html">server.RouterChache</a></li>
+            
+                <li><a href="../classes/server.Server.html">server.Server</a></li>
+            
+                <li><a href="../classes/server.SpielTyp.html">server.SpielTyp</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/controller.html">controller</a></li>
+            
+                <li><a href="../modules/display.html">display</a></li>
+            
+                <li><a href="../modules/global.html">global</a></li>
+            
+                <li><a href="../modules/server.html">server</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: public/profil/profil.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&quot;use strict&quot;;
+
+var actPage = 0;
+var maxEntry = CONFIG.ProfilListe.maxEntry;
+var pages = CONFIG.ProfilListe.pages;
+
+function getAllProfile(act){
+	var von = (act*maxEntry)+1;
+	var bis = (maxEntry-1) + von;
+	console.log(&quot;von &quot;, von);
+	console.log(&quot;bis &quot;, bis);
+	$.getJSON(&#x27;/api/profil/&#x27; + von + &#x27;-&#x27; + bis, function(data){ //+ von + &#x27;/&#x27; + bis &lt;th&gt; gesetze Steine &lt;/th
+		actPage = act;
+		var head = &quot;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Punkte&lt;/th&gt;&gt;&lt;th style=&#x27;width:120px;&#x27;&gt; &lt;/th&gt;&lt;th style=&#x27;width:140px;&#x27;&gt; &lt;/th&gt;&lt;/tr&gt;&quot;;
+		$(&#x27;#ProfilTable&#x27;).html(head);
+		var i;
+		var tr = &#x27;&#x27;
+		for(i = 0; i &lt; data.length; i++){
+			tr += &#x27;&lt;tr&gt;&#x27;;
+			tr += replaceString(&#x27;&lt;td&gt;?&lt;/td&gt;&#x27;, data[i].ProfilID);
+			tr += replaceString(&#x27;&lt;td&gt;?&lt;/td&gt;&#x27;, data[i].Name);
+			tr += replaceString(&#x27;&lt;td&gt;?&lt;/td&gt;&#x27;, data[i].Punkte);
+			//tr += replaceString(&#x27;&lt;td&gt;?&lt;/td&gt;&#x27;, data[i].GesetzteBloecke);
+			tr += replaceArray(&#x27;&lt;td&gt;&lt;a href=&quot;?&quot;&gt;??&lt;/a&gt;&lt;/td&gt;&#x27;, [data[i].ProfilID, &#x27;Details anzeigen&#x27;]);
+			tr += replaceArray(&#x27;&lt;td&gt;&lt;a href=&quot;/display/#profil/?&quot;&gt;??&lt;/a&gt;&lt;/td&gt;&#x27;,[data[i].ProfilID, &#x27;als Display folgen&#x27;]);
+			tr += &#x27;&lt;/tr&gt;&#x27;;
+		}
+		$(&#x27;#ProfilTable&#x27;).append(tr);
+		getPager();
+	});
+}
+
+
+/**
+ * Erstellt den Pager.
+ *
+ * @method getPager
+ */
+function getPager(){
+	$.getJSON(&#x27;/api/profil/length/&#x27;, function(data){
+		var pagination = Math.ceil(data.count/maxEntry) -1;
+		var i, j, range, text = &#x27;&#x27;;
+		var link = &#x27;&lt;li ??&gt;&lt;a href=&quot;javascript:;&quot; onclick=&quot;getAllProfile(?)&quot;&gt;???&lt;/a&gt;&lt;/li&gt;&#x27;;
+		if(1 &lt;= pagination){
+			i = 1;
+			if (actPage != 0){
+				i = actPage - pages +1;
+				if (i &lt; 1)
+					i = 1;
+				text += replaceArray(link, [0, &#x27;&#x27;, &#x27;erste Seite&#x27;]);
+				text += replaceArray(link, [actPage-1, &#x27;&#x27;, &#x27;vorherige Seite&#x27;]);
+				if (1 &lt; i)
+					text += &#x27;&lt;li&gt;&lt;p&gt;...&lt;/p&gt;&lt;/li&gt;&#x27;;	 
+			}
+			while(i &lt; actPage+1){
+				text += replaceArray(link, [i-1, &#x27;&#x27;, i]);
+				i += 1;
+			}
+			text += replaceArray(link, [actPage, &#x27;class=&quot;on&quot;&#x27;, actPage+1]);
+			while(i &lt; (actPage + pages +1) &amp;&amp; i &lt;= pagination){
+				i += 1;
+				text += replaceArray(link, [i-1, &#x27;&#x27;, i]);
+			}
+			if (i &lt;= pagination)
+				text += &#x27;&lt;li&gt;&lt;p&gt;...&lt;/p&gt;&lt;/li&gt;&#x27;;
+			if (actPage &lt; pagination){
+				text += replaceArray(link, [actPage+1, &#x27;&#x27;, &#x27;n&amp;auml;chste Seite&#x27;]);
+				text += replaceArray(link, [pagination, &#x27;&#x27;, &#x27;letzte Seite&#x27;]);
+			}
+		}
+		$(&#x27;#pager&#x27;).html(text);
+	});
+}
+
+function replaceString(link, value){
+	return link.replace(&#x27;?&#x27;, value);
+}
+
+
+/**
+ * Ersetzt die Vorkommen von &#x27;?&#x27; in link den Werten in array
+ *
+ * @method replaceArray
+ * @param  {String}	  beinhaltet mehrere &#x27;?&#x27;, die ersetzt werden sollen
+ * @param  {Array}	  die String in value werden für &#x27;?&#x27; eingefügt
+ */
+function replaceArray(link, array){
+	if (array.length == 3)
+		return link.replace(&#x27;???&#x27;, array[2]).replace(&#x27;??&#x27;, array[1]).replace(&#x27;?&#x27;, array[0]);
+	else if (array.length == 2)
+		return link.replace(&#x27;??&#x27;, array[1]).replace(&#x27;?&#x27;, array[0]);
+
+}
+
+function getOneProfil(id){
+	$.getJSON(&#x27;/api/profil/&#x27;+id, function(data){
+			var tr = &#x27;&lt;tr&gt;&#x27;
+			tr += &#x27;&lt;td&gt;&#x27; + data.ProfilID + &#x27;&lt;/td&gt;&#x27;;
+			tr += &#x27;&lt;td&gt;&#x27; + data.Name + &#x27; &lt;/td&gt;&#x27;;
+			tr += &#x27;&lt;td&gt;&#x27; + Util.formatTimestamp(data.AnmeldeDatum) + &#x27;&lt;/td&gt;&#x27;;
+			tr += &#x27;&lt;td&gt;&#x27; + Util.formatTimestamp(data.LetzteAnmeldung, true, &quot;nie&quot;) + &#x27;&lt;/td&gt;&#x27;;
+			tr += &#x27;&lt;td&gt;&#x27; + data.Punkte + &#x27; &lt;/td&gt;&#x27;;
+			$(&#x27;#DetailProfilTable&#x27;).append(tr);
+			
+			$(&quot;#profilName&quot;).text(data.Name);
+	});
+	
+	$.getJSON(&#x27;/api/profil/&#x27;+id+&quot;/spiele&quot;, function(data){
+		var i;
+		for(i = 0; i &lt; data.length; i++){
+			var tr = &#x27;&lt;tr&gt;&#x27;
+			//tr += &#x27;&lt;td&gt;&#x27; + data[i].SpielID + &#x27;&lt;/td&gt;&#x27;;
+			//tr += &#x27;&lt;td&gt;&#x27; + data[i].punkte + &#x27; &lt;/td&gt;&#x27;;
+			tr += &#x27;&lt;td&gt;&#x27; + data[i].SpielTypBezeichnung + &#x27;&lt;/td&gt;&#x27;;
+			tr += &#x27;&lt;td&gt;&#x27; + Util.formatTimestamp(data[i].Datum, true) + &#x27;&lt;/td&gt;&#x27;;
+			tr += &#x27;&lt;td&gt;&#x27; + Util.secondsToReadable(data[i].Dauer) + &#x27; &lt;/td&gt;&#x27;;
+			tr += &#x27;&lt;td&gt; &lt;a href=&quot;/display#spiel/&#x27; + data[i].SpielID + &#x27;&quot;&gt;Spieldetails Anzeigen »&lt;/a&gt;&lt;/td&gt;&#x27;;
+			
+			http://localhost:1337735
+			$(&#x27;#SpielTabelle&#x27;).append(tr);
+		}
+	});
+}
+
+$(window).ready(function(){
+	var id = parseInt(window.location.pathname.replace(/\/$/g,&quot;&quot;).split( &#x27;/&#x27; ).pop());
+	if(id){
+		getOneProfil(id);
+	}else{
+		getAllProfile(actPage);
+		window.setInterval(&quot;getAllProfile(actPage)&quot;, (CONFIG.ProfilListe.interval * 1000));
+	}
+});
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

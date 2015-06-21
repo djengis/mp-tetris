@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html><!-- manifest="profil.manifest" -->
+	<head>
+		<title>Spieler</title>
+		<meta charset="utf-8" />
+				
+		<link href="/global/extern_libs/reset.css" rel="stylesheet" type="text/css" />
+		<link href="/global/main.css" rel="stylesheet" type="text/css" />
+		<link href="/profil/profil.css" rel="stylesheet" type="text/css" />
+		
+		<script src="/global/extern_libs/jquery-2.1.0.min.js"></script>
+		<script src="/global/extern_libs/jquery.color.js"></script>
+		<script src="/global/extern_libs/jquery-ui-1.10.4.custom.min.js"></script>
+		<script src="/global/Util.js"></script>
+		<script src="/global/config.js"></script>
+		
+		<script src="/profil/profil.js"></script>
+		  
+	</head>
+	<body>
+		<a id="bigBackButton" href="/profil/">« Zurück zu den Profilen</a>
+		<h1>Profil von <span id="profilName"></span></h1>
+		
+		<table id="DetailProfilTable" class="styledTable">
+ 			<tr>
+ 				<th> ID </th>
+			    <th> Name </th>
+			    <th> Anmeldung </th>
+			    <th> zuletzt Online </th>
+			    <th> Punkte </th>
+  			</tr>
+		</table>
+		<h1>Dessen gespielte Spiele</h1>
+		<table id="SpielTabelle" class="styledTable">
+ 			<tr>
+			    <th> SpielTypBezeichnung </th>
+ 				<!-- <th> SpielID </th> -->
+			    <th> Datum </th>
+			    <th> Dauer </th>
+			    <th>  </th>
+  			</tr>
+		</table>
+	</body>
+</html>

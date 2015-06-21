@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html><!-- manifest="profil.manifest" -->
+	<head>
+		<title>Spieler</title>
+		<meta charset="utf-8" />
+		
+		<link href="/global/extern_libs/reset.css" rel="stylesheet" type="text/css" />
+		<link href="/global/main.css" rel="stylesheet" type="text/css" />
+		<link href="/profil/profil.css" rel="stylesheet" type="text/css" />
+				
+		<script src="/global/extern_libs/jquery-2.1.0.min.js"></script>
+		<script src="/global/extern_libs/jquery.color.js"></script>
+		<script src="/global/extern_libs/jquery-ui-1.10.4.custom.min.js"></script>
+		<script src="/global/config.js"></script>
+		<script src="/global/Util.js"></script>
+		<script src="/profil/profil.js"></script>
+		  
+	</head>
+	<body id="body">
+		<h1>Profile</h1>
+		
+		<table id="ProfilTable" class="styledTable">
+		</table>
+		
+		<ul id="pager"> 
+		</ul>
+		
+		<a id="bigBackButton" href="/">« Zurück zur Hauptseite</a>
+	</body>
+</html>

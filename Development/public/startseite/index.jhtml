@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Startseite</title>
+		<meta charset="utf-8" />
+		
+		<link href="/global/extern_libs/reset.css" rel="stylesheet" type="text/css" />
+		<link href="/global/main.css" rel="stylesheet" type="text/css" />
+		<link href="/startseite/startseite.css" rel="stylesheet" type="text/css" />
+		
+		<script src="/global/extern_libs/jquery-2.1.0.min.js"></script>
+		<script src="/global/extern_libs/jquery.color.js"></script>
+		<script src="/global/extern_libs/jquery-ui-1.10.4.custom.min.js"></script>
+		<script src="/global/extern_libs/jquery.animateNumber.min.js"></script>
+		<script src="/global/extern_libs/selectivizr-min.js"></script>
+		<script src="/startseite/startseite.js"></script>
+	</head>
+	<body>
+		<div id="wrap" class="styledForm">
+			<img id="logo" src="/global/logo.svg" alt="" style="opacity:0;">
+		
+			<a class="button" href="/display/">Ausgabegerät</a>
+			<table id="statistics">
+				<tr>
+					<th>Spieler online:</th>
+					<td id="spieler_online">0</td>
+				</tr>
+				<tr>
+					<th>Laufende Spiele:</th>
+					<td id="spiele">0</td>
+				</tr>
+				<tr>
+					<th>Server läuft seit (Sek.):</th>
+					<td id="uptime">0</td>
+				</tr>
+				<tr>
+					<th>Profilübersicht</th>
+					<td><a href="/profil/">» » »</a></td>
+				</tr>
+				<tr>
+					<th>Highscores</th>
+					<td><a href="/highscore/">» » »</a></td>
+				</tr>
+			</table>
+			<a class="button" href="/controller/">Eingabegerät</a>	
+		</div>
+	</body>
+</html>

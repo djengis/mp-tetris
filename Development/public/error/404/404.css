@@ -1,0 +1,28 @@
+body{
+	text-align: center;
+	background-color: #415568;
+}
+h1{
+	line-height: 500px;
+	font-size: 500px;
+	margin-bottom: -55px;
+	font-weight: bold;
+	color: #333;
+	text-shadow: 0px 0px 25px rgba(0,0,0,0.3);
+	font-family:  Times New Roman, Times, serif;
+	
+	/* just for fun ;) */
+	background: -webkit-linear-gradient(#aabacf 50%, #415568 90%);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;   
+	-moz-text-fill-color: transparent;
+	-moz-background-clip: text;   
+	text-fill-color: transparent;
+	background-clip: text; 
+
+}
+p{
+	color: #71808e;
+	font-family: Helvetica, Arial, sans-serif;
+	text-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}

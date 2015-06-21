@@ -1,0 +1,83 @@
+#afterGame{
+	display: none;
+	position: absolute;
+	top:0;
+	left:0;
+	right: 0;
+	/*bottom:0;*/
+	min-height: 100%;
+	background-color: rgba(0,0,0,0.55);
+	color: #6a727b;
+	z-index: 10000;
+	padding: 20px;
+	box-sizing: border-box;
+}
+#afterGame h1,
+#afterGame h2{
+	margin-bottom: 1px;
+	color: #6a727b;
+	background-color: rgba(255,255,255,0.070);
+}
+#afterGame h2{
+	font-size: 25px;
+	font-weight: bold;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 8px;
+	padding-left: 8px;
+}
+#afterGame ul#gewinnerListe{
+	margin:0;
+	padding: 0;
+}
+#afterGame ul#gewinnerListe li:first-child{
+	font-size: 50px;
+	padding-left: 20px;
+	padding-top: 30px;
+	height: 70px;
+}
+#afterGame ul#gewinnerListe li{
+	margin: 0;
+	padding: 0;
+	
+	display: block;
+	background-color: rgba(255,255,255,0.1);
+	margin-bottom: 1px;
+	
+	font-size: 30px;
+	padding-left: 20px;
+	padding-top: 20px;
+	height: 45px;
+	
+	position: relative;
+	
+	border-right: 5px solid #ccc;
+}
+#afterGame ul#gewinnerListe li:first-child .gewinnerListePunkte{
+	top: 30px;
+}
+#afterGame .gewinnerListePunkte{
+	position: absolute;
+	right: 125px;
+	top:20px;
+	bottom:0;
+}
+#afterGame ul#gewinnerListe li:first-child .gewinnerListeStuff{
+	top: 36px;
+	font-size: 19px;
+	line-height: 20px;
+}
+#afterGame .gewinnerListeStuff{
+	position: absolute;
+	right: 0px;
+	width: 110px;
+	top:20px;
+	bottom:0;
+	font-size: 13px;
+	line-height: 15px;
+}
+#afterGame #graph{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: rgba(255,255,255,0.1);
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Display</title>
+		<meta charset="utf-8" />
+		
+		<link href="/global/extern_libs/reset.css" rel="stylesheet" type="text/css" />
+		<link href="/global/main.css" rel="stylesheet" type="text/css" />
+		<link href="/display/lounge.css" rel="stylesheet" type="text/css" />
+		<link href="/display/afterGame.css" rel="stylesheet" type="text/css" />
+		<link href="/display/display.css" rel="stylesheet" type="text/css" />
+		<link href="/display/game.css" rel="stylesheet" type="text/css" />
+			
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="/global/extern_libs/jquery-2.1.0.min.js"></script>
+		<script src="/global/extern_libs/jquery.color.js"></script>
+		<script src="/global/extern_libs/jquery-ui-1.10.4.custom.min.js"></script>
+		<script src="/global/extern_libs/jsqr-0.2-min.js"></script>
+		<script src="/global/extern_libs/selectivizr-min.js"></script>
+		<script src="/global/extern_libs/jquery.animateNumber.min.js"></script>
+		<script src="/global/extern_libs/howler.min.js"></script>
+		<script src="/global/extern_libs/jquery.ba-hashchange.min.js"></script>
+		<script src="/global/extern_libs/raphael-min.js"></script>
+		<script src="/global/config.js"></script>
+		<script src="/global/Util.js"></script>
+		<script src="/global/enum_controller_buttons.js"></script>
+		
+		<script src="/display/Spieler.js"></script>
+		<script src="/display/Lounge.js"></script>
+		<script src="/display/AfterGame.js"></script>
+		<script src="/display/Display.js"></script>
+		<script src="/display/MyAudio.js"></script>
+	</head>
+	
+	<body id="body">		
+		<div id="afterGame">Spiel beendet</div>
+
+		<div id="connection_lost"></div>
+			
+		<a id="bigBackButton" href="/">« Zurück zur Hauptseite</a>
+		
+		<form id="AuswahlSpielSpieler" action="javascript:;" method="post" class="styledForm">
+			
+			<h1>DittPlay</h1>
+			<label>
+				<input type="text"  id="spiel_erID" required="required">
+				<span>need input &hellip;</span>
+			</label>
+			<button type="button" id="verbinden_spiel">Spiel folgen</button>
+			
+			<button type="button" id="verbinden_spieler">Profil folgen</button>
+			
+			<div id="AuswahlSpielSpieler_info"></div>
+			
+		</form>
+		
+		<div id="display"></div>
+		
+		<script type="text/javascript">
+			$(window).ready(function(){
+				'use strict';
+				
+				var display = new Display("{host}");
+				display.init();
+				display.showConnect();
+				
+				display.lastHash = null;
+				
+				
+				function hahsy(){
+					var hash = window.location.hash;
+					
+					if(display.lastHash == hash) return;
+					display.lastHash = hash;
+					
+					if(hash.indexOf("#profil/")===0){
+						hash = hash.replace("#profil/", "");
+						$("#spiel_erID").val(hash);
+						display.connectToProfil(parseInt(hash));
+					}
+					
+					if(hash.indexOf("#spiel/")===0){
+						hash = hash.replace("#spiel/", "");
+						$("#spiel_erID").val(hash);
+						$("#AuswahlSpielSpieler #verbinden_spiel").click();
+					}
+				}
+				
+				$(window).hashchange(function() {
+					setTimeout(function(){hahsy();}, 250);
+				});
+				
+				if(window.location.hash){
+					/* erst ausführen, sofern das Display connectet ist.. 
+					dies ist die schlampige art es zu lösen.*/
+					setTimeout(function(){hahsy();}, 500);
+				}
+				
+				$("#spiel_erID").focus();
+			});
+		</script>
+	</body>
+</html>

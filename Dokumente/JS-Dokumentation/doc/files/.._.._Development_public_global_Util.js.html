@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>../../Development/public/global/Util.js - Muliplayer Tetris</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.8.0pr2/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <script src="http://yui.yahooapis.com/combo?3.8.0pr2/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            <h1><a href="../index.html"><img src="../assets/css/logo.png">Muliplayer Tetris: ../../Development/public/global/Util.js</a></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.9</em>
+        </div>
+    </div>
+    <div class="yui3-g">
+
+        <div id="sidebar" class="yui3-u">
+            <div id="modules" class="sidebox">
+    <div class="hd">
+        <h2 class="no-toc">Modules</h2>
+    </div>
+    <div class="bd">
+        <ul>
+            
+                <li><a href="../modules/controller.html">controller</a>
+                
+                </li>
+            
+                <li><a href="../modules/display.html">display</a>
+                
+                </li>
+            
+                <li><a href="../modules/global.html">global</a>
+                
+                </li>
+            
+                <li><a href="../modules/server.html">server</a>
+                
+                </li>
+            
+        </ul>
+    </div>
+</div>
+
+<div id="classes" class="sidebox">
+    <div class="hd">
+        <h2 class="no-toc">Classes</h2>
+    </div>
+    <div class="bd">
+        <ul>
+            
+                <li><a href="../classes/controller.Auswahl.html">controller.Auswahl</a></li>
+            
+                <li><a href="../classes/controller.Chat.html">controller.Chat</a></li>
+            
+                <li><a href="../classes/controller.Controller.html">controller.Controller</a></li>
+            
+                <li><a href="../classes/display.AfterGame.html">display.AfterGame</a></li>
+            
+                <li><a href="../classes/display.Display.html">display.Display</a></li>
+            
+                <li><a href="../classes/display.Lounge.html">display.Lounge</a></li>
+            
+                <li><a href="../classes/display.MyAudio.html">display.MyAudio</a></li>
+            
+                <li><a href="../classes/display.Spieler.html">display.Spieler</a></li>
+            
+                <li><a href="../classes/global.API_SCHEMA.html">global.API_SCHEMA</a></li>
+            
+                <li><a href="../classes/global.BUTTON.html">global.BUTTON</a></li>
+            
+                <li><a href="../classes/global.BUTTONTYPE.html">global.BUTTONTYPE</a></li>
+            
+                <li><a href="../classes/global.CONFIG.html">global.CONFIG</a></li>
+            
+                <li><a href="../classes/global.GAME_EVENT.html">global.GAME_EVENT</a></li>
+            
+                <li><a href="../classes/global.LIST_EVENT.html">global.LIST_EVENT</a></li>
+            
+                <li><a href="../classes/global.pre_defs.html">global.pre_defs</a></li>
+            
+                <li><a href="../classes/global.Util.html">global.Util</a></li>
+            
+                <li><a href="../classes/server.Api.html">server.Api</a></li>
+            
+                <li><a href="../classes/server.Chat.html">server.Chat</a></li>
+            
+                <li><a href="../classes/server.CommandLine.html">server.CommandLine</a></li>
+            
+                <li><a href="../classes/server.Controller.html">server.Controller</a></li>
+            
+                <li><a href="../classes/server.Database.html">server.Database</a></li>
+            
+                <li><a href="../classes/server.Display.html">server.Display</a></li>
+            
+                <li><a href="../classes/server.Game.html">server.Game</a></li>
+            
+                <li><a href="../classes/server.games.AbstractGame.html">server.games.AbstractGame</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.html">server.games.SpielAufZeit</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Block.html">server.games.SpielAufZeit.Block</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Blockelement.html">server.games.SpielAufZeit.Blockelement</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Spieler.html">server.games.SpielAufZeit.Spieler</a></li>
+            
+                <li><a href="../classes/server.Main.html">server.Main</a></li>
+            
+                <li><a href="../classes/server.Profil.html">server.Profil</a></li>
+            
+                <li><a href="../classes/server.Router.html">server.Router</a></li>
+            
+                <li><a href="../classes/server.RouterChache.html">server.RouterChache</a></li>
+            
+                <li><a href="../classes/server.Server.html">server.Server</a></li>
+            
+                <li><a href="../classes/server.SpielTyp.html">server.SpielTyp</a></li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="fileTree" class="sidebox">
+    <div class="hd">
+        <h2 class="no-toc">Files</h2>
+    </div>
+    <div class="bd">
+        <ul><li>../<ul><li>../<ul><li>Development/<ul><li>public/<ul><li>controller/<ul><li><a href="../files/.._.._Development_public_controller_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_controller_Auswahl.js.html">Auswahl.js</a></li><li><a href="../files/.._.._Development_public_controller_Chat.js.html">Chat.js</a></li><li><a href="../files/.._.._Development_public_controller_Controller.js.html">Controller.js</a></li></ul></li><li>display/<ul><li><a href="../files/.._.._Development_public_display_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_display_AfterGame.js.html">AfterGame.js</a></li><li><a href="../files/.._.._Development_public_display_Display.js.html">Display.js</a></li><li><a href="../files/.._.._Development_public_display_Lounge.js.html">Lounge.js</a></li><li><a href="../files/.._.._Development_public_display_MyAudio.js.html">MyAudio.js</a></li><li><a href="../files/.._.._Development_public_display_Spieler.js.html">Spieler.js</a></li></ul></li><li>global/<ul><li><a href="../files/.._.._Development_public_global_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_global_Util.js.html">Util.js</a></li><li><a href="../files/.._.._Development_public_global_api-schema.js.html">api-schema.js</a></li><li><a href="../files/.._.._Development_public_global_config.js.html">config.js</a></li><li><a href="../files/.._.._Development_public_global_db.js.html">db.js</a></li><li><a href="../files/.._.._Development_public_global_enum_controller_buttons.js.html">enum_controller_buttons.js</a></li><li><a href="../files/.._.._Development_public_global_events.js.html">events.js</a></li></ul></li><li>highscore/<ul><li><a href="../files/.._.._Development_public_highscore_highscore.js.html">highscore.js</a></li></ul></li><li>profil/<ul><li><a href="../files/.._.._Development_public_profil_profil.js.html">profil.js</a></li></ul></li><li>server/<ul><li><a href="../files/.._.._Development_public_server_Api.js.html">Api.js</a></li><li><a href="../files/.._.._Development_public_server_Chat.js.html">Chat.js</a></li><li><a href="../files/.._.._Development_public_server_CommandLine.js.html">CommandLine.js</a></li><li><a href="../files/.._.._Development_public_server_Controller.js.html">Controller.js</a></li><li><a href="../files/.._.._Development_public_server_Database.js.html">Database.js</a></li><li><a href="../files/.._.._Development_public_server_Display.js.html">Display.js</a></li><li><a href="../files/.._.._Development_public_server_Game.js.html">Game.js</a></li><li>Games/<ul><li><a href="../files/.._.._Development_public_server_Games_AbstractGame.js.html">AbstractGame.js</a></li><li>SpielAufZeit/<ul><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_Block.js.html">Block.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_Blockelement.js.html">Blockelement.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_SpielAufZeit.js.html">SpielAufZeit.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html">Spieler.js</a></li></ul></li></ul></li><li><a href="../files/.._.._Development_public_server_Main.js.html">Main.js</a></li><li><a href="../files/.._.._Development_public_server_Profil.js.html">Profil.js</a></li><li><a href="../files/.._.._Development_public_server_Router.js.html">Router.js</a></li><li><a href="../files/.._.._Development_public_server_RouterChache.js.html">RouterChache.js</a></li><li><a href="../files/.._.._Development_public_server_Server.js.html">Server.js</a></li><li><a href="../files/.._.._Development_public_server_SpielTyp.js.html">SpielTyp.js</a></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul>
+    </div>
+</div>
+
+
+
+        </div>
+
+        <div id="main" class="yui3-u">
+            <div class="content"><h4>../../Development/public/global/Util.js</h4>
+
+<pre class="code prettyprint linenums">
+&#x27;use strict&#x27;;
+
+/**
+ * Konsturktor für Util
+ *
+ * @module global
+ * @namespace global
+ * @class Util
+ * @constructor
+ */
+function Util(){
+	/* void	*/
+}
+
+/**
+ * Berechnet den Logarithms zur Basis 10.
+ *
+ * @method log10
+ * @static
+ * @param {Number} n 
+ */
+Util.log10 = function(n) {
+  return Math.log(n) / Math.LN10;
+};
+
+/**
+ * @method setIfChanged
+ * @static
+ * @param {jQuery-DOM-Element} element 
+ * @param {String} newString
+ * @param {Boolean} isHtml
+ */
+Util.setIfChanged = function(element, newString, isHtml){
+	var oldString;
+	newString = &quot;&quot;+newString; // sorge dafür, dass es auf jedenfall ein String ist.
+	
+	if(isHtml){
+		oldString = element.html();
+	}else{
+		oldString = element.text();
+	}
+	
+	if(oldString !== newString){
+		if(jQuery.isNumeric(oldString) &amp;&amp; jQuery.isNumeric(newString)){
+			// number ändern
+			
+			var nOld = parseInt(oldString);
+			var nNew = parseInt(newString);
+			
+			element.prop(&#x27;number&#x27;, nOld)
+			element.animateNumber({ number: nNew, easing: &#x27;easeInQuad&#x27; });
+			
+		}else{
+			// String ändern
+			element.css(&quot;opacity&quot;, 0).animate({opacity: 1}, 500);	
+			
+			if(isHtml){
+				element.html(newString);
+			}else{
+				element.text(newString);
+			}
+		}			
+	}
+};
+
+/**
+ * Gibt einen leserlichen String zurück.
+ *
+ * @method secondsToReadable
+ * @static
+ * @param {Number} Sekunden
+ * @return {String}
+ */
+Util.secondsToReadable = function(sec){
+	if(sec&lt;60){
+		return sec+&quot; Sek.&quot;;
+	}else if(sec&lt;60*60){
+		var minuten = Math.floor(sec/60);
+		var sekunden = sec%60;
+		return minuten+&quot; Min. &quot;+sekunden+&quot; Sek.&quot;;
+	}else if(sec&lt;60*60*60){
+		var stunden = Math.floor(sec/(60*60));
+		var minuten = Math.floor((sec%(60*60)/60));
+		var sekunden = sec%60;
+		return stunden+&quot; Std. &quot;+minuten+&quot; Min. &quot;+sekunden+&quot; Sek.&quot;;
+	}else{
+		return sec;
+	}
+};
+
+/**
+ * Funktion fuer Random-Werte zum Fuellen der SpielDaten
+ *
+ * @method rand
+ * @static
+ * @param {Number}	Minimum
+ * @param {Number}	Maximum
+ */
+Util.randInteger = function(minwert, maxwert){
+	if(maxwert===undefined){
+		maxwert = minwert;
+		minwert = 0;
+	}
+	return Math.floor((Math.random() * (maxwert - minwert)) + minwert);
+}
+
+/**
+ * Funktion fuer das Drehen eines Arrays gegen den Uhrzeigersinn
+ *
+ * @method dreheArray
+ * @static
+ * @param {Array} 	Array, das gedreht werden soll
+ * @return {Array}	gedrehte Array
+ */
+Util.dreheArray = function(array) {
+	var i,j;
+	var neuesArray = new Array(array[0].length);//new int[array[0].length][array.length];
+	
+	for (i=0; i&lt;neuesArray.length; i++) {
+		neuesArray[i] = new Array(array.length);
+		for (j=0; j&lt;neuesArray[0].length; j++) {
+			neuesArray[i][j] = array[j][array[j].length-i-1];
+		}
+	}
+	
+	return neuesArray;
+}
+
+/**
+ * Funktion fuer das Drehen eines Arrays im Uhrzeigersinn
+ *
+ * @method dreheArray
+ * @static
+ * @param {Array} 	Array, das gedreht werden soll
+ * @return {Array}	gedrehte Array
+ */
+Util.dreheRechtsArray = function(array) {
+	var i,j; 
+	var neuesArray = new Array(array[0].length);//new int[array[0].length][array.length];
+	var y = neuesArray.length;
+
+	for (i=0; i&lt;neuesArray.length; i++) 
+		neuesArray[i] = new Array(array.length);
+	
+	for (i=0; i&lt;neuesArray.length; i++) {
+		y -= 1;
+		for (j=0; j&lt;neuesArray[0].length; j++) 
+			neuesArray[y][array[j].length-j-1] = array[j][array[j].length-i-1];
+	}
+	return neuesArray;
+}
+
+
+/**
+ * Überprüft, ob sich das gesuchte Objekt in dem Array befindet
+ *
+ * @method inArray
+ * @static
+ * @param {Array} 	haystack
+ * @param {Object} 	needle
+ * @return {Boolean}
+ */
+Util.inArray = function(haystack, needle){
+	var i;
+	for(i in haystack){
+		if(haystack[i] === needle){
+			return true;
+		}
+	}
+	return false;
+};
+
+/**
+ * Gibt den Index des gesuchten Elements wieder, sonst -1.
+ *
+ * @method posArray
+ * @static
+ * @param {Array} 	haystack
+ * @param {Object} 	needle
+ * @return {Number}
+ */
+Util.posArray = function(haystack, needle){
+	var i;
+	for(i in haystack){
+		if(haystack[i] === needle){
+			return i;
+		}
+	}
+	return -1;
+};
+
+/**
+ * Entfernt needle von haystack.
+ *
+ * @method delArray
+ * @static
+ * @param {Array} 	haystack
+ * @param {Object} 	needle
+ * @return {Array}	haystack ohne needle
+ */
+Util.delArray = function(haystack, needle){
+	var i;
+	var newhaystack = [];
+	for(i in haystack){
+		if(haystack[i] !== needle){
+			newhaystack.push(haystack[i]);
+		}
+	}	
+	return newhaystack;
+};
+
+
+/**
+ * Ordnet die Elemente im Array zufällig an (nach Fisher-Yates algorithm)
+ *
+ * @method arraySchuffle
+ * @static
+ * @param {Array} array
+ * @return {Array}
+ */
+Util.arraySchuffle = function(array){
+	var ret = [];
+	
+	for(var j in array){
+		ret.push(array[j]);
+	}
+
+    var i = ret.length, j, temp;
+    if(i == 0) return;
+    while(--i) {
+        j = Math.floor( Math.random() * ( i + 1 ) );
+        temp = ret[i];
+        ret[i] = ret[j];
+        ret[j] = temp;
+    }
+	return ret;
+};
+
+/**
+ * Konvertiert Timestamp in das Format dd. MM yy
+ *
+ * @method formatTimestamp
+ * @static
+ * @param {String} timestmap
+ * @param {Boolean} time
+ * @param {String} invalidDatumText
+ * @return {String} r	formatiertes Datum
+ * @example
+ 		Util.formatTimestamp(&quot;2014-04-17T12:05:00.000Z&quot;)
+ 		return 17. April 2014
+ */
+Util.formatTimestamp = function(timestmap, time, invalidDatumText){
+	var Monat = [&quot;Januar&quot;, &quot;Februar&quot;, &quot;M&amp;auml;rz&quot;, &quot;April&quot;, &quot;Mai&quot;, &quot;Juni&quot;, &quot;Juli&quot;, &quot;August&quot;, &quot;September&quot;, &quot;Oktober&quot;, &quot;November&quot;, &quot;Dezember&quot;];
+	
+	var d = new Date(timestmap);
+	
+	if(d==&quot;Invalid Date&quot;){
+		if(invalidDatumText){
+			return invalidDatumText;
+		}else{
+			return null;
+		}
+	}
+	
+	var r = d.getDate() + &quot;. &quot; + Monat[d.getMonth()] + &quot; &quot; + d.getFullYear();
+	
+	if(time){
+		var Std = d.getHours();
+		var Min = d.getMinutes();
+		var StdAusgabe = ((Std &lt; 10) ? &quot;0&quot; + Std : Std);
+		var MinAusgabe = ((Min &lt; 10) ? &quot;0&quot; + Min : Min);
+		r += &quot; um &quot;+StdAusgabe+&quot;:&quot;+MinAusgabe+&quot; Uhr&quot;;
+	}
+	
+	return r;
+};
+
+if(typeof exports !== &#x27;undefined&#x27;){
+	exports.Util = Util;
+} 
+
+</pre>
+
+</div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/js/tabs.js"></script>
+</body>
+</html>

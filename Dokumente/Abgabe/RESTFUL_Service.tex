@@ -1,0 +1,434 @@
+\documentclass[11pt,a4paper]{article} % ein Artikel in 11-Punkt Schrift
+
+\usepackage[paper=a4paper,width=14cm,left=35mm,height=22cm]{geometry}
+
+\usepackage{setspace}
+\usepackage[german]{babel} % deutsch, deutsche Rechtschreibung
+\usepackage[utf8]{inputenc} % Un\begin{flushright}
+\usepackage[T1]{fontenc} % Umlaute und deutsches Trennen
+\linespread{1.15} % nicht ganz anderthalbzeilig, nur ein bisschen mehr Platz
+
+\usepackage{listings}
+\setlength{\parskip}{0.5em} % kleiner Paragraphenabstand
+\usepackage{color}
+% Seitenmarkierungen 
+\usepackage{fancyhdr} % Schickere Header und Footer
+\pagestyle{fancy}
+\fancyhead[L]{RESTFUL Service} 
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{\ } % keine Seitenzahl unten
+\fancyfoot[L]{ }
+\fancyfoot[R]{ }
+\lstset{tabsize=4, lineskip={-1.0pt}} 
+\title{RESTFUL Service\\ Beschreibung}
+\author{Nici Emmel\\Cengiz Mardin\\Anna Steinhilber}
+\date{\today}
+
+\definecolor{kommi}{gray}{.5}
+
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\addcontentsline{toc}{section}{Profil}
+\section*{Profil}
+
+\addcontentsline{toc}{subsection}{Alle Einträge anzeigen}
+\subsection*{Alle Einträge anzeigen}
+\textbf{Beschreibung}: Gibt sämtliche Profile zurück.\\
+\textbf{URL}: /api/profil/\\
+\textbf{Methode}: GET\\
+\textbf{Rückgabe}:\textcolor{kommi}{\textit{/api/profil/}}\\
+\begin{lstlisting}
+{[
+	{
+		ProfilID:1,
+		Name:"Anna",
+		AnmeldeDatum:"2014-06-08T08:59:44.000Z",
+		LetzteAnmeldung:"2014-06-21T14:29:47.000Z",
+		Punkte:1994391,
+		GesetzteBloecke:16799
+	},
+	{
+		ProfilID:2,
+		Name:"Nici",
+		AnmeldeDatum:"2014-06-08T08:59:44.000Z",
+		LetzteAnmeldung:"0000-00-00 00:00:00",
+		Punkte:1277593,
+		GesetzteBloecke:15552
+	},
+	...
+]}
+\end{lstlisting}
+
+\addcontentsline{toc}{subsection}{Länge}
+\subsection*{Länge}
+\textbf{Beschreibung}: Gibt die Anzahl der Profile zurück.\\
+\textbf{URL}: /api/profil/length\\
+\textbf{Methode}: GET\\
+\textbf{Rückgabe}:\textcolor{kommi}{\textit{/api/profil/length}}\\
+\begin{lstlisting}
+{"count":30}
+\end{lstlisting}
+
+\addcontentsline{toc}{subsection}{Online Status}
+\subsection*{Online Status}
+\textbf{Beschreibung}: Gibt zurück, ob das Profil \textit{<id>} zur Zeit online ist.\\
+\textbf{URL}: /api/profil/isonline/\textit{<id>}\\
+\textbf{Methode}: GET\\
+\textbf{Rückgabe}: \textcolor{kommi}{\textit{/api/profil/isonline/5}}\\ 
+\begin{lstlisting}
+{false}
+\end{lstlisting}
+
+\addcontentsline{toc}{subsection}{Alle Eintraege zwischen \textit{<von>} \textit{<bis>}}
+\subsection*{Alle Eintraege zwischen \textit{<von>} \textit{<bis>}}
+\textbf{Beschreibung}: \\
+\textbf{URL}: /api/profil/\textit{<von>}-\textit{<bis>}\\
+\textbf{Methode}: GET\\
+\textbf{Rückgabe}: \textcolor{kommi}{\textit{/api/profil/3-5}}\\ 
+\begin{lstlisting}
+{[
+	{
+		ProfilID:3,
+		Name:"Cengiz",
+		AnmeldeDatum:"2014-06-08T08:59:44.000Z",
+		LetzteAnmeldung:"2014-06-11T09:14:58.000Z",
+		Punkte:1510971,
+		GesetzteBloecke:12612
+	},	
+	{
+		ProfilID:4,
+		Name:"Peter",
+		AnmeldeDatum:"2014-06-08T08:59:45.000Z",
+		LetzteAnmeldung:"0000-00-00 00:00:00",
+		Punkte:1947960,
+		GesetzteBloecke:15176
+	},
+	{
+		ProfilID:5,
+		Name:"Maggi",
+		AnmeldeDatum:"2014-06-08T08:59:45.000Z",
+		LetzteAnmeldung:"0000-00-00 00:00:00",
+		Punkte:1905356,
+		GesetzteBloecke:17638
+	}
+]}
+\end{lstlisting}
+
+\addcontentsline{toc}{subsection}{Profil anzeigen}
+\subsection*{Profil anzeigen}
+\textbf{Beschreibung}: Gibt Informationen des Users \textit{<id>} wieder.\\
+\textbf{URL}: /api/profil/\textit{<id>}\\
+\textbf{Methode}: GET\\
+\textbf{Rückgabe}: \textcolor{kommi}{\textit{/api/profil/3}}\\
+\begin{lstlisting}
+{
+	ProfilID:3,
+	Name:"Cengiz",
+	AnmeldeDatum:"2014-06-08T08:59:44.000Z",
+	LetzteAnmeldung:"2014-06-11T09:14:58.000Z",
+	Punkte:1510971,
+	GesetzteBloecke:12612
+}
+\end{lstlisting}
+
+\addcontentsline{toc}{subsection}{Profil anhand \textit{<name>} anzeigen}
+\subsection*{Profil anhand \textit{<name>} anzeigen}
+\textbf{Beschreibung}: Gibt Informationen eines Users wieder.\\
+\textbf{URL}: /api/profil/\textit{<name>}\\
+\textbf{Methode}: GET\\
+\textbf{Rückgabe}: \textcolor{kommi}{\textit{/api/profil/Ned}}\\
+\begin{lstlisting}
+{
+	ProfilID:16,
+	Name:"Ned Stark",
+	AnmeldeDatum:"2014-06-08T08:59:45.000Z",
+	LetzteAnmeldung:"0000-00-00 00:00:00"
+}
+\end{lstlisting}
+
+\addcontentsline{toc}{subsection}{Spiele von Profil \textit{<id>} anzeigen}
+\subsection*{Spiele von Profil <id> anzeigen}
+\textbf{Beschreibung}: Gibt Informationen des Users \textit{<id>} wieder.\\
+\textbf{URL}: /api/profil/\textit{<id>}/spiele\\
+\textbf{Methode}: GET\\
+\textbf{Rückgabe}: \textcolor{kommi}{\textit{/api/profil/25/spiele}}\\
+\begin{lstlisting}
+{[
+	{
+		SpielID:7,
+		ProfilID:25,
+		Dauer:6,
+		MaxProfil:4,
+		Datum:"2014-06-08T08:59:46.000Z",
+		SpielTypID:3,
+		SpielTypBezeichnung:"Last Man Standing",
+		SpielTypClass:"none"
+	},
+	{
+		SpielID:15,
+		ProfilID:25,
+		Dauer:106,
+		MaxProfil:4,
+		Datum:"2014-06-08T08:59:46.000Z",
+		SpielTypID:1,
+		SpielTypBezeichnung:"Spiel auf Zeit",
+		SpielTypClass:"SpielAufZeit"
+	},
+	{
+		SpielID:28,
+		ProfilID:25,
+		Dauer:588,
+		MaxProfil:4,
+		Datum:"2014-06-08T08:59:47.000Z",
+		SpielTypID:1,
+		SpielTypBezeichnung:"Spiel auf Zeit",
+		SpielTypClass:"SpielAufZeit"
+	},
+	...
+]}
+\end{lstlisting}
+
+\addcontentsline{toc}{subsection}{Spiele des Spieltypen \textit{<typ>} von Profil \textit{<id>} anzeigen}
+\subsection*{Spiele des Spieltypen \textit{<typ>} von Profil \textit{<id>} anzeigen}
+\textbf{Beschreibung}: \\
+\textbf{URL}: /api/profil/\textit{<id>}/spiele/\textit{<spielTypClass>}\\
+\textbf{Methode}: GET\\
+\textbf{Rückgabe}: \textcolor{kommi}{\textit{/api/profil/25/spiele/SpielAufZeit}}\\
+\begin{lstlisting}
+{[
+	{
+		SpielID:15,
+		ProfilID:25,
+		Dauer:106,
+		MaxProfil:4,
+		Datum:"2014-06-08T08:59:46.000Z",
+		SpielTypID:1,
+		SpielTypBezeichnung:"Spiel auf Zeit",
+		SpielTypClass:"SpielAufZeit"
+	},
+	{
+		SpielID:28,
+		ProfilID:25,
+		Dauer:588,
+		MaxProfil:4,
+		Datum:"2014-06-08T08:59:47.000Z",
+		SpielTypID:1,
+		SpielTypBezeichnung:"Spiel auf Zeit",
+		SpielTypClass:"SpielAufZeit"
+	},
+	{
+		SpielID:229,
+		ProfilID:25,
+		Dauer:170,
+		MaxProfil:4,
+		Datum:"2014-06-08T08:59:55.000Z",
+		SpielTypID:1,
+		SpielTypBezeichnung:"Spiel auf Zeit",
+		SpielTypClass:"SpielAufZeit"
+	}
+]}
+\end{lstlisting}
+
+\addcontentsline{toc}{subsection}{Name des Profils \textit{<id>} ändern}
+\subsection*{Name des Profils \textit{<id>} ändern}
+\textbf{Beschreibung}: Ändern den Namen des Profils mit der übergebenen \textit{<id>}.\\
+\textbf{URL}: /api/profil/\textit{<id>}\\
+\textbf{Methode}: PUT\\
+\textbf{PutBody}: 
+\begin{lstlisting}
+{Name: <neuer name>}
+\end{lstlisting}
+\textbf{Rückgabe}:\textcolor{kommi}{\textit{/api/profil/1}}\\
+\begin{lstlisting}
+	HTTP Status 200
+\end{lstlisting}
+
+\addcontentsline{toc}{subsection}{Profil erstellen}
+\subsection*{Profil erstellen}
+\textbf{Beschreibung}: Wird verwendet, für das Erstellen eines Profils mittels eines JSON Objekts, das über den POST-Body gesendet wird. Die ID wird automatisch vergeben.\\
+\textbf{URL}: /api/profil/\\
+\textbf{Methode}: POST\\
+\textbf{PostBody}: 
+\begin{lstlisting}
+{Name: <name>}
+\end{lstlisting}
+\textbf{Rückgabe}: \textcolor{kommi}{\textit{/api/profil/}}\\
+\begin{lstlisting}
+	HTTP Status 201
+\end{lstlisting}
+
+\addcontentsline{toc}{subsection}{Profil löschen}
+\subsection*{Profil löschen}
+\textbf{Beschreibung}: Löscht das Profil mit der übergebenen \textit{<id>}\\
+\textbf{URL}: /api/profil/\textit{<id>}\\
+\textbf{Methode}: DELETE\\
+\textbf{Rückgabe}:\textcolor{kommi}{\textit{/api/profil/29}}\\
+\begin{lstlisting}
+	HTTP Status 200
+\end{lstlisting}
+
+
+\addcontentsline{toc}{section}{Highscore}
+\section*{Highscore}
+
+\addcontentsline{toc}{subsection}{Anzahl der Einträge}
+\subsection*{Anzahl der Einträge}
+textbf{Beschreibung}: Gibt die Anzahl der Einträge des SpielTypen \textit{<typ>} zurück. Wird kein Typ mitgegeben, wird die Anzahl der gesamte Highscore Einträge zurückgeschickt.\\
+\textbf{URL}: /api/highscore/length/\textit{<typ>}\\
+\textbf{Methode}: GET\\
+\textbf{Rückgabe}:\textcolor{kommi}{\textit{/api/highscore/length/Deathmatch}}\\
+\begin{lstlisting}
+{"count":30}
+\end{lstlisting}
+
+\addcontentsline{toc}{subsection}{Alle Eintraege}
+\subsection*{Alle Eintraege}
+\textbf{Beschreibung}: Holt Highscoreinformationen aus der Datenbank.\\
+\textbf{URL}: /api/highscore\\
+\textbf{Methode}: GET\\
+\textbf{Rückgabe}:\textcolor{kommi}{\textit{/api/highscore}}\\
+\begin{lstlisting}
+{[
+	{
+		ProfilID:19,
+		Name:"Chris",
+		LetzteAnmeldung:"0000-00-00 00:00:00",
+		Spieleanzahl:41,
+		Gesamtdauer:13476,
+		Punkte:2299518,
+		GesetzteBloecke:20201,
+		Tastenanschlaege:57495,
+		Platz:1
+	},
+	{
+		ProfilID:20,
+		Name:"Coraline",
+		LetzteAnmeldung:"0000-00-00 00:00:00",
+		Spieleanzahl:38,
+		Gesamtdauer:9578,
+		Punkte:1835581,
+		GesetzteBloecke:21054,
+		Tastenanschlaege:56322,
+		Platz:2
+	},
+	...
+]}
+\end{lstlisting}
+
+\addcontentsline{toc}{subsection}{Alle Eintraege des Spieltypen \textit{<typ>}}
+\subsection*{Alle Eintraege des Spieltypen \textit{typ>}}
+\textbf{Beschreibung}: \\
+\textbf{URL}: /highscore/\textit{<spieltyp>}\\
+\textbf{Methode}: GET\\
+\textbf{Rückgabe}:\textcolor{kommi}{\textit{/api/highscore/Spiel Auf Zeit}}\\
+\begin{lstlisting}
+{[
+	{
+		ProfilID:21,
+		Name:"Julian",
+		LetzteAnmeldung:"0000-00-00 00:00:00",
+		Spieleanzahl:13,
+		Gesamtdauer:4983,
+		Punkte:914097,
+		GesetzteBloecke:5930,
+		Tastenanschlaege:19358,
+		Platz:1
+	},
+	{
+		ProfilID:7,
+		Name:"Johannes",
+		LetzteAnmeldung:"0000-00-00 00:00:00",
+		Spieleanzahl:14,
+		Gesamtdauer:3105,
+		Punkte:749080,
+		GesetzteBloecke:5856,
+		Tastenanschlaege:20048,
+		Platz:2
+	},
+	...
+]}
+\end{lstlisting}
+
+\addcontentsline{toc}{subsection}{Eintraeg an der Stelle \textit{<nummer>}}
+\subsection*{Eintrag an der Stelle \textit{<nummer>}}
+\textbf{Beschreibung}: Gibt den Highscore mit der Platzierung \textit{<nummer>} zurück.\\
+\textbf{URL}: /highscore/\textit{<nummer>}\\
+\textbf{Methode}: GET\\
+\textbf{Rückgabe}:\textcolor{kommi}{\textit{/api/highscore/17}}\\
+\begin{lstlisting}
+{
+	ProfilID:15,
+	Name:"John Schnee",
+	LetzteAnmeldung:"0000-00-00 00:00:00",
+	Spieleanzahl:10,
+	Gesamtdauer:2261,
+	Punkte:462335,
+	GesetzteBloecke:4547,
+	Tastenanschlaege:7689,
+	Platz:17
+}
+\end{lstlisting}
+
+\addcontentsline{toc}{subsection}{Alle Eintraege zwischen \textit{<von>} \textit{<bis>}}
+\subsection*{Alle Eintraege zwischen \textit{<von>} \textit{<bis>}}
+\textbf{Beschreibung}: \\
+\textbf{URL}: /highscore/<spieltyp>\\
+\textbf{Methode}: GET\\
+\textbf{Rückgabe}:\textcolor{kommi}{\textit{/api/highscore/Deathmatch}}\\
+\begin{lstlisting}
+{[
+	{
+		ProfilID:8,
+		Name:"Tobi",
+		LetzteAnmeldung:"0000-00-00 00:00:00",
+		Spieleanzahl:36,
+		Gesamtdauer:12059,
+		Punkte:1496653,
+		GesetzteBloecke:20040,
+		Tastenanschlaege:58791,
+		Platz:17
+	},
+	{
+		ProfilID:9,
+		Name:"Tim",
+		LetzteAnmeldung:"0000-00-00 00:00:00",
+		Spieleanzahl:29,
+		Gesamtdauer:9677,
+		Punkte:1474420,
+		GesetzteBloecke:17447,
+		Tastenanschlaege:46548,
+		Platz:18
+	},
+	{
+		ProfilID:16,
+		Name:"Ned Stark",
+		LetzteAnmeldung:"0000-00-00 00:00:00",
+		Spieleanzahl:32,
+		Gesamtdauer:9171,
+		Punkte:1452698,
+		GesetzteBloecke:15292,
+		Tastenanschlaege:55527,
+		Platz:19
+	}
+]}
+\end{lstlisting}
+
+\addcontentsline{toc}{section}{Statistik}
+\section*{Statistik}
+\textbf{Beschreibung}: Gibt zurück, wie viele Profile online sind, wie viele Spiele zur Zeil laufen oder sich in der Lounge befinden und wie lange der Server schon läuft in Sekunden.\\
+\textbf{URL}: /api/statistics\\
+\textbf{Methode}: GET\\
+\textbf{Rückgabe}: \textcolor{kommi}{\textit{/api/statistics}}\\
+\begin{lstlisting}
+{
+	online:2,
+	spiele:1,
+	uptime:453.543778772
+}
+\end{lstlisting}
+
+\end{document}

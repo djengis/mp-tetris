@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Controller</title>
+		<meta charset="utf-8" />
+		
+		<meta name='viewport' 
+			content='
+					height=320,
+			        width=device-width,
+					initial-scale=1.0,
+					maximum-scale=1.0,
+					minimum-scale=1.0,
+					user-scalable=no,
+					minimal-ui'/>
+
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+
+			
+		<!-- ios schnubbels -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="format-detection" content="telephone=no" /> 
+		
+		<link rel="apple-touch-icon" href="/controller/icons/icon_72.png" />
+		<link rel="apple-touch-icon" sizes="76x76" href="/controller/icons/icon_72.png" />
+		<link rel="apple-touch-icon" sizes="120x120" href="/controller/icons/icon_120.png" />
+		<link rel="apple-touch-icon" sizes="152x152" href="/controller/icons/icon_152.png" />
+		
+		
+		<link href="/global/extern_libs/reset.css" rel="stylesheet" type="text/css" />
+		<link href="/global/main.css" rel="stylesheet" type="text/css" />
+		<link href="/controller/chat.css" rel="stylesheet" type="text/css" />
+		<link href="/controller/auswahl.css" rel="stylesheet" type="text/css" />
+		<link href="/controller/controller.css" rel="stylesheet" type="text/css" />
+			
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="/global/extern_libs/jquery-2.1.0.min.js"></script>
+		<script src="/global/extern_libs/jquery.color.js"></script>
+		<script src="/global/extern_libs/jquery.animateNumber.min.js"></script>
+		<script src="/global/extern_libs/jsqr-0.2-min.js"></script>
+		<script src="/global/extern_libs/selectivizr-min.js"></script>
+		
+		<script src="/global/config.js"></script>
+		<script src="/global/Util.js"></script>
+		<script src="/global/events.js"></script>
+		<script src="/global/enum_controller_buttons.js"></script>
+		
+		<script src="/controller/Chat.js"></script>
+		<script src="/controller/Controller.js"></script>
+		<script src="/controller/Auswahl.js"></script>
+	</head>
+	<body>
+	
+		<div id="countdown"><span></span></div>
+	
+		<div id="connection_lost"></div>
+	
+		<div id="auswahl" style="display:none;">
+			<div id="playerselect" class="menu" style="display:none;">
+			
+				<div id="hauptmenue_button" class="element button new_button">
+					<div class='roundButton'><div class='roundButton_top'></div>Hauptmenü<div class='roundButton_bottom'></div></div>
+				</div>
+			
+				<div id="new_player_button" class="element button new_button">
+					<div class='plusButton'><div class='plusButton_top'><div class="plusButton_top_l"></div><div class="plusButton_top_t"></div><div class="plusButton_top_r"></div></div>Neues Profil<div class='plusButton_bottom'></div></div>
+					
+					<form method="post" class="styledForm">
+						<h1>Neues Profil</h1>
+						<label for="new_name">
+						<input type="text" id="new_name" value="" maxlength="30" required="required" />
+						<span>need input &hellip;</span>
+						</label>
+						<button type="submit" id="spieler_erstellen">Profil erstellen</button>
+						<button type="reset">Abbrechen</button>
+					</form>
+				</div><div class="element"></div>
+				
+			</div>
+			<div id="gameselect" class="menu" style="display:none;">
+			
+				<div id="abmelden_button" class="element button new_button">
+					<div class='roundButton'><div class='roundButton_top'></div>Abmelden<div class='roundButton_bottom'></div></div>
+				</div>
+				
+				<div id="new_game_button" class="element button new_button">
+					<div class='plusButton'><div class='plusButton_top'><div class="plusButton_top_l"></div><div class="plusButton_top_t"></div><div class="plusButton_top_r"></div></div>Neues Spiel<div class='plusButton_bottom'></div></div>
+					
+					<form method="post">
+						<button type="submit" id="spiel_erstellen">Spiel erstellen</button><br />
+						<button type="reset">Abbrechen</button>
+					</form>
+					
+				</div><div class="element"></div>
+				
+			</div>
+		</div>
+	
+		<div id="controller" style="display:none;">  
+			<div id="top" class="row">
+				<button type="button" id="rotateLeft"><span></span></button>
+				<div id="spieler_infos"><span></span></div>
+				<button type="button" id="rotateRight"><span></span></button>
+			</div>
+			<div id="middle" class="row">
+				<div class="playerColor"><span id="profil_infos"></span></div>
+				<button type="button" id="exit"><span>Verlassen</span></button>
+				<div class="playerColor"><span id="spiel_infos"></span></div>
+			</div>
+			<div id="bottom" class="row">
+				<button type="button" id="left"><span></span></button>
+				<button type="button" id="down"><span></span></button>
+				<button type="button" id="right"><span></span></button>
+			</div>
+		</div>
+		<script type="text/javascript">
+		
+			$(window).ready(function(){
+				'use strict';
+				
+				var controller = new Controller('http://'+window.location.hostname+'/');
+				var auswahl = new Auswahl();
+				
+				controller.init(auswahl, function(){
+					auswahl.init(this);
+					auswahl.show();
+					auswahl.showProfilauswahl();
+				}.bind(controller));
+				
+				var mql = window.matchMedia("(orientation: portrait)");
+				mql.addListener(function(m) { window.scrollTo(0, 0); });
+			    document.addEventListener('focusout', function(e) {window.scrollTo(0, 0)});
+			});
+		</script>
+
+	
+	</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title>403 - Forbidden</title>
+                <meta charset="utf-8" />
+                <link href="/global/extern_libs/reset.css" rel="stylesheet" type="text/css" />
+                <link href="/error/403/403.css" rel="stylesheet" type="text/css" />
+               
+        </head>
+        <body>
+                <h1>403</h1>
+                <p>
+                        You don't have permission to access to this on this server.
+                </p>
+        </body>
+</html>

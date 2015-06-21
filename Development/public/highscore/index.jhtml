@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bestenliste</title>
+		<meta charset="utf-8" />
+			
+		<link href="/global/extern_libs/reset.css" rel="stylesheet" type="text/css" />
+		<link href="/global/main.css" rel="stylesheet" type="text/css" />
+		<link href="/highscore/highscore.css" rel="stylesheet" type="text/css" />
+		
+		<script src="/global/extern_libs/jquery-2.1.0.min.js"></script>
+		<script src="/global/extern_libs/jquery.color.js"></script>
+		<script src="/global/extern_libs/jquery-ui-1.10.4.custom.min.js"></script>
+		<script src="/global/config.js"></script>
+		<script src="/highscore/highscore.js"></script>
+	</head>
+	<body id="body">
+	
+		<h1>Highscore</h1>
+		
+		<form action="#">
+			<p> Bestenliste von
+				<select id="selectType">
+					<option value="">alle</option>
+				</select>
+ 			</p>
+		</form>
+		
+		<table id="scoreTable" class="styledTable">
+		</table>
+		
+		<ul id="pager"> 
+		</ul>
+		
+		<a id="bigBackButton" href="/">« Zurück zur Hauptseite</a>
+	</body>
+</html>

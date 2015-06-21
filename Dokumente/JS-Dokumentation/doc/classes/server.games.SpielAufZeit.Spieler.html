@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>server.games.SpielAufZeit.Spieler - Muliplayer Tetris</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.8.0pr2/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <script src="http://yui.yahooapis.com/combo?3.8.0pr2/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            <h1><a href="../index.html"><img src="../assets/css/logo.png">Muliplayer Tetris: server.games.SpielAufZeit.Spieler</a></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.9</em>
+        </div>
+    </div>
+    <div class="yui3-g">
+
+        <div id="sidebar" class="yui3-u">
+            <div id="modules" class="sidebox">
+    <div class="hd">
+        <h2 class="no-toc">Modules</h2>
+    </div>
+    <div class="bd">
+        <ul>
+            
+                <li><a href="../modules/controller.html">controller</a>
+                
+                </li>
+            
+                <li><a href="../modules/display.html">display</a>
+                
+                </li>
+            
+                <li><a href="../modules/global.html">global</a>
+                
+                </li>
+            
+                <li><a href="../modules/server.html">server</a>
+                
+                </li>
+            
+        </ul>
+    </div>
+</div>
+
+<div id="classes" class="sidebox">
+    <div class="hd">
+        <h2 class="no-toc">Classes</h2>
+    </div>
+    <div class="bd">
+        <ul>
+            
+                <li><a href="../classes/controller.Auswahl.html">controller.Auswahl</a></li>
+            
+                <li><a href="../classes/controller.Chat.html">controller.Chat</a></li>
+            
+                <li><a href="../classes/controller.Controller.html">controller.Controller</a></li>
+            
+                <li><a href="../classes/display.AfterGame.html">display.AfterGame</a></li>
+            
+                <li><a href="../classes/display.Display.html">display.Display</a></li>
+            
+                <li><a href="../classes/display.Lounge.html">display.Lounge</a></li>
+            
+                <li><a href="../classes/display.MyAudio.html">display.MyAudio</a></li>
+            
+                <li><a href="../classes/display.Spieler.html">display.Spieler</a></li>
+            
+                <li><a href="../classes/global.API_SCHEMA.html">global.API_SCHEMA</a></li>
+            
+                <li><a href="../classes/global.BUTTON.html">global.BUTTON</a></li>
+            
+                <li><a href="../classes/global.BUTTONTYPE.html">global.BUTTONTYPE</a></li>
+            
+                <li><a href="../classes/global.CONFIG.html">global.CONFIG</a></li>
+            
+                <li><a href="../classes/global.GAME_EVENT.html">global.GAME_EVENT</a></li>
+            
+                <li><a href="../classes/global.LIST_EVENT.html">global.LIST_EVENT</a></li>
+            
+                <li><a href="../classes/global.pre_defs.html">global.pre_defs</a></li>
+            
+                <li><a href="../classes/global.Util.html">global.Util</a></li>
+            
+                <li><a href="../classes/server.Api.html">server.Api</a></li>
+            
+                <li><a href="../classes/server.Chat.html">server.Chat</a></li>
+            
+                <li><a href="../classes/server.CommandLine.html">server.CommandLine</a></li>
+            
+                <li><a href="../classes/server.Controller.html">server.Controller</a></li>
+            
+                <li><a href="../classes/server.Database.html">server.Database</a></li>
+            
+                <li><a href="../classes/server.Display.html">server.Display</a></li>
+            
+                <li><a href="../classes/server.Game.html">server.Game</a></li>
+            
+                <li><a href="../classes/server.games.AbstractGame.html">server.games.AbstractGame</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.html">server.games.SpielAufZeit</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Block.html">server.games.SpielAufZeit.Block</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Blockelement.html">server.games.SpielAufZeit.Blockelement</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Spieler.html">server.games.SpielAufZeit.Spieler</a></li>
+            
+                <li><a href="../classes/server.Main.html">server.Main</a></li>
+            
+                <li><a href="../classes/server.Profil.html">server.Profil</a></li>
+            
+                <li><a href="../classes/server.Router.html">server.Router</a></li>
+            
+                <li><a href="../classes/server.RouterChache.html">server.RouterChache</a></li>
+            
+                <li><a href="../classes/server.Server.html">server.Server</a></li>
+            
+                <li><a href="../classes/server.SpielTyp.html">server.SpielTyp</a></li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div id="methods-on-page" class="sidebox on-page">
+    <div class="hd">
+        <h2 class="no-toc">Methods On Page</h2>
+    </div>
+    <div class="bd">
+        <ul>
+            
+                <li><a href="#methods__init">_init</a></li>
+            
+                <li><a href="#methods_addLevel">addLevel</a></li>
+            
+                <li><a href="#methods_addLines">addLines</a></li>
+            
+                <li><a href="#methods_addPunkte">addPunkte</a></li>
+            
+                <li><a href="#methods_compute">compute</a></li>
+            
+                <li><a href="#methods_decrementCursorX">decrementCursorX</a></li>
+            
+                <li><a href="#methods_decrementCursorY">decrementCursorY</a></li>
+            
+                <li><a href="#methods_del">del</a></li>
+            
+                <li><a href="#methods_die">die</a></li>
+            
+                <li><a href="#methods_emitToController">emitToController</a></li>
+            
+                <li><a href="#methods_getBlockelement">getBlockelement</a></li>
+            
+                <li><a href="#methods_getColor">getColor</a></li>
+            
+                <li><a href="#methods_getController">getController</a></li>
+            
+                <li><a href="#methods_getCursor">getCursor</a></li>
+            
+                <li><a href="#methods_getCursorX">getCursorX</a></li>
+            
+                <li><a href="#methods_getCursorY">getCursorY</a></li>
+            
+                <li><a href="#methods_getEmitData">getEmitData</a></li>
+            
+                <li><a href="#methods_getId">getId</a></li>
+            
+                <li><a href="#methods_getLevel">getLevel</a></li>
+            
+                <li><a href="#methods_getLines">getLines</a></li>
+            
+                <li><a href="#methods_getNextBlockelement">getNextBlockelement</a></li>
+            
+                <li><a href="#methods_getPlatz">getPlatz</a></li>
+            
+                <li><a href="#methods_getPlatz">getPlatz</a></li>
+            
+                <li><a href="#methods_getProfil">getProfil</a></li>
+            
+                <li><a href="#methods_getPunkte">getPunkte</a></li>
+            
+                <li><a href="#methods_getTickTime">getTickTime</a></li>
+            
+                <li><a href="#methods_incrementCursorX">incrementCursorX</a></li>
+            
+                <li><a href="#methods_incrementCursorY">incrementCursorY</a></li>
+            
+                <li><a href="#methods_isActive">isActive</a></li>
+            
+                <li><a href="#methods_nextElement">nextElement</a></li>
+            
+                <li><a href="#methods_setActive">setActive</a></li>
+            
+                <li><a href="#methods_setColor">setColor</a></li>
+            
+                <li><a href="#methods_setCursor">setCursor</a></li>
+            
+                <li><a href="#methods_setCursorX">setCursorX</a></li>
+            
+                <li><a href="#methods_setCursorY">setCursorY</a></li>
+            
+                <li><a href="#methods_setLevel">setLevel</a></li>
+            
+                <li><a href="#methods_setLines">setLines</a></li>
+            
+                <li><a href="#methods_setPunkte">setPunkte</a></li>
+            
+                <li><a href="#methods_setTickTime">setTickTime</a></li>
+            
+                <li><a href="#methods_ticker">ticker</a></li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="fileTree" class="sidebox">
+    <div class="hd">
+        <h2 class="no-toc">Files</h2>
+    </div>
+    <div class="bd">
+        <ul><li>../<ul><li>../<ul><li>Development/<ul><li>public/<ul><li>controller/<ul><li><a href="../files/.._.._Development_public_controller_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_controller_Auswahl.js.html">Auswahl.js</a></li><li><a href="../files/.._.._Development_public_controller_Chat.js.html">Chat.js</a></li><li><a href="../files/.._.._Development_public_controller_Controller.js.html">Controller.js</a></li></ul></li><li>display/<ul><li><a href="../files/.._.._Development_public_display_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_display_AfterGame.js.html">AfterGame.js</a></li><li><a href="../files/.._.._Development_public_display_Display.js.html">Display.js</a></li><li><a href="../files/.._.._Development_public_display_Lounge.js.html">Lounge.js</a></li><li><a href="../files/.._.._Development_public_display_MyAudio.js.html">MyAudio.js</a></li><li><a href="../files/.._.._Development_public_display_Spieler.js.html">Spieler.js</a></li></ul></li><li>global/<ul><li><a href="../files/.._.._Development_public_global_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_global_Util.js.html">Util.js</a></li><li><a href="../files/.._.._Development_public_global_api-schema.js.html">api-schema.js</a></li><li><a href="../files/.._.._Development_public_global_config.js.html">config.js</a></li><li><a href="../files/.._.._Development_public_global_db.js.html">db.js</a></li><li><a href="../files/.._.._Development_public_global_enum_controller_buttons.js.html">enum_controller_buttons.js</a></li><li><a href="../files/.._.._Development_public_global_events.js.html">events.js</a></li></ul></li><li>highscore/<ul><li><a href="../files/.._.._Development_public_highscore_highscore.js.html">highscore.js</a></li></ul></li><li>profil/<ul><li><a href="../files/.._.._Development_public_profil_profil.js.html">profil.js</a></li></ul></li><li>server/<ul><li><a href="../files/.._.._Development_public_server_Api.js.html">Api.js</a></li><li><a href="../files/.._.._Development_public_server_Chat.js.html">Chat.js</a></li><li><a href="../files/.._.._Development_public_server_CommandLine.js.html">CommandLine.js</a></li><li><a href="../files/.._.._Development_public_server_Controller.js.html">Controller.js</a></li><li><a href="../files/.._.._Development_public_server_Database.js.html">Database.js</a></li><li><a href="../files/.._.._Development_public_server_Display.js.html">Display.js</a></li><li><a href="../files/.._.._Development_public_server_Game.js.html">Game.js</a></li><li>Games/<ul><li><a href="../files/.._.._Development_public_server_Games_AbstractGame.js.html">AbstractGame.js</a></li><li>SpielAufZeit/<ul><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_Block.js.html">Block.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_Blockelement.js.html">Blockelement.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_SpielAufZeit.js.html">SpielAufZeit.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html">Spieler.js</a></li></ul></li></ul></li><li><a href="../files/.._.._Development_public_server_Main.js.html">Main.js</a></li><li><a href="../files/.._.._Development_public_server_Profil.js.html">Profil.js</a></li><li><a href="../files/.._.._Development_public_server_Router.js.html">Router.js</a></li><li><a href="../files/.._.._Development_public_server_RouterChache.js.html">RouterChache.js</a></li><li><a href="../files/.._.._Development_public_server_Server.js.html">Server.js</a></li><li><a href="../files/.._.._Development_public_server_SpielTyp.js.html">SpielTyp.js</a></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul>
+    </div>
+</div>
+
+
+
+        </div>
+
+        <div id="main" class="yui3-u">
+            <div class="content"><h4>Class server.games.SpielAufZeit.Spieler</h4>
+
+
+
+<span class="foundat">Class defined in: <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l11"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:11</code></a></span>
+<div class="intro"></div>
+
+
+
+<div id="classdocs">
+    <ul>
+        
+        <li><a href="#methods">Methods</a></li>
+        
+        
+        <li><a href="#props">Properties</a></li>
+        
+        
+        
+    </ul>
+    <div>
+        
+            <div id="methods">
+            
+                <a name="methods__init"></a>
+<div class="method item private">
+     <strong class="name"><code>_init</code></strong>( <code>  </code> ) <em><code>&#x2F;* private method *&#x2F;</code></em>
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l173"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:173</code></a>
+    </span><br>
+    
+    
+    
+    
+</div>
+
+            
+                <a name="methods_addLevel"></a>
+<div class="method item">
+     <strong class="name"><code>addLevel</code></strong>( <code>n </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l334"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:334</code></a>
+    </span><br>
+    
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>n</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_addLines"></a>
+<div class="method item">
+     <strong class="name"><code>addLines</code></strong>( <code>n </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l307"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:307</code></a>
+    </span><br>
+    
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>n</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_addPunkte"></a>
+<div class="method item">
+     <strong class="name"><code>addPunkte</code></strong>( <code>p </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l298"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:298</code></a>
+    </span><br>
+    
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>p</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_compute"></a>
+<div class="method item">
+     <strong class="name"><code>compute</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l159"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:159</code></a>
+    </span><br>
+    
+    
+    
+    
+</div>
+
+            
+                <a name="methods_decrementCursorX"></a>
+<div class="method item">
+    <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a> <strong class="name"><code>decrementCursorX</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l494"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:494</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_decrementCursorY"></a>
+<div class="method item">
+    <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a> <strong class="name"><code>decrementCursorY</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l503"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:503</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_del"></a>
+<div class="method item">
+     <strong class="name"><code>del</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l166"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:166</code></a>
+    </span><br>
+    
+    
+    
+    
+</div>
+
+            
+                <a name="methods_die"></a>
+<div class="method item">
+     <strong class="name"><code>die</code></strong>( <code>xy </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l439"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:439</code></a>
+    </span><br>
+    
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>xy</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_emitToController"></a>
+<div class="method item">
+     <strong class="name"><code>emitToController</code></strong>( <code>event, obj </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l218"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:218</code></a>
+    </span><br>
+    
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>event</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+        <li>
+        
+            <code>obj</code> <strong>&lt;JSON&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getBlockelement"></a>
+<div class="method item">
+    server.Games.SpielAufZeit.Blockelement <strong class="name"><code>getBlockelement</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l271"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:271</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;server.Games.SpielAufZeit.Blockelement&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getColor"></a>
+<div class="method item">
+    <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a> <strong class="name"><code>getColor</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l403"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:403</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getController"></a>
+<div class="method item">
+    <a href="../classes/server.Controller.html" class="crosslink">server.Controller</a> <strong class="name"><code>getController</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l244"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:244</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="../classes/server.Controller.html" class="crosslink">server.Controller</a>&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getCursor"></a>
+<div class="method item">
+    <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a> <strong class="name"><code>getCursor</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l467"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:467</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a>&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getCursorX"></a>
+<div class="method item">
+    <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a> <strong class="name"><code>getCursorX</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l476"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:476</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getCursorY"></a>
+<div class="method item">
+    <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a> <strong class="name"><code>getCursorY</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l485"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:485</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getEmitData"></a>
+<div class="method item">
+    JSON <strong class="name"><code>getEmitData</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l530"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:530</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;JSON&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getId"></a>
+<div class="method item">
+    <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a> <strong class="name"><code>getId</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l380"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:380</code></a>
+    </span><br>
+    <p>Gibt die id, WELCHE GLEICH DER PROFIL-ID IST, wieder.</p>
+
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getLevel"></a>
+<div class="method item">
+    <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a> <strong class="name"><code>getLevel</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l361"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:361</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getLines"></a>
+<div class="method item">
+    <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a> <strong class="name"><code>getLines</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l325"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:325</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getNextBlockelement"></a>
+<div class="method item">
+    server.Games.SpielAufZeit.Blockelement <strong class="name"><code>getNextBlockelement</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l280"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:280</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;server.Games.SpielAufZeit.Blockelement&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getPlatz"></a>
+<div class="method item">
+    <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a> <strong class="name"><code>getPlatz</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l191"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:191</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getPlatz"></a>
+<div class="method item">
+    <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a> <strong class="name"><code>getPlatz</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l182"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:182</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt; <p>platz</p>
+</div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getProfil"></a>
+<div class="method item">
+    <a href="../classes/server.Profil.html" class="crosslink">server.Profil</a> <strong class="name"><code>getProfil</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l253"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:253</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="../classes/server.Profil.html" class="crosslink">server.Profil</a>&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getPunkte"></a>
+<div class="method item">
+    <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a> <strong class="name"><code>getPunkte</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l370"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:370</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_getTickTime"></a>
+<div class="method item">
+    <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a> <strong class="name"><code>getTickTime</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l200"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:200</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_incrementCursorX"></a>
+<div class="method item">
+    <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a> <strong class="name"><code>incrementCursorX</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l512"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:512</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_incrementCursorY"></a>
+<div class="method item">
+    <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a> <strong class="name"><code>incrementCursorY</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l521"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:521</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_isActive"></a>
+<div class="method item">
+    <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a> <strong class="name"><code>isActive</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l412"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:412</code></a>
+    </span><br>
+    
+    
+    
+    
+    <br><div class="returns"><strong>Returns:</strong> &lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>&gt; </div>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_nextElement"></a>
+<div class="method item">
+     <strong class="name"><code>nextElement</code></strong>( <code>  </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l262"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:262</code></a>
+    </span><br>
+    
+    
+    
+    
+</div>
+
+            
+                <a name="methods_setActive"></a>
+<div class="method item">
+     <strong class="name"><code>setActive</code></strong>( <code>b </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l421"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:421</code></a>
+    </span><br>
+    
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>b</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_setColor"></a>
+<div class="method item">
+     <strong class="name"><code>setColor</code></strong>( <code>color </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l394"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:394</code></a>
+    </span><br>
+    
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>color</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_setCursor"></a>
+<div class="method item">
+     <strong class="name"><code>setCursor</code></strong>( <code>xy </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l430"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:430</code></a>
+    </span><br>
+    
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>xy</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_setCursorX"></a>
+<div class="method item">
+     <strong class="name"><code>setCursorX</code></strong>( <code>x </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l449"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:449</code></a>
+    </span><br>
+    
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>x</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_setCursorY"></a>
+<div class="method item">
+     <strong class="name"><code>setCursorY</code></strong>( <code>y </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l458"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:458</code></a>
+    </span><br>
+    
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>y</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_setLevel"></a>
+<div class="method item">
+     <strong class="name"><code>setLevel</code></strong>( <code>n </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l344"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:344</code></a>
+    </span><br>
+    
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>n</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_setLines"></a>
+<div class="method item">
+     <strong class="name"><code>setLines</code></strong>( <code>n </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l316"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:316</code></a>
+    </span><br>
+    
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>n</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_setPunkte"></a>
+<div class="method item">
+     <strong class="name"><code>setPunkte</code></strong>( <code>p </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l289"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:289</code></a>
+    </span><br>
+    
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>p</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_setTickTime"></a>
+<div class="method item">
+     <strong class="name"><code>setTickTime</code></strong>( <code>n </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l209"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:209</code></a>
+    </span><br>
+    
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>n</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+                <a name="methods_ticker"></a>
+<div class="method item">
+     <strong class="name"><code>ticker</code></strong>( <code>c, force </code> ) 
+    <br>
+    <span class="foundat">
+    
+        
+    
+        <a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l228"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:228</code></a>
+    </span><br>
+    
+    
+    <strong>Parameters:</strong>
+    <ul class="params">
+    
+        <li>
+        
+            <code>c</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+        <li>
+        
+            <code>force</code> <strong>&lt;<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>&gt;</strong>
+        
+        
+         
+            
+        </li>
+    
+    </ul>
+    
+    
+    
+</div>
+
+            
+            </div>
+        
+        
+            <div id="props">
+            
+                <a name="props__active"></a>
+<div class="props item">
+    <code>_active</code> &lt;<strong><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l60"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:60</code></a></span>
+    
+    
+</div>
+
+            
+                <a name="props__color"></a>
+<div class="props item">
+    <code>_color</code> &lt;<strong><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l52"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:52</code></a></span>
+    
+    
+</div>
+
+            
+                <a name="props__controller"></a>
+<div class="props item">
+    <code>_controller</code> &lt;<strong><a href="../classes/server.Controller.html" class="crosslink">server.Controller</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l37"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:37</code></a></span>
+    
+    
+</div>
+
+            
+                <a name="props__controller"></a>
+<div class="props item">
+    <code>_controller</code> &lt;<strong><a href="../classes/server.Controller.html" class="crosslink">server.Controller</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l30"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:30</code></a></span>
+    
+    
+</div>
+
+            
+                <a name="props__cursor"></a>
+<div class="props item">
+    <code>_cursor</code> &lt;<strong><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l44"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:44</code></a></span>
+    
+    
+</div>
+
+            
+                <a name="props__deleted"></a>
+<div class="props item">
+    <code>_deleted</code> &lt;<strong><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l146"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:146</code></a></span>
+    
+    
+</div>
+
+            
+                <a name="props__elementNext"></a>
+<div class="props item">
+    <code>_elementNext</code> &lt;<strong><a href="../classes/server.games.SpielAufZeit.Blockelement.html" class="crosslink">server.games.SpielAufZeit.Blockelement</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l107"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:107</code></a></span>
+    
+    
+</div>
+
+            
+                <a name="props__elementNow"></a>
+<div class="props item">
+    <code>_elementNow</code> &lt;<strong><a href="../classes/server.games.SpielAufZeit.Blockelement.html" class="crosslink">server.games.SpielAufZeit.Blockelement</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l100"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:100</code></a></span>
+    
+    
+</div>
+
+            
+                <a name="props__gameinstance"></a>
+<div class="props item">
+    <code>_gameinstance</code> &lt;<strong>??</strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l23"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:23</code></a></span>
+    
+    
+</div>
+
+            
+                <a name="props__level"></a>
+<div class="props item">
+    <code>_level</code> &lt;<strong><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l76"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:76</code></a></span>
+    
+    
+</div>
+
+            
+                <a name="props__lines"></a>
+<div class="props item">
+    <code>_lines</code> &lt;<strong><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l84"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:84</code></a></span>
+    
+    
+</div>
+
+            
+                <a name="props__out"></a>
+<div class="props item">
+    <code>_out</code> &lt;<strong><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l130"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:130</code></a></span>
+    
+    
+</div>
+
+            
+                <a name="props__out"></a>
+<div class="props item">
+    <code>_out</code> &lt;<strong><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l138"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:138</code></a></span>
+    
+    
+</div>
+
+            
+                <a name="props__platz"></a>
+<div class="props item">
+    <code>_platz</code> &lt;<strong><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l92"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:92</code></a></span>
+    
+    
+</div>
+
+            
+                <a name="props__punkte"></a>
+<div class="props item">
+    <code>_punkte</code> &lt;<strong><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l68"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:68</code></a></span>
+    
+    
+</div>
+
+            
+                <a name="props__tick"></a>
+<div class="props item">
+    <code>_tick</code> &lt;<strong><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l114"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:114</code></a></span>
+    
+    
+</div>
+
+            
+                <a name="props__tick"></a>
+<div class="props item">
+    <code>_tick</code> &lt;<strong><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></strong>&gt;<br>
+    <span class="foundat"><a href="../../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html#l122"><code>..&#x2F;..&#x2F;Development&#x2F;public&#x2F;server&#x2F;Games&#x2F;SpielAufZeit&#x2F;Spieler.js:122</code></a></span>
+    
+    
+</div>
+
+            
+            </div>
+        
+        
+        
+    </div>
+</div>
+</div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/js/tabs.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+#loungeList{
+	
+}
+#loungeList ul{
+	margin-top: -5px;
+	margin-left: -5px;
+	height: 150px;
+	margin-bottom: 10px;
+}
+#loungeList ul li{
+	display: block;
+	float: left;
+	width: 150px;
+	height: 150px;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+#loungeList ul li i,
+#loungeList ul li a{
+	display: block;
+	width: 150px;
+	height: 150px;
+	float: left;
+	box-sizing: border-box;
+	border: 2px solid rgba(255,255,255,0.05);
+	box-shadow:  0px 0px 15px rgba(0,0,0,0.2);
+	background-color: rgba(255,255,255,0.05);
+	text-decoration: none;
+	color: rgba(255,255,255,0.65);
+	padding: 10px;
+	font-size: 20px;
+	word-wrap: break-word;
+	line-height: 23px;
+}
+#loungeList ul li i{
+	font-style: italic;
+	opacity: 0.45;
+}
+#loungeList .clear{
+	clear: both;
+}
+#loungeList p{
+	margin-bottom: 5px;
+	margin-top: 5px;
+	padding: 0;
+	padding-left: 8px;
+}
+#loungeList #countdown{
+	position: absolute;
+	left: 0;
+	top:0;
+	bottom:0;
+	right: 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 8px;
+	padding-left: 8px;
+}
+#loungeList #countdown_balken{
+	position: absolute;
+	left: 0;
+	top:0;
+	bottom:0;
+	width: 0%;
+	background-color: rgba(255,255,255,0.2);
+}

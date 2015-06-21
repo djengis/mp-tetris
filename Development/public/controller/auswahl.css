@@ -1,0 +1,320 @@
+/* roundButton{ */
+.plusButton,
+.roundButton{
+	position: absolute;
+	bottom: 20px;
+	color: #838d97;
+	text-align: center;
+	overflow: visible;
+	left:0;
+	right: 0;
+	height: 80px;
+	padding-top: 43px;
+	box-sizing: border-box;
+	text-shadow: 0px 0px 7px rgba(0,0,0,0.25);
+	font-size: 13px;
+    transition: all 1s linear;
+    cursor: pointer;
+}
+.plusButton .plusButton_top,
+.roundButton .roundButton_top{
+	left: 50%;
+	margin-left: -40px;
+	position: absolute;
+	background-color: #838d97;
+	height: 40px;
+	top:0;
+	width: 80px;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.25);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	background-image: linear-gradient(to bottom, #69747f 0%, #838d97 100%);
+	border: 1px solid #838d97;
+    transition: all 1s linear;
+}
+.plusButton .plusButton_bottom,
+.roundButton .roundButton_bottom{
+	left: 50%;
+	margin-left: -40px;
+	position: absolute;
+	background-color: #838d97;
+	height: 15px;
+	bottom:0;
+	width: 80px;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.25);
+
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border: 1px solid #89949f;
+    transition: all 1s linear;
+}
+.plusButton .plusButton_top{
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+.plusButton .plusButton_top_l{
+	height: 13px;
+	position: absolute;
+	top: 26.6px;
+	left: 0;
+	right: 0;
+	border: 1px solid #89949f;
+	background-color: #838d97;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.25);
+	z-index: 3;
+}
+.plusButton .plusButton_top_t{
+	width: 26.6px;
+	height: 26.6px;
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	margin-left: -13.3px;
+	border: 1px solid #89949f;
+	background-color: #838d97;
+	border-bottom: 0;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.25);
+	z-index: 2;
+}
+.plusButton .plusButton_top_r{
+	position: absolute;
+	background-color: #838d97;
+	width: 26.6px;
+	height: 26.6px;
+	top: 0px;
+	left: 50%;
+	margin-left: -13.3px;
+	z-index: 3;
+	border: 1px solid #838d97;
+	background-image: linear-gradient(to bottom, #69747f 0%, #838d97 100%);
+}
+.plusButton .plusButton_bottom{
+	width: 26.6px;
+	margin-left: -13.3px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+.on .roundButton .roundButton_bottom,
+.on .roundButton .roundButton_top,
+.roundButton.on .roundButton_bottom,
+.roundButton.on .roundButton_top{
+	background-color: #727b84;
+	background-image: linear-gradient(to bottom, #69747f 0%, #727b84 100%);
+	border: 1px solid #727b84;
+}
+.on .plusButton .plusButton_bottom,
+.on .plusButton .plusButton_top_l,
+.on .plusButton .plusButton_top_r,
+.on .plusButton .plusButton_top_t{
+	background-color: #727b84;
+	border: 1px solid #727b84;
+	background-image: none;
+}
+.on .plusButton,
+.on .roundButton{
+	color: #727b84;
+}
+
+.roundButton.aus_dem_spiel_austreten{
+	right: 20px;
+	width: 80px;
+	left: auto;
+}
+.roundButton.spiel_starten{
+	right: 20px;
+	width: 80px;
+	left: auto;
+	bottom: 120px;
+}
+
+.btn_green .roundButton{
+	color: #9fb098;
+	text-shadow: 0 0 15px rgba(145,176,136,0.1);
+}
+.btn_green .roundButton .roundButton_top,
+.btn_green .roundButton .roundButton_bottom{
+	background-image: none;
+	background-color: #8eae85;	
+	border: 1px solid #9fba97;
+	box-shadow: 0 0 45px 0px rgba(145,176,136,0.5), inset 0 0px 15px #96b48e;
+    transition: none 1s linear;
+}
+.btn_red .roundButton{
+	color: #b09898;
+	text-shadow: 0px 0px 15px rgba(175,146,136,0.1);
+}
+.btn_red .roundButton .roundButton_top,
+.btn_red .roundButton .roundButton_bottom{
+	background-image: none;
+	background-color: #ae8484;	
+	border: 1px solid #ba9797;
+	box-shadow: 0 0 45px 0px rgba(175,146,136,0.5), inset 0 0px 15px #b58f8f;
+    transition: none 1s linear;
+}
+/* }roundButton */
+
+/* auswahl{ */
+#auswahl{
+	height: 100%;
+}
+#auswahl .menu{
+	height: 100%;
+	white-space: nowrap;
+}
+#auswahl .menu .element{
+	display: inline-block;
+	height: 100%;
+	width: 190px;
+	background-color: #415568;
+	margin: 0;
+	padding: 0;
+	border: none;
+	color: #6a727b;
+	padding: 10px;
+	box-sizing: border-box;
+	position: relative;
+	line-height: 135%;
+	vertical-align: top;
+	white-space: nowrap;
+	text-shadow: 0px 0px 7px rgba(0,0,0,0.25);
+	
+	line-height: 20px;
+	overflow: hidden;
+	font-size: 15px !important;
+	
+	background-image: -webkit-linear-gradient(left, #495d71 1px, #364658 1px, #415568 15px); 
+	background-image: -moz-linear-gradient(left, #495d71 1px, #364658 1px, #415568 15px);
+	background-image: -o-linear-gradient(left, #495d71 1px, #364658 1px, #415568 15px);
+	background-image: linear-gradient(left, #495d71 1px, #364658 1px, #415568 15px);
+}
+#auswahl .menu .element.game_lounge{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 100;
+	width: auto;
+	height: auto;
+}
+.lounge_element,
+.lounge_element_admin{
+	display: none;
+}
+.game_lounge .lounge_element,
+.game_lounge .lounge_element_admin{
+	display: inherit;
+}
+.game_lounge span.col {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin-right: 5px;
+	box-sizing: border-box;
+	border: 1px solid rgba(255,255,255,0.1);
+	box-shadow: inset 0px 0px 4px rgba(0,0,0,0.1);
+}
+#auswahl .menu .element.on{
+	color: #6a727b;
+}
+#auswahl .menu .element:last-child{
+	width: 20px;
+}
+#auswahl .menu .element h2,
+#auswahl .menu .element ul li,
+#auswahl .menu .element strong{
+	color: #838d97;
+}
+#auswahl .menu .element strong{
+	padding-left: 10px;
+}
+#auswahl .menu .element ul{
+	padding-left: 10px;
+}
+
+#auswahl .menu .element h2{
+	line-height: 30px;
+	font-weight: normal;
+	font-size: 18px;
+	margin: 0;
+}
+
+#auswahl .menu .element i{
+	font-style: oblique;
+}
+#auswahl .menu *:not([type="text"]){
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#auswahl .menu .new_button{
+	width: 100px;
+    transition: all 0.2s ease;
+}
+#auswahl .menu .new_button.register{
+	width: 100%;
+    transition: all 0.2s ease;
+}
+#auswahl .menu .new_button .roundButton{
+	position: absolute;
+	left: 0;
+	top: 10px;
+}
+#auswahl #hauptmenue_button,
+#auswahl #abmelden_button{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100px;
+	z-index: 1;
+}
+
+#auswahl .menu .new_button form{
+	display: none;
+}
+#auswahl .menu .new_button.register form{
+	display: block;
+}
+#auswahl .menu .new_button.register h2{
+	display: none;
+}
+#auswahl .beeaaaaam{
+	display: block;
+	position: absolute;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #fff;
+}
+#new_player_button form{
+	display: block;
+	width: 315px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+#new_player_button input#new_name{
+	display: block;
+	width: 314px;
+}
+#new_player_button button[type="submit"]{
+	display:inline-block;
+	width: 170px;
+}
+#new_player_button button[type="reset"]{
+	display:inline-block;
+	width: 140px;
+}
+#new_player_button form{
+	color: #838d97;
+	padding: 10px;
+	text-shadow: 0px 0px 7px rgba(0,0,0,0.25);
+	background-color: rgba(255,255,255,0.05);
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
+}
+/* }auswahl */

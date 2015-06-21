@@ -1,0 +1,16 @@
+CACHE MANIFEST
+
+#Werden im Cache gespeichert
+CACHE:
+#/profil/profil.jhtml
+#/profil/profil.css
+#/profil/profil.js
+#/profil/einzelansichtProfil.jhtml
+
+#für die eine Verbindung zum Server erforderlich ist
+NETWORK:
+
+
+#Wenn auf eine Ressource nicht zugegriffen werden kann
+FALLBACK:
+

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title>404 - Anfeorderte Ressource nicht gefunden</title>
+                <meta charset="utf-8" />
+                <link href="/global/extern_libs/reset.css" rel="stylesheet" type="text/css" />
+                <link href="/error/404/404.css" rel="stylesheet" type="text/css" />
+               
+        </head>
+        <body>
+                <h1>404</h1>
+                <p>
+                        Die von Ihnen angeforderte Ressource wurde nicht gefunden. Tja...
+                </p>
+        </body>
+</html>

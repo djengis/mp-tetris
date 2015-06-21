@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>../../Development/public/controller/Auswahl.js - Muliplayer Tetris</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.8.0pr2/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <script src="http://yui.yahooapis.com/combo?3.8.0pr2/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            <h1><a href="../index.html"><img src="../assets/css/logo.png">Muliplayer Tetris: ../../Development/public/controller/Auswahl.js</a></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.9</em>
+        </div>
+    </div>
+    <div class="yui3-g">
+
+        <div id="sidebar" class="yui3-u">
+            <div id="modules" class="sidebox">
+    <div class="hd">
+        <h2 class="no-toc">Modules</h2>
+    </div>
+    <div class="bd">
+        <ul>
+            
+                <li><a href="../modules/controller.html">controller</a>
+                
+                </li>
+            
+                <li><a href="../modules/display.html">display</a>
+                
+                </li>
+            
+                <li><a href="../modules/global.html">global</a>
+                
+                </li>
+            
+                <li><a href="../modules/server.html">server</a>
+                
+                </li>
+            
+        </ul>
+    </div>
+</div>
+
+<div id="classes" class="sidebox">
+    <div class="hd">
+        <h2 class="no-toc">Classes</h2>
+    </div>
+    <div class="bd">
+        <ul>
+            
+                <li><a href="../classes/controller.Auswahl.html">controller.Auswahl</a></li>
+            
+                <li><a href="../classes/controller.Chat.html">controller.Chat</a></li>
+            
+                <li><a href="../classes/controller.Controller.html">controller.Controller</a></li>
+            
+                <li><a href="../classes/display.AfterGame.html">display.AfterGame</a></li>
+            
+                <li><a href="../classes/display.Display.html">display.Display</a></li>
+            
+                <li><a href="../classes/display.Lounge.html">display.Lounge</a></li>
+            
+                <li><a href="../classes/display.MyAudio.html">display.MyAudio</a></li>
+            
+                <li><a href="../classes/display.Spieler.html">display.Spieler</a></li>
+            
+                <li><a href="../classes/global.API_SCHEMA.html">global.API_SCHEMA</a></li>
+            
+                <li><a href="../classes/global.BUTTON.html">global.BUTTON</a></li>
+            
+                <li><a href="../classes/global.BUTTONTYPE.html">global.BUTTONTYPE</a></li>
+            
+                <li><a href="../classes/global.CONFIG.html">global.CONFIG</a></li>
+            
+                <li><a href="../classes/global.GAME_EVENT.html">global.GAME_EVENT</a></li>
+            
+                <li><a href="../classes/global.LIST_EVENT.html">global.LIST_EVENT</a></li>
+            
+                <li><a href="../classes/global.pre_defs.html">global.pre_defs</a></li>
+            
+                <li><a href="../classes/global.Util.html">global.Util</a></li>
+            
+                <li><a href="../classes/server.Api.html">server.Api</a></li>
+            
+                <li><a href="../classes/server.Chat.html">server.Chat</a></li>
+            
+                <li><a href="../classes/server.CommandLine.html">server.CommandLine</a></li>
+            
+                <li><a href="../classes/server.Controller.html">server.Controller</a></li>
+            
+                <li><a href="../classes/server.Database.html">server.Database</a></li>
+            
+                <li><a href="../classes/server.Display.html">server.Display</a></li>
+            
+                <li><a href="../classes/server.Game.html">server.Game</a></li>
+            
+                <li><a href="../classes/server.games.AbstractGame.html">server.games.AbstractGame</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.html">server.games.SpielAufZeit</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Block.html">server.games.SpielAufZeit.Block</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Blockelement.html">server.games.SpielAufZeit.Blockelement</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Spieler.html">server.games.SpielAufZeit.Spieler</a></li>
+            
+                <li><a href="../classes/server.Main.html">server.Main</a></li>
+            
+                <li><a href="../classes/server.Profil.html">server.Profil</a></li>
+            
+                <li><a href="../classes/server.Router.html">server.Router</a></li>
+            
+                <li><a href="../classes/server.RouterChache.html">server.RouterChache</a></li>
+            
+                <li><a href="../classes/server.Server.html">server.Server</a></li>
+            
+                <li><a href="../classes/server.SpielTyp.html">server.SpielTyp</a></li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="fileTree" class="sidebox">
+    <div class="hd">
+        <h2 class="no-toc">Files</h2>
+    </div>
+    <div class="bd">
+        <ul><li>../<ul><li>../<ul><li>Development/<ul><li>public/<ul><li>controller/<ul><li><a href="../files/.._.._Development_public_controller_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_controller_Auswahl.js.html">Auswahl.js</a></li><li><a href="../files/.._.._Development_public_controller_Chat.js.html">Chat.js</a></li><li><a href="../files/.._.._Development_public_controller_Controller.js.html">Controller.js</a></li></ul></li><li>display/<ul><li><a href="../files/.._.._Development_public_display_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_display_AfterGame.js.html">AfterGame.js</a></li><li><a href="../files/.._.._Development_public_display_Display.js.html">Display.js</a></li><li><a href="../files/.._.._Development_public_display_Lounge.js.html">Lounge.js</a></li><li><a href="../files/.._.._Development_public_display_MyAudio.js.html">MyAudio.js</a></li><li><a href="../files/.._.._Development_public_display_Spieler.js.html">Spieler.js</a></li></ul></li><li>global/<ul><li><a href="../files/.._.._Development_public_global_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_global_Util.js.html">Util.js</a></li><li><a href="../files/.._.._Development_public_global_api-schema.js.html">api-schema.js</a></li><li><a href="../files/.._.._Development_public_global_config.js.html">config.js</a></li><li><a href="../files/.._.._Development_public_global_db.js.html">db.js</a></li><li><a href="../files/.._.._Development_public_global_enum_controller_buttons.js.html">enum_controller_buttons.js</a></li><li><a href="../files/.._.._Development_public_global_events.js.html">events.js</a></li></ul></li><li>highscore/<ul><li><a href="../files/.._.._Development_public_highscore_highscore.js.html">highscore.js</a></li></ul></li><li>profil/<ul><li><a href="../files/.._.._Development_public_profil_profil.js.html">profil.js</a></li></ul></li><li>server/<ul><li><a href="../files/.._.._Development_public_server_Api.js.html">Api.js</a></li><li><a href="../files/.._.._Development_public_server_Chat.js.html">Chat.js</a></li><li><a href="../files/.._.._Development_public_server_CommandLine.js.html">CommandLine.js</a></li><li><a href="../files/.._.._Development_public_server_Controller.js.html">Controller.js</a></li><li><a href="../files/.._.._Development_public_server_Database.js.html">Database.js</a></li><li><a href="../files/.._.._Development_public_server_Display.js.html">Display.js</a></li><li><a href="../files/.._.._Development_public_server_Game.js.html">Game.js</a></li><li>Games/<ul><li><a href="../files/.._.._Development_public_server_Games_AbstractGame.js.html">AbstractGame.js</a></li><li>SpielAufZeit/<ul><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_Block.js.html">Block.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_Blockelement.js.html">Blockelement.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_SpielAufZeit.js.html">SpielAufZeit.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html">Spieler.js</a></li></ul></li></ul></li><li><a href="../files/.._.._Development_public_server_Main.js.html">Main.js</a></li><li><a href="../files/.._.._Development_public_server_Profil.js.html">Profil.js</a></li><li><a href="../files/.._.._Development_public_server_Router.js.html">Router.js</a></li><li><a href="../files/.._.._Development_public_server_RouterChache.js.html">RouterChache.js</a></li><li><a href="../files/.._.._Development_public_server_Server.js.html">Server.js</a></li><li><a href="../files/.._.._Development_public_server_SpielTyp.js.html">SpielTyp.js</a></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul>
+    </div>
+</div>
+
+
+
+        </div>
+
+        <div id="main" class="yui3-u">
+            <div class="content"><h4>../../Development/public/controller/Auswahl.js</h4>
+
+<pre class="code prettyprint linenums">
+&#x27;use strict&#x27;;
+
+/**
+ * Konsturktor für Auswahl
+ *
+ * @module controller
+ * @namespace controller
+ * @class Auswahl
+ * @constructor
+ */
+function Auswahl(){
+	/**
+	 * @property _socket
+	 * @type Socket
+	 * @default null
+	 * @private
+	 */
+	this._socket = null;
+	
+	/**
+	 * @property _controller
+	 * @type controller.Controller
+	 * @default null
+	 * @private
+	 */
+	this._controller = null;
+	
+	/**
+	 * @property _isTouch
+	 * @type Boolean
+	 * @private
+	 */
+	this._isTouch = !!(&#x27;ontouchstart&#x27; in window);
+	
+	/**
+	 * @property _chat
+	 * @type controller.Chat
+	 * @private
+	 */
+	this._chat = null;
+}
+
+/**
+  * Initalisiert Auswahl
+  *
+  * @method init
+  * @param {controller.Controller} controller
+  */
+Auswahl.prototype.init = function(controller){
+	this._controller = controller;
+	this._socket = this._controller.getSocket();
+	this._chat = new Chat(this._socket);
+	
+	this.updateProfillist();
+	this.updateGamelist();
+	
+	this._initListeners();
+	this._bindSocketEvents();
+};
+
+/**
+  * Erstellt Profil, anhand eines JSON Objekt
+  *
+  * @method createProfil
+  * @async
+  * @param {JSON} data
+  * @param {Function} callback
+  */
+Auswahl.prototype.createProfil = function(data, callback){
+	this._socket.emit(&#x27;createPlayer&#x27;, data, function(data, fn){
+		callback(data);
+	});
+};
+
+/**
+  * Erstellt Spiel, anhand eines JSON Objekt
+  *
+  * @method createGame
+  * @async
+  * @param {JSON} data
+  * @param {Function} callback
+  */
+Auswahl.prototype.createGame = function(data, callback){
+	this._socket.emit(&#x27;createGame&#x27;, data, function(data, fn){
+		callback(data);
+	}.bind(this));
+};
+
+/**
+  * Zeigt Auswahlansicht für Spiele an
+  *
+  * @method showLevelauswahl
+  */
+Auswahl.prototype.showLevelauswahl = function(){
+	this._controller.deselectSpiel();
+	this._controller.hide();
+	$(&quot;#gameselect&quot;).show();
+	$(&quot;#auswahl&quot;).show();
+	$(&quot;#playerselect&quot;).hide();
+	$(&quot;#gameselect .element&quot;).removeClass(&quot;game_lounge&quot;); 
+	$(&quot;#gameselect .aus_dem_spiel_austreten&quot;).hide();
+	$(&quot;#gameselect .spiel_starten&quot;).hide();
+	$(&quot;#gameselect .spiel_beitreten&quot;).show();
+	$(&quot;#abmelden_button&quot;).show();
+	$(&quot;#gameselect&quot;).css(&quot;overflow&quot;,&quot;&quot;);
+	$(&quot;body&quot;).scrollLeft(0);
+	$(&quot;#gameselect .lounge_element, #gameselect .lounge_element_admin&quot;).hide();
+	$(&quot;#&quot;+this._chat.getRootId()).remove();
+};
+
+/**
+  * Zeigt Auswahlansicht für Profile an
+  *
+  * @method showProfilauswahl
+  */
+Auswahl.prototype.showProfilauswahl = function(){
+	this._controller.deselectSpiel();
+	this._controller.hide();
+	$(&quot;#gameselect&quot;).hide();
+	$(&quot;#auswahl&quot;).show();
+	$(&quot;#playerselect&quot;).show();
+	$(&quot;#gameselect .element&quot;).removeClass(&quot;game_lounge&quot;);  
+	$(&quot;#gameselect .aus_dem_spiel_austreten&quot;).hide();
+	$(&quot;#gameselect .spiel_starten&quot;).hide();
+	$(&quot;#gameselect .spiel_beitreten&quot;).show();
+	$(&quot;#gameselect .lounge_element, #gameselect .lounge_element_admin&quot;).hide();
+	$(&quot;body&quot;).scrollLeft(0);
+	$(&quot;#&quot;+this._chat.getRootId()).remove();
+};
+
+/**
+  * Zeigt die Spiele Lounge an
+  *
+  * @method showLounge
+  * @param {JSON} data
+  */
+Auswahl.prototype.showLounge = function(data){
+	this._controller._game_selected = data.SpielID;
+	$(&quot;#gameselect&quot;).show();
+	$(&quot;#gameselect&quot;).css(&quot;overflow&quot;,&quot;hidden&quot;);
+	$(&quot;#playerselect&quot;).hide();
+	
+	$(&quot;#gameselect .element&quot;).removeClass(&quot;game_lounge&quot;); 
+	$(&quot;#game_&quot;+data.SpielID+&quot;.element&quot;).addClass(&quot;game_lounge&quot;);
+	$(&quot;#gameselect .aus_dem_spiel_austreten&quot;).show();
+	$(&quot;#gameselect .spiel_starten&quot;).show();
+	$(&quot;#gameselect .spiel_beitreten&quot;).hide();
+	$(&quot;#game_&quot;+data.SpielID+&quot;.element&quot;).removeClass(&quot;button&quot;);
+	$(&quot;#gameselect .lounge_element&quot;).show();
+	
+	$(&quot;#gameselect .lounge_element_admin&quot;).hide();
+	if(this._controller._profil_id === data.ErstellerId){
+		$(&quot;#gameselect .lounge_element_admin&quot;).show();
+	}
+	$(&quot;body&quot;).scrollLeft(0);
+	
+	// CHAT
+	$(&quot;#&quot;+this._chat.getRootId()).remove();
+	this._chat.setName(this._controller.getProfil().name);
+	$(&quot;#game_&quot;+data.SpielID+&quot;.element&quot;).append(this._chat.getRootHtml());
+};
+
+/**
+  * Bindet Socket Events
+  *
+  * @method _bindSocketEvents
+  * @private
+  */
+Auswahl.prototype._bindSocketEvents = function(){
+
+	/* Spiel */
+	
+	this._socket.on(LIST_EVENT.SpielAdded, function(data) {
+		this.addGameToSelection(data, false);
+	}.bind(this));
+	
+	this._socket.on(LIST_EVENT.SpielChange, function(data) {
+		this.changeGameInSelection(data);
+	}.bind(this));
+	
+	this._socket.on(LIST_EVENT.SpielDeleted, function(data) {
+		this.deleteGameInSelection(data);
+	}.bind(this));
+	
+	/* Profil */
+	
+	this._socket.on(LIST_EVENT.ProfilAdded, function(data) {
+		this.addProfilToSelection(data, false);
+	}.bind(this));
+	
+	this._socket.on(LIST_EVENT.ProfilChange, function(data) {
+		this.changeProfilInSelection(data);
+	}.bind(this));
+	
+	this._socket.on(LIST_EVENT.ProfilDeleted, function(data) {
+		this.deleteProfilInSelection(data);
+	}.bind(this));
+};
+
+/**
+  * Aktualisiert die Profil Auswahlliste
+  *
+  * @method updateProfillist
+  * @param {Function} callback
+  */
+Auswahl.prototype.updateProfillist = function(callback){
+	this._socket.emit(LIST_EVENT.UpdateProfilList, {}, function(table) {
+		var row;		
+		if(table.length){
+			for(row in table){
+				row = table[row];
+				if($(&quot;#player_&quot;+row.ProfilID).length){continue;} 
+				this.addProfilToSelection(row);
+			}
+		}else{
+			// Keine Profil vorhanden  
+		}
+	}.bind(this));
+};
+
+/**
+  * Aktualisiert die Spiele Auswahlliste
+  *
+  * @method updateGamelist
+  * @async
+  * @param {Function} callback
+  */
+Auswahl.prototype.updateGamelist = function(callback){
+	this._socket.emit(LIST_EVENT.UpdateSpielList, {}, function(table) {	
+		var row;
+		if(table.length){
+			for(row in table){
+				row = table[row];
+				if($(&quot;#game_&quot;+row.SpielID).length){continue;} 
+				this.addGameToSelection(row);
+			}
+		}else{
+			// Keine Spiele vorhanden 
+		}
+	}.bind(this));
+};
+
+/**
+  * Fügt das Spiel der Auswahlansicht hinzu.
+  *
+  * @method addGameToSelection
+  * @param {JSON} row Daten
+  * @optional {Boolean} statisch=false
+  */
+Auswahl.prototype.addGameToSelection = function(row, statisch){
+	if(statisch === undefined){ statisch = true; }
+	
+	var html = &quot;&quot;;
+	var color = &quot;&quot;; 
+	var beitraetbar = false;
+	
+	var text = &quot;%&quot;;
+	
+	var lounge_head = &quot;In der Lounge&quot;;
+	
+	switch(row.GameStatus){
+		case &quot;waiting&quot;:
+			text = &quot;???&quot;;
+			color = &quot;btn_red&quot;;
+			break;
+		case &quot;ended&quot;:
+		case &quot;aborted&quot;:
+		 	text = &quot;Zuende&quot;;
+			color = &quot;btn_red&quot;;
+			lounge_head = &quot;Im Spiel waren&quot;;
+			break;
+			
+		case &quot;playing&quot;:
+		case &quot;countdown&quot;:
+			text = &quot;Läuft&quot;;
+			color = &quot;btn_green&quot;;
+			lounge_head = &quot;Im Spiel&quot;;
+			break;
+
+		case &quot;boarded&quot;:
+			text = &quot;Voll&quot;;
+			color = &quot;btn_green&quot;;
+			break;
+			
+		case &quot;boarding&quot;:
+			beitraetbar = true;
+			text = &quot;Beitreten&quot;;
+			color = &quot;&quot;;
+			break;
+	}
+	
+	var GameStatus = row.GameStatus;
+	var ErstellerName = row.ErstellerName;
+	var SpielID = row.SpielID;
+	var lounge;
+	
+	if(row.GameStatus == &quot;ended&quot; || row.GameStatus == &quot;playing&quot; || row.GameStatus == &quot;countdown&quot; || row.GameStatus == &quot;aborted&quot;){
+		lounge = this._htmlMakeLoungeList(0, row.MitProfil);
+	}else{
+		lounge = this._htmlMakeLoungeList(row.MaxProfil, row.MitProfil);
+	}
+	var button1 = this._htmlGetRoundButton(text, &quot;spiel_beitreten&quot;);
+	var button2 = this._htmlGetRoundButton(&quot;austreten&quot;, &quot;aus_dem_spiel_austreten lounge_element&quot;);
+	var button3 = this._htmlGetRoundButton(&quot;Spiel starten&quot;, &quot;spiel_starten lounge_element_admin&quot;);
+	
+	html += &#x27;&lt;div class=&quot;element button spiel_eintreten &#x27;+color+&#x27;&quot; id=&quot;game_&#x27;+row.SpielID+&#x27;&quot;&gt;&#x27;;
+	html += &quot;	&lt;p&gt;Identifikationsnummer&lt;/p&gt;&quot;;
+	html += &quot;	&lt;strong class=&#x27;SpielID&#x27;&gt;&quot;+SpielID+&quot;&lt;/strong&gt;&quot;;
+	html += &quot;	&lt;p&gt;Status&lt;/p&gt;&quot;;
+	html += &quot;	&lt;strong class=&#x27;GameStatus&#x27;&gt;&quot;+GameStatus+&quot;&lt;/strong&gt;&quot;;
+	html += &quot;	&lt;p&gt;Erstellt von&lt;/p&gt;&quot;;
+	html += &quot;	&lt;strong class=&#x27;ErstellerName&#x27;&gt;&quot;+ErstellerName+&quot;&lt;/strong&gt;&quot;;
+	html += &quot;	&lt;p class=&#x27;lounge_head&#x27;&gt;&quot;+lounge_head+&quot;&lt;/p&gt;&quot;;
+	html += &quot;	&lt;ul class=&#x27;lounge&#x27;&gt;&quot;+lounge+&quot;&lt;/ul&gt;&quot;;
+	html += &quot;	&quot;+button1;
+	html += &quot;	&quot;+button2;
+	html += &quot;	&quot;+button3;
+	html += &#x27;&lt;/div&gt;&#x27;;
+	
+	var jElement = $(html);
+	
+	if(statisch){
+		// füge vor dem letzten ein
+		$(&quot;#gameselect &gt; div:last-child()&quot;).before(jElement);
+	}else{
+		// überspringe Neues Spiel und Abmelden und füge danach ein
+		$(&quot;#gameselect &gt; div:nth-child(2)&quot;).after(jElement);
+		
+		var beeaaaaam = $(&quot;&lt;div class=&#x27;beeaaaaam&#x27;&gt;&lt;/div&gt;&quot;);
+		$(&quot;#gameselect #game_&quot;+row.SpielID).append(beeaaaaam);
+		beeaaaaam.animate({opacity:0},200, function(){
+			$(this).remove();
+		});
+	}
+	
+	// stuffs
+	
+	$(&quot;.aus_dem_spiel_austreten&quot;, jElement).hide();
+	$(&quot;.spiel_starten&quot;, jElement).hide();
+	
+	$(jElement).data(&quot;beitraetbar&quot;, beitraetbar);
+	$(jElement).data(&quot;SpielID&quot;, row.SpielID);
+};
+
+/**
+  * Ändert die Darstellung des Spiels in der Auswahlansicht, anhand des Status des Spieles.
+  *	
+  * * waiting:				Farbe rot, 		Text &#x27;???&#x27;
+  * * ended, aborted:		Farbe rot,		Text &#x27;Zuende&#x27;
+  * * playing, countdown:	Farbe grün,		Text &#x27;Läuft&#x27;
+  * * boarded:				Farbe grün,		Text &#x27;Voll&#x27;
+  * * boarding:				Farbe grün,		Text &#x27;Beitreten&#x27;
+  *
+  * @method changeGameInSelection
+  * @param {JSON} data
+  */
+Auswahl.prototype.changeGameInSelection = function(data){
+	var elementId = &quot;#game_&quot;+data.SpielID;
+
+	Util.setIfChanged($(&quot;.SpielID&quot;, elementId),data.SpielID);
+	Util.setIfChanged($(&quot;.GameStatus&quot;, elementId), data.GameStatus);
+	Util.setIfChanged($(&quot;.ErstellerName&quot;, elementId),data.ErstellerName);
+	
+	
+	if(data.GameStatus == &quot;ended&quot; || data.GameStatus == &quot;playing&quot; || data.GameStatus == &quot;countdown&quot; || data.GameStatus == &quot;aborted&quot;){
+		Util.setIfChanged($(&quot;.lounge&quot;, elementId),this._htmlMakeLoungeList(0, data.MitProfil), true);
+	}else{
+		Util.setIfChanged($(&quot;.lounge&quot;, elementId),this._htmlMakeLoungeList(data.MaxProfil, data.MitProfil), true);
+	}
+	
+	
+	$(elementId).data(&quot;beitraetbar&quot;, false);
+	
+	switch(data.GameStatus){
+		case &quot;waiting&quot;:
+			$(elementId+&quot; .spiel_beitreten .button_text&quot;).html(&quot;???&quot;);
+			$(elementId).removeClass(&quot;btn_green&quot;);
+			$(elementId).addClass(&quot;btn_red&quot;);
+			break;
+			
+		case &quot;ended&quot;:
+		case &quot;aborted&quot;:
+			$(elementId+&quot; .spiel_beitreten .button_text&quot;).html(&quot;Zuende&quot;);
+			$(elementId).removeClass(&quot;btn_green&quot;);
+			$(elementId).addClass(&quot;btn_red&quot;);
+			$(elementId+&quot; .lounge_head&quot;).text(&quot;Im Spiel waren&quot;);
+			break;
+			
+		case &quot;playing&quot;:
+		case &quot;countdown&quot;:
+			$(elementId+&quot; .spiel_beitreten .button_text&quot;).html(&quot;Läuft&quot;);
+			$(elementId).addClass(&quot;btn_green&quot;);
+			$(elementId).removeClass(&quot;btn_red&quot;);
+			$(elementId+&quot; .lounge_head&quot;).text(&quot;Im Spiel&quot;);
+			break;
+			
+		case &quot;boarded&quot;:
+			$(elementId+&quot; .spiel_beitreten .button_text&quot;).html(&quot;Voll&quot;);
+			$(elementId).addClass(&quot;btn_green&quot;);
+			$(elementId).removeClass(&quot;btn_red&quot;);
+			break;
+			
+		case &quot;boarding&quot;:
+			$(elementId+&quot; .spiel_beitreten .button_text&quot;).html(&quot;Beitreten&quot;);
+			$(elementId).removeClass(&quot;btn_green&quot;);
+			$(elementId).removeClass(&quot;btn_red&quot;);
+			$(elementId).data(&quot;beitraetbar&quot;, true);
+			break;
+	}
+};
+
+/**
+  * Spieler befindete sich in einem Spiel, welches der Ersteller entfernt hat.
+  *
+  * @method deleteGameInSelection
+  * @param {JSON} data
+  */
+Auswahl.prototype.deleteGameInSelection = function(data){
+	if(data.SpielID === this._controller.getGameSelected() &amp;&amp; data.ErstellerId != this._controller.getProfilId()){
+		console.log(&quot;BAM, Spiel unter den Füßen entfernt!&quot;);
+		this._controller.deselectSpiel();
+	}
+	
+	$(&quot;#game_&quot;+data.SpielID).remove();
+};
+
+/**
+  * Fügt das übergebene Profil, mit der Statistik, der Profil-Auswahlansicht hinzu
+  *
+  * @method addProfilToSelection
+  * @param {JSON} row Daten
+  * @optional {Boolean} statisch=true
+  */
+Auswahl.prototype.addProfilToSelection = function(row, statisch){
+	if(statisch === undefined){ statisch = true; }
+	
+	var html = &quot;&quot;;
+	
+	var color = &quot;&quot;; 
+	var text = &quot;Profil auswählen&quot;;
+	
+	if(row.isOnline || row.Name === &quot;online&quot;){
+		color = &quot;btn_green&quot;;
+		text = &quot;Profil online&quot;;
+	}
+	
+	html += &#x27;&lt;div class=&quot;element button &#x27;+color+&#x27;&quot; id=&quot;player_&#x27;+row.ProfilID+&#x27;&quot;&gt;&#x27;;
+	html += &#x27;	&lt;h2 class=&quot;Name&quot;&gt;&#x27;+row.Name+&quot;&lt;/h2&gt;&quot;;
+	html += &quot;	&lt;p&gt;Angemeldet seit dem&lt;/p&gt;&quot;;
+	html += &quot;	&lt;strong class=&#x27;AnmeldeDatum&#x27;&gt;&quot;+Util.formatTimestamp(row.AnmeldeDatum)+&quot;&lt;/strong&gt;&quot;;
+	html += &quot;	&lt;p&gt;Letzter Login am&lt;/p&gt;&quot;;
+	html += &quot;	&lt;strong class=&#x27;LetzteAnmeldung&#x27;&gt;&quot;+(Util.formatTimestamp(row.LetzteAnmeldung)===null?&quot;Noch nie&quot;:Util.formatTimestamp(row.LetzteAnmeldung))+&quot;&lt;/strong&gt;&quot;;
+	html += &quot;	&lt;p&gt;Gespielte Spiele:&lt;/p&gt;&quot;;
+	html += &quot;	&lt;strong class=&#x27;gespielteSpiele&#x27;&gt;&quot;+row.gespielteSpiele+&quot;&lt;/strong&gt;&quot;;
+	html += &quot;	&lt;p&gt;Gesetzte Steine:&lt;/p&gt;&quot;;
+	html += &quot;	&lt;strong class=&#x27;gesetzteSteine&#x27;&gt;&quot;+row.gesetzteSteine+&quot;&lt;/strong&gt;&quot;;
+	html += &quot;	&lt;div class=&#x27;roundButton selectProfil&#x27;&gt;&lt;div class=&#x27;roundButton_top&#x27;&gt;&lt;/div&gt;&lt;span class=&#x27;button_text&#x27;&gt;&quot;+text+&quot;&lt;/span&gt;&lt;div class=&#x27;roundButton_bottom&#x27;&gt;&lt;/div&gt;&lt;/div&gt;&quot;;
+	html += &#x27;&lt;/div&gt;&#x27;;
+	
+	var jElement = $(html);
+	
+	if(statisch){
+		// füge vor dem letzten ein
+		$(&quot;#playerselect &gt; div:last-child()&quot;).before(jElement);
+	}else{
+		// überspringe Neues Profil und Raus und füge danach ein
+		$(&quot;#playerselect &gt; div:nth-child(2)&quot;).after(jElement);
+		
+		var beeaaaaam = $(&quot;&lt;div class=&#x27;beeaaaaam&#x27;&gt;&lt;/div&gt;&quot;);
+		$(&quot;#playerselect #player_&quot;+row.ProfilID).append(beeaaaaam);
+		beeaaaaam.animate({opacity:0},200, function(){
+			$(this).remove();
+		});
+	}
+	
+	$(&quot;.selectProfil&quot;, jElement).data(&quot;ProfilID&quot;, row.ProfilID);
+};
+
+/**
+  * Ändert die Darstellung des übergebenen Profil in Auswahlansicht.
+  * Profil ist online - Button ist grün und Text lautet &#x27;Profil online&#x27;
+  * ansonstens - Farbe grau und Text &#x27;Profil auswählen&#x27; 
+  *
+  * @method changeProfilInSelection
+  * @param {JSON} data
+  */
+Auswahl.prototype.changeProfilInSelection = function(data){
+	var elementId = &quot;#player_&quot;+data.ProfilID;
+
+	if(data.isOnline){
+		$(elementId).addClass(&quot;btn_green&quot;);
+		$(&quot;.button_text&quot;, elementId).text(&quot;Profil online&quot;);
+	}else{
+		$(elementId).removeClass(&quot;btn_green&quot;);
+		$(&quot;.button_text&quot;, elementId).text(&quot;Profil auswählen&quot;);
+	}
+	
+	Util.setIfChanged($(&quot;.Name&quot;, elementId),data.Name);
+	Util.setIfChanged($(&quot;.AnmeldeDatum&quot;, elementId),Util.formatTimestamp(data.AnmeldeDatum));
+	Util.setIfChanged($(&quot;.LetzteAnmeldung&quot;, elementId),Util.formatTimestamp(data.LetzteAnmeldung)===null?&quot;Noch nie&quot;:Util.formatTimestamp(data.LetzteAnmeldung));
+	Util.setIfChanged($(&quot;.gespielteSpiele&quot;, elementId),data.gespielteSpiele);
+	Util.setIfChanged($(&quot;.gesetzteSteine&quot;, elementId),data.gesetzteSteine);
+};
+
+/**
+  * Entfernt Profil von Profil-Auswahlansicht
+  *
+  * @method deleteProfilInSelection
+  * @param {JSON} data
+  */
+Auswahl.prototype.deleteProfilInSelection = function(data){
+	$(&quot;#player_&quot;+data.ProfilID).remove();
+}
+
+/**
+ * Spieler erstellt ein neues Spiel und wird zur Lounge weitergeleitet.
+ *
+ * @method submitCreateGame
+ */
+Auswahl.prototype.submitCreateGame = function(){
+	this.createGame({MaxProfil: 4, SpielTypID: 1}, function(data){	
+		if(data.ok===true){
+			$(&quot;#new_game_button button[type=&#x27;reset&#x27;]&quot;).mouseup();
+			this.flash();
+			this.showLounge(data);
+		}else{
+			alert(data.message);
+		}
+	}.bind(this));
+};
+
+/**
+ * Spieler erstellt ein neues Profil, anschließend wird er zur Spiele-Auswahlansicht weitergeleitet.
+ *
+ * @method submitCreateProfil
+ */
+Auswahl.prototype.submitCreateProfil = function(){
+	var name = $(&quot;#new_name&quot;).val();	
+	this.createProfil({&quot;name&quot;: name}, function(data){	
+		if(data.ok===true){
+			$(&quot;#new_player_button button[type=&#x27;reset&#x27;]&quot;).mouseup();
+			this._controller.selectProfil(data.ProfilID, function(){
+				this.showLevelauswahl();
+			}.bind(this));
+		}else{
+			alert(data.message);
+		}
+	}.bind(this));
+};
+
+/**
+ * Meldet Profil ab
+ *
+ * @method abmelden
+ */
+Auswahl.prototype.abmelden = function(){
+	this._controller.disselectProfil();
+	this.flash();
+	this.showProfilauswahl();
+};
+
+/**
+ * Leitet zur Startseite zurück.
+ *
+ * @method backToMain
+ */
+Auswahl.prototype.backToMain = function(){
+	window.location.href = &quot;/&quot;;
+};
+
+/**
+ * Spieler wählt ein Spiel aus. Dabei wird im die Lounge des Spieles angezeigt.
+ *
+ * @method selectLounge
+ * @param {Number} SpielID
+ */
+Auswahl.prototype.selectLounge = function(SpielID){
+	var jElement = $(&quot;#game_&quot;+SpielID);
+	
+	if(!jElement.data(&quot;beitraetbar&quot;)){
+		return;
+	}
+	
+	this._controller.selectGame(SpielID, function(result){
+		if(result.ok === true){
+			this.showLounge(result.data);
+			this.flash();
+		}else{
+			alert(result.message);
+		}
+	}.bind(this));
+};
+
+/**
+ * Spieler verlässt die Lounge und die Spiele-Auswahlansicht erscheint.
+ *
+ * @method disselectLounge
+ * @param {Number} SpielID
+ */
+Auswahl.prototype.disselectLounge = function(SpielID){
+		
+	this._controller.leaveGame(SpielID, function(result){
+		if(result.ok === true){
+			this.showLevelauswahl();
+			this.flash();
+		}else{
+			alert(result.message);
+		}
+	}.bind(this)); 
+	return false;
+};
+
+/**
+ * Spiel wird gestartet.
+ *
+ * @method startGameFromLounge
+ * @param {Number} SpielID
+ */
+Auswahl.prototype.startGameFromLounge = function(SpielID){
+	this._controller.startGame(SpielID, function(result){
+		if(result.ok === true){
+			this.flash();
+			// ab hier übernimmt der Controller
+		}else{
+			alert(result.message);
+		}
+	}.bind(this));
+	return false;
+};
+
+/**
+ * 
+ *
+ * @method showCreateGame
+ */
+Auswahl.prototype.showCreateGame = function(){
+	$(&quot;body&quot;).scrollLeft(0);
+	// es gibt hier noch nichts -&gt; direkt erstellen
+	// leite direkt den click auf den Button ein
+	$(&quot;#new_game_button form&quot;).submit(); 
+	$(this).hide();
+};
+
+/**
+ * Spiel wird gecancelt.
+ *
+ * @method cancelCreateGame
+ */
+Auswahl.prototype.cancelCreateGame = function(){
+	$(&quot;#new_game_button&quot;).removeClass(&quot;register&quot;);
+	$(&quot;#new_game_button&quot;).addClass(&quot;button&quot;);
+	$(&quot;#new_game_button input&quot;).val(&quot;&quot;);
+	$(&quot;#new_game_button .plusButton&quot;).show();
+	$(&quot;#abmelden_button&quot;).show();
+};
+
+/**
+ * Ansicht zur Erstellung eines neuen Profils
+ *
+ * @method showCreateProfil
+ */
+Auswahl.prototype.showCreateProfil = function(){
+	$(&quot;body&quot;).scrollLeft(0);
+	$(&quot;#new_player_button&quot;).addClass(&quot;register&quot;);
+	$(&quot;#new_player_button&quot;).removeClass(&quot;button&quot;);
+	$(&quot;#new_player_button&quot;).removeClass(&quot;on&quot;);
+	$(&quot;#new_player_button .plusButton&quot;).hide();
+	$(&quot;#abmelden_button&quot;).hide();
+	$(&quot;#hauptmenue_button&quot;).hide();
+	$(&quot;#new_player_button&quot;).siblings(&quot;*&quot;).hide();
+};
+
+/**
+ * Versteckt die Ansicht zur Erstellung eines neuen Profils
+ *
+ * @method cancelCreateProfil
+ */
+Auswahl.prototype.cancelCreateProfil = function(){
+	$(&quot;#new_player_button&quot;).removeClass(&quot;register&quot;);
+	$(&quot;#new_player_button&quot;).addClass(&quot;button&quot;);
+	$(&quot;#new_player_button input&quot;).val(&quot;&quot;);
+	$(&quot;#new_player_button .plusButton&quot;).show();
+	$(&quot;#new_player_button&quot;).siblings(&quot;*&quot;).show();
+};
+
+/**
+ * Profil wird ausgewählt, dem Spieler wird die Spiele-Auswahlansicht angezeigt
+ *
+ * @method selectProfil
+ * @param {Number} ProfilID
+ */
+Auswahl.prototype.selectProfil = function(ProfilID){
+	if(!$(&#x27;#player_&#x27;+ProfilID).hasClass(&quot;btn_green&quot;)){
+		this._controller.selectProfil(ProfilID, function(data){
+			this.showLevelauswahl();
+			this.flash();
+		}.bind(this));
+	}
+};
+
+/**
+ * Initalisiert Listeners
+ *
+ * @method _initListeners
+ * @private
+ */
+Auswahl.prototype._initListeners = function(){
+	
+	this._chat.delegate();
+	
+	/* Spiel */
+	
+	// Spiel erstellen anzeigen
+	$(&#x27;#new_game_button .plusButton&#x27;).on(&quot;mouseup&quot;, function(event){
+		this.showCreateGame();
+		event.preventDefault(); 
+	}.bind(this));
+	
+	// Spiel erstellen submit
+	$(&quot;#new_game_button form&quot;).on(&quot;submit&quot;, function(event){
+		this.submitCreateGame();
+		event.preventDefault(); 
+	}.bind(this));
+	
+	// Spiel erstellen abbrechen
+	$(&quot;#new_game_button button[type=&#x27;reset&#x27;]&quot;).on(&quot;mouseup&quot;, function(event){
+		this.cancelCreateGame();
+		event.preventDefault(); 
+	}.bind(this));
+	
+	// Spiel starten
+	$(&quot;#gameselect&quot;).delegate(&quot;.spiel_starten&quot;, &quot;mouseup&quot;, function(event){
+		this.startGameFromLounge($(event.currentTarget).parent().data(&quot;SpielID&quot;));
+		event.preventDefault();
+	}.bind(this));	
+	
+	// Lounge eintreten
+	$(&quot;#gameselect&quot;).delegate(&quot;.spiel_beitreten&quot;, &quot;mouseup&quot;, function(event){
+		this.selectLounge($(event.currentTarget).parent().data(&quot;SpielID&quot;));
+		event.preventDefault();
+	}.bind(this));
+	
+	// Lounge austreten
+	$(&quot;#gameselect&quot;).delegate(&quot;.aus_dem_spiel_austreten&quot;, &quot;mouseup&quot;, function(event){	
+		this.disselectLounge($(event.currentTarget).parent().data(&quot;SpielID&quot;));
+		event.preventDefault();
+	}.bind(this));
+	
+	
+	/* Profil */
+	
+	// Profil erstellen anzeigen
+	$(&#x27;#new_player_button .plusButton&#x27;).on(&quot;mouseup&quot;, function(event){
+		this.showCreateProfil();
+		event.preventDefault(); 
+	}.bind(this));
+	
+	// Profil erstellen abbrechen
+	$(&quot;#new_player_button button[type=&#x27;reset&#x27;]&quot;).on(&quot;mouseup&quot;, function(event){
+		this.cancelCreateProfil();
+		event.preventDefault(); 
+	}.bind(this));
+	
+	// Profil erstellen submit
+	$(&quot;#new_player_button form&quot;).on(&quot;submit&quot;, function(event){
+		this.submitCreateProfil();
+		event.preventDefault(); 
+	}.bind(this));
+	
+	// Profil abmelden
+	$(&quot;#abmelden_button&quot;).on(&quot;click&quot;, function(){	
+		this.abmelden();
+		event.preventDefault();
+	}.bind(this));
+	
+	// Profil auswählen
+	$(&quot;#playerselect&quot;).delegate(&#x27;.selectProfil&#x27;, &quot;mouseup&quot;, function(event){
+		this.selectProfil($(event.currentTarget).data(&quot;ProfilID&quot;));
+		event.preventDefault(); 
+	}.bind(this));
+	
+	// zurück
+	$(&quot;#hauptmenue_button&quot;).on(&quot;click&quot;, function(){	
+		this.backToMain();
+		event.preventDefault();
+	}.bind(this));
+	
+	
+	/* Weiteres */
+	
+	// Horizontales scrollen, bei Vertialem scrollen
+	if(!this._isTouch){
+		$(&#x27;body&#x27;).bind(&#x27;mousewheel&#x27;, function(event, _trash) {
+	        var delta = event.originalEvent.wheelDelta;
+	        $(&quot;body&quot;).scrollLeft($(&quot;body&quot;).scrollLeft() - (delta/8));
+	        event.preventDefault();
+	    });
+	}
+		
+	// allg. wenn man auf einen button click oder tippt oder was auch immer.
+	$(&quot;body&quot;).delegate(&quot;.roundButton, *[type=&#x27;button&#x27;]&quot;, &quot;touchstart mousedown&quot;, function(event){
+		$(this).addClass(&quot;on&quot;);
+	});
+	
+	$(&quot;body&quot;).delegate(&quot;.roundButton, *[type=&#x27;button&#x27;]&quot;, &quot;touchend mouseup&quot;, function(event){
+		$(this).removeClass(&quot;on&quot;);	
+	});
+};
+
+/**
+  * Erstellt Button mit abgerundeten Ecken
+  *
+  * @method _htmlGetRoundButton
+  * @param {String} text
+  * @param {String} clas
+  * @private
+  */
+Auswahl.prototype._htmlGetRoundButton = function(text, clas){
+	return &quot;&lt;div class=&#x27;&quot;+clas+&quot; roundButton&#x27;&gt;&lt;div class=&#x27;roundButton_top&#x27;&gt;&lt;/div&gt;&lt;span class=&#x27;button_text&#x27;&gt;&quot;+text+&quot;&lt;/span&gt;&lt;div class=&#x27;roundButton_bottom&#x27;&gt;&lt;/div&gt;&lt;/div&gt;&quot;;
+};
+
+/**
+  * Erstellt Spielerliste für die Lounge
+  *
+  * @method _htmlMakeLoungeList
+  * @param {Number} MaxProfil
+  * @param {Array} ProfilIn
+  * @private
+  * @example _htmlMakeLoungeList(4, [{...}, {...}]);
+  */
+Auswahl.prototype._htmlMakeLoungeList = function(MaxProfil, ProfilIn){ // n, array
+	var returnString = &quot;&quot;;
+	var i,c;
+	for(i in ProfilIn){
+		c = ProfilIn[i].color;
+		//display:none;
+		returnString += &quot;&lt;li&gt;&lt;span class=&#x27;lounge_element col&#x27; style=&#x27;background-color:rgb(&quot;+c[0]+&quot;,&quot;+c[1]+&quot;,&quot;+c[2]+&quot;);&#x27;&gt;&lt;/span&gt;&lt;i&gt;&quot;+(ProfilIn[i].Name)+&quot;&lt;/i&gt;&lt;/li&gt;&quot;; // $.text führt zu einem stackoverflow.. wtf?..
+	}
+	for(i = ProfilIn.length; i &lt; MaxProfil; i++){
+		returnString += &quot;&lt;li&gt;&lt;i&gt;frei&lt;/i&gt;&lt;/li&gt;&quot;;
+	}
+	return returnString;
+};
+
+/**
+  * Animation
+  *
+  * @method flash
+  */
+Auswahl.prototype.flash = function(){
+	$(&quot;body&quot;).stop().css({opacity: 0.0}).animate({
+		opacity: 1
+	}, 150);
+};
+
+/**
+  * Versteckt Controller und zeigt Auswahl
+  *
+  * @method show
+  */
+Auswahl.prototype.show = function(){
+	this._controller.hide();
+	$(&quot;#auswahl&quot;).show();
+};
+
+/**
+  * Versteckt Auswahl
+  *
+  * @method hide
+  */
+Auswahl.prototype.hide = function(){
+	$(&quot;#auswahl&quot;).hide();
+};
+
+</pre>
+
+</div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/js/tabs.js"></script>
+</body>
+</html>

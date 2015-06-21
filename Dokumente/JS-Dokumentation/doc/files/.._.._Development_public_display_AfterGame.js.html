@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>../../Development/public/display/AfterGame.js - Muliplayer Tetris</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.8.0pr2/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <script src="http://yui.yahooapis.com/combo?3.8.0pr2/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            <h1><a href="../index.html"><img src="../assets/css/logo.png">Muliplayer Tetris: ../../Development/public/display/AfterGame.js</a></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.9</em>
+        </div>
+    </div>
+    <div class="yui3-g">
+
+        <div id="sidebar" class="yui3-u">
+            <div id="modules" class="sidebox">
+    <div class="hd">
+        <h2 class="no-toc">Modules</h2>
+    </div>
+    <div class="bd">
+        <ul>
+            
+                <li><a href="../modules/controller.html">controller</a>
+                
+                </li>
+            
+                <li><a href="../modules/display.html">display</a>
+                
+                </li>
+            
+                <li><a href="../modules/global.html">global</a>
+                
+                </li>
+            
+                <li><a href="../modules/server.html">server</a>
+                
+                </li>
+            
+        </ul>
+    </div>
+</div>
+
+<div id="classes" class="sidebox">
+    <div class="hd">
+        <h2 class="no-toc">Classes</h2>
+    </div>
+    <div class="bd">
+        <ul>
+            
+                <li><a href="../classes/controller.Auswahl.html">controller.Auswahl</a></li>
+            
+                <li><a href="../classes/controller.Chat.html">controller.Chat</a></li>
+            
+                <li><a href="../classes/controller.Controller.html">controller.Controller</a></li>
+            
+                <li><a href="../classes/display.AfterGame.html">display.AfterGame</a></li>
+            
+                <li><a href="../classes/display.Display.html">display.Display</a></li>
+            
+                <li><a href="../classes/display.Lounge.html">display.Lounge</a></li>
+            
+                <li><a href="../classes/display.MyAudio.html">display.MyAudio</a></li>
+            
+                <li><a href="../classes/display.Spieler.html">display.Spieler</a></li>
+            
+                <li><a href="../classes/global.API_SCHEMA.html">global.API_SCHEMA</a></li>
+            
+                <li><a href="../classes/global.BUTTON.html">global.BUTTON</a></li>
+            
+                <li><a href="../classes/global.BUTTONTYPE.html">global.BUTTONTYPE</a></li>
+            
+                <li><a href="../classes/global.CONFIG.html">global.CONFIG</a></li>
+            
+                <li><a href="../classes/global.GAME_EVENT.html">global.GAME_EVENT</a></li>
+            
+                <li><a href="../classes/global.LIST_EVENT.html">global.LIST_EVENT</a></li>
+            
+                <li><a href="../classes/global.pre_defs.html">global.pre_defs</a></li>
+            
+                <li><a href="../classes/global.Util.html">global.Util</a></li>
+            
+                <li><a href="../classes/server.Api.html">server.Api</a></li>
+            
+                <li><a href="../classes/server.Chat.html">server.Chat</a></li>
+            
+                <li><a href="../classes/server.CommandLine.html">server.CommandLine</a></li>
+            
+                <li><a href="../classes/server.Controller.html">server.Controller</a></li>
+            
+                <li><a href="../classes/server.Database.html">server.Database</a></li>
+            
+                <li><a href="../classes/server.Display.html">server.Display</a></li>
+            
+                <li><a href="../classes/server.Game.html">server.Game</a></li>
+            
+                <li><a href="../classes/server.games.AbstractGame.html">server.games.AbstractGame</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.html">server.games.SpielAufZeit</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Block.html">server.games.SpielAufZeit.Block</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Blockelement.html">server.games.SpielAufZeit.Blockelement</a></li>
+            
+                <li><a href="../classes/server.games.SpielAufZeit.Spieler.html">server.games.SpielAufZeit.Spieler</a></li>
+            
+                <li><a href="../classes/server.Main.html">server.Main</a></li>
+            
+                <li><a href="../classes/server.Profil.html">server.Profil</a></li>
+            
+                <li><a href="../classes/server.Router.html">server.Router</a></li>
+            
+                <li><a href="../classes/server.RouterChache.html">server.RouterChache</a></li>
+            
+                <li><a href="../classes/server.Server.html">server.Server</a></li>
+            
+                <li><a href="../classes/server.SpielTyp.html">server.SpielTyp</a></li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="fileTree" class="sidebox">
+    <div class="hd">
+        <h2 class="no-toc">Files</h2>
+    </div>
+    <div class="bd">
+        <ul><li>../<ul><li>../<ul><li>Development/<ul><li>public/<ul><li>controller/<ul><li><a href="../files/.._.._Development_public_controller_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_controller_Auswahl.js.html">Auswahl.js</a></li><li><a href="../files/.._.._Development_public_controller_Chat.js.html">Chat.js</a></li><li><a href="../files/.._.._Development_public_controller_Controller.js.html">Controller.js</a></li></ul></li><li>display/<ul><li><a href="../files/.._.._Development_public_display_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_display_AfterGame.js.html">AfterGame.js</a></li><li><a href="../files/.._.._Development_public_display_Display.js.html">Display.js</a></li><li><a href="../files/.._.._Development_public_display_Lounge.js.html">Lounge.js</a></li><li><a href="../files/.._.._Development_public_display_MyAudio.js.html">MyAudio.js</a></li><li><a href="../files/.._.._Development_public_display_Spieler.js.html">Spieler.js</a></li></ul></li><li>global/<ul><li><a href="../files/.._.._Development_public_global_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_global_Util.js.html">Util.js</a></li><li><a href="../files/.._.._Development_public_global_api-schema.js.html">api-schema.js</a></li><li><a href="../files/.._.._Development_public_global_config.js.html">config.js</a></li><li><a href="../files/.._.._Development_public_global_db.js.html">db.js</a></li><li><a href="../files/.._.._Development_public_global_enum_controller_buttons.js.html">enum_controller_buttons.js</a></li><li><a href="../files/.._.._Development_public_global_events.js.html">events.js</a></li></ul></li><li>highscore/<ul><li><a href="../files/.._.._Development_public_highscore_highscore.js.html">highscore.js</a></li></ul></li><li>profil/<ul><li><a href="../files/.._.._Development_public_profil_profil.js.html">profil.js</a></li></ul></li><li>server/<ul><li><a href="../files/.._.._Development_public_server_Api.js.html">Api.js</a></li><li><a href="../files/.._.._Development_public_server_Chat.js.html">Chat.js</a></li><li><a href="../files/.._.._Development_public_server_CommandLine.js.html">CommandLine.js</a></li><li><a href="../files/.._.._Development_public_server_Controller.js.html">Controller.js</a></li><li><a href="../files/.._.._Development_public_server_Database.js.html">Database.js</a></li><li><a href="../files/.._.._Development_public_server_Display.js.html">Display.js</a></li><li><a href="../files/.._.._Development_public_server_Game.js.html">Game.js</a></li><li>Games/<ul><li><a href="../files/.._.._Development_public_server_Games_AbstractGame.js.html">AbstractGame.js</a></li><li>SpielAufZeit/<ul><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_.Modul.js.html">.Modul.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_Block.js.html">Block.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_Blockelement.js.html">Blockelement.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_SpielAufZeit.js.html">SpielAufZeit.js</a></li><li><a href="../files/.._.._Development_public_server_Games_SpielAufZeit_Spieler.js.html">Spieler.js</a></li></ul></li></ul></li><li><a href="../files/.._.._Development_public_server_Main.js.html">Main.js</a></li><li><a href="../files/.._.._Development_public_server_Profil.js.html">Profil.js</a></li><li><a href="../files/.._.._Development_public_server_Router.js.html">Router.js</a></li><li><a href="../files/.._.._Development_public_server_RouterChache.js.html">RouterChache.js</a></li><li><a href="../files/.._.._Development_public_server_Server.js.html">Server.js</a></li><li><a href="../files/.._.._Development_public_server_SpielTyp.js.html">SpielTyp.js</a></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul>
+    </div>
+</div>
+
+
+
+        </div>
+
+        <div id="main" class="yui3-u">
+            <div class="content"><h4>../../Development/public/display/AfterGame.js</h4>
+
+<pre class="code prettyprint linenums">
+&#x27;use strict&#x27;;
+
+/**
+ *
+ * @module display
+ * @namespace display
+ *
+ * @class AfterGame
+ * @constructor
+ */
+function AfterGame(){
+	/**
+	 * @property _elementId
+	 * @type {String}
+	 * @default &quot;afterGame&quot;
+	 * @private
+	 */
+	this._elementId = &quot;afterGame&quot;;
+	
+	/**
+	 * @property _element
+	 * @type {$}
+	 * @default null
+	 * @private
+	 */
+	this._element = null;
+	
+	/**
+	 * @property _data
+	 * @type {JSON}
+	 * @default null
+	 * @private
+	 */
+	this._data = null;
+}
+
+/**
+ * @method init
+ */
+AfterGame.prototype.init = function(){
+	this._element = $(&quot;#&quot;+this._elementId);
+	$(window).on(&quot;resize&quot;, this.reshape.bind(this));
+};
+
+/**
+ * @method show
+ *
+ * @param {JSON} data
+ */
+AfterGame.prototype.show = function(data){
+//data = ____test;
+	if(data===null){
+		//data = ____test; //  nur zum Testen
+		this._element.html(&quot;Leider keine Daten verfügbar&quot;).show();
+		return;
+	}
+	
+	data.spieler.sort(function(a,b){
+		return a.platz-b.platz;
+	});
+
+	var statistics = data.statistics;
+	var spieler = data.spieler;
+	var c;
+	
+	var spielZeitInMs = statistics.gameEnds;
+	
+	this._element.text(&quot;&quot;);
+	
+	$(&quot;body&quot;).animate({opacity:0}, 550, function(){
+		$(&quot;#display&quot;).text(&quot;&quot;);
+		$(&quot;body&quot;).css(&quot;opacity&quot;,1);
+	
+		this._element.show().css(&quot;opacity&quot;,0).animate({opacity:1}, 550, function(){
+			
+			var liste = &quot;&lt;h1&gt;Und der Gewinner lautet: &lt;/h1&gt;&quot;;
+			liste += (&quot;&lt;ul id=&#x27;gewinnerListe&#x27;&gt;&quot;);
+			for(var i in spieler){
+				c = spieler[i].color;
+			
+				liste += &quot;&lt;li style=&#x27;border-right-color: rgb(&quot;+c[0]+&quot;,&quot;+c[1]+&quot;,&quot;+c[2]+&quot;)&#x27;&gt;&quot;;
+				
+				liste += spieler[i].platz+&quot;. &quot;+spieler[i].name;
+				
+				liste += &quot;&lt;span class=&#x27;gewinnerListePunkte&#x27;&gt;&quot;;
+				liste += spieler[i].punkte+&quot; Punkte&quot;;
+				liste += &quot;&lt;/span&gt;&quot;;
+				liste += &quot;&lt;span class=&#x27;gewinnerListeStuff&#x27;&gt;&quot;;
+				liste += &quot;Level: &quot;+spieler[i].level+&quot;&lt;br /&gt;&quot;;
+				liste += &quot;Lines: &quot;+spieler[i].lines+&quot;&quot;;
+				liste += &quot;&lt;/span&gt;&quot;;
+				
+				liste += &quot;&lt;/li&gt;&quot;;
+			}
+			liste += (&quot;&lt;/ul&gt;&quot;);
+			liste += &quot;&lt;h2&gt;Was wann geschah:&lt;/h2&gt;&quot;;
+			liste += &quot;&lt;div id=&#x27;graph&#x27;&gt;&lt;/div&gt;&quot;;
+			
+			this._element.html(liste);
+			
+			this.drawGraph(data);
+			this._data = data;
+			
+		}.bind(this));
+	}.bind(this));
+};
+
+/**
+ * @method drawGraph
+ *
+ * @param {JSON} data
+ */
+AfterGame.prototype.drawGraph = function(data){
+	$(&quot;#graph svg&quot;).remove();
+	
+	var statistics = data.statistics;
+	var spieler = data.spieler;
+	var height = 200;
+   	var width = $(&quot;#graph&quot;).width();
+	var end = statistics.gameEnds;
+	var elements = [];
+	var maxPunkte = spieler[0].punkte; 
+	
+    var paper = Raphael(&quot;graph&quot;, &quot;100%&quot;, height);
+    
+    var maxHeight = height-5;
+    
+	var z, x, y, i ,j, c;
+    var path;
+    // horizontale
+    for(z = 0; z &lt;= 4; z++){
+    	y = Math.round(height-5-(((height-10)/4)*z));
+		path = &quot;M0 &quot;+y;
+		path += &quot;L&quot;+width+&quot; &quot;+y;
+	    c = paper.path(path);
+	    c.attr(&quot;stroke&quot;, &quot;rgba(0,0,0,0.2)&quot;);
+	    if(z%2==0){
+	    	c.attr(&quot;stroke-width&quot;, &quot;1.5&quot;);
+	    }else{
+	    	c.attr(&quot;stroke-width&quot;, &quot;1&quot;);
+	    }
+	    c.attr(&quot;stroke-dasharray&quot;, &quot;.&quot;);
+    }
+    
+    // graphen
+	for(i in spieler){
+		path = &quot;M0 &quot;+height;
+		for(j in statistics.spieler[spieler[i].id].punkteAt){
+			if(isNaN(j)){
+				continue;
+			}
+			x = ((width/end)*j);
+			y = height-(maxHeight/maxPunkte)*statistics.spieler[spieler[i].id].punkteAt[j];
+			path += &quot;L&quot;+x+&quot; &quot;+(y);
+		}
+	    c = paper.path(path);
+	    c.attr(&quot;stroke&quot;, &quot;rgba(&quot;+spieler[i].color[0]+&quot;,&quot;+spieler[i].color[1]+&quot;,&quot;+spieler[i].color[2]+&quot;, 0.9)&quot;);
+	    c.attr(&quot;stroke-width&quot;, &quot;3&quot;);
+	    
+		c = paper.path(path = &quot;M&quot;+x+&quot; &quot;+Math.round(y)+&quot; L&quot;+width+&quot; &quot;+Math.round(y));
+	    c.attr(&quot;stroke-width&quot;, &quot;1&quot;);
+	    c.attr(&quot;stroke&quot;, &quot;rgba(&quot;+spieler[i].color[0]+&quot;,&quot;+spieler[i].color[1]+&quot;,&quot;+spieler[i].color[2]+&quot;, 0.5)&quot;);
+	    c.attr(&quot;stroke-dasharray&quot;, &quot;-&quot;);
+	}
+	
+	// ausscheidungen zeigen
+	for(i in spieler){
+		j = statistics.spieler[spieler[i].id].died;
+		y = height-(maxHeight/maxPunkte)*statistics.spieler[spieler[i].id].punkte;
+		x = ((width/end)*j);
+		//y = 
+		c = paper.circle(x, y, 3);
+	    c.attr(&quot;fill&quot;, &quot;rgba(&quot;+spieler[i].color[0]+&quot;,&quot;+spieler[i].color[1]+&quot;,&quot;+spieler[i].color[2]+&quot;, 0.4)&quot;);
+	    c.attr(&quot;stroke&quot;, &quot;rgba(&quot;+spieler[i].color[0]+&quot;,&quot;+spieler[i].color[1]+&quot;,&quot;+spieler[i].color[2]+&quot;, 1)&quot;);
+	    c.attr(&quot;stroke-width&quot;, &quot;1&quot;);
+	    
+		c = paper.rect(Math.round(x-1), 5, 1, height-10);
+	    c.attr(&quot;stroke-width&quot;, &quot;0&quot;);
+	    c.attr(&quot;fill&quot;, &quot;rgba(&quot;+spieler[i].color[0]+&quot;,&quot;+spieler[i].color[1]+&quot;,&quot;+spieler[i].color[2]+&quot;, 0.7)&quot;);
+	}
+	
+};
+
+/**
+ * @method reshape
+ */
+AfterGame.prototype.reshape = function(){
+	if(this._data!==null){
+		this.drawGraph(this._data);
+	}
+};
+
+/**
+ * @method hide
+ */
+AfterGame.prototype.hide = function(){
+	this._element.hide();
+};
+
+var ____test = JSON.parse(&#x27;{&quot;spieler&quot;:[{&quot;cursor&quot;:[1,10],&quot;id&quot;:3,&quot;color&quot;:[149,171,57],&quot;element&quot;:&quot;ES&quot;,&quot;punkte&quot;:218,&quot;name&quot;:&quot;Cengiz&quot;,&quot;active&quot;:false,&quot;platz&quot;:1,&quot;level&quot;:1,&quot;lines&quot;:8},{&quot;cursor&quot;:[17,0],&quot;id&quot;:30,&quot;color&quot;:[242,104,53],&quot;element&quot;:&quot;St&quot;,&quot;punkte&quot;:206,&quot;name&quot;:&quot;Caroline&quot;,&quot;active&quot;:false,&quot;platz&quot;:2,&quot;level&quot;:2,&quot;lines&quot;:11},{&quot;cursor&quot;:[18,11],&quot;id&quot;:1,&quot;color&quot;:[108,106,166],&quot;element&quot;:&quot;St&quot;,&quot;punkte&quot;:48,&quot;name&quot;:&quot;Anna&quot;,&quot;active&quot;:false,&quot;platz&quot;:3,&quot;level&quot;:1,&quot;lines&quot;:2}],&quot;statistics&quot;:{&quot;spieler&quot;:{&quot;1&quot;:{&quot;punkte&quot;:48,&quot;buttonAt&quot;:{&quot;11716&quot;:[1,1],&quot;11724&quot;:[1,0],&quot;11726&quot;:[1,1],&quot;11786&quot;:[1,0],&quot;11850&quot;:[1,1],&quot;11927&quot;:[1,0],&quot;12007&quot;:[1,1],&quot;12055&quot;:[1,0],&quot;12151&quot;:[1,1],&quot;12232&quot;:[1,0],&quot;12294&quot;:[1,1],&quot;12390&quot;:[1,0],&quot;12453&quot;:[1,1],&quot;12547&quot;:[1,0],&quot;22904&quot;:[3,1],&quot;23841&quot;:[1,1],&quot;23921&quot;:[1,0],&quot;24285&quot;:[2,1],&quot;28376&quot;:[0,1],&quot;28448&quot;:[0,0],&quot;28551&quot;:[0,1],&quot;28639&quot;:[0,0],&quot;29006&quot;:[0,1],&quot;29598&quot;:[0,0],&quot;30111&quot;:[2,1],&quot;30766&quot;:[1,1],&quot;30878&quot;:[1,0],&quot;30998&quot;:[3,1],&quot;31214&quot;:[1,1],&quot;31310&quot;:[1,0],&quot;31583&quot;:[2,1],&quot;32191&quot;:[1,1],&quot;32294&quot;:[1,0],&quot;32447&quot;:[2,1],&quot;32944&quot;:[1,1],&quot;33039&quot;:[1,0],&quot;33254&quot;:[2,1],&quot;33446&quot;:[1,1],&quot;33862&quot;:[1,0],&quot;34167&quot;:[2,1],&quot;35118&quot;:[1,1],&quot;35222&quot;:[1,0],&quot;35318&quot;:[3,1],&quot;35486&quot;:[3,1],&quot;35631&quot;:[3,1],&quot;35927&quot;:[1,1],&quot;36014&quot;:[1,0],&quot;50135&quot;:[3,1],&quot;50510&quot;:[1,1],&quot;50633&quot;:[1,0],&quot;51886&quot;:[2,1],&quot;52311&quot;:[0,1],&quot;52551&quot;:[0,0],&quot;52854&quot;:[0,1],&quot;52933&quot;:[0,0],&quot;53038&quot;:[0,1],&quot;53126&quot;:[0,0],&quot;53319&quot;:[2,1],&quot;53854&quot;:[1,1],&quot;53958&quot;:[1,0],&quot;54431&quot;:[2,1],&quot;56407&quot;:[0,1],&quot;56862&quot;:[0,0],&quot;57070&quot;:[0,1],&quot;57181&quot;:[0,0],&quot;57286&quot;:[0,1],&quot;57365&quot;:[0,0],&quot;57471&quot;:[0,1],&quot;57566&quot;:[0,0],&quot;60062&quot;:[0,1],&quot;60365&quot;:[0,0],&quot;60566&quot;:[0,1],&quot;60669&quot;:[0,0],&quot;60798&quot;:[0,1],&quot;60917&quot;:[0,0],&quot;71350&quot;:[3,1],&quot;71518&quot;:[3,1],&quot;71766&quot;:[1,1],&quot;71854&quot;:[1,0],&quot;72078&quot;:[0,1],&quot;72149&quot;:[0,0],&quot;101422&quot;:[1,1],&quot;101703&quot;:[1,0],&quot;101718&quot;:[3,1],&quot;101902&quot;:[3,1],&quot;102125&quot;:[0,1],&quot;102204&quot;:[0,0],&quot;117117&quot;:[0,1],&quot;117396&quot;:[0,0],&quot;117485&quot;:[3,1],&quot;117629&quot;:[3,1],&quot;117861&quot;:[0,1],&quot;117965&quot;:[0,0],&quot;118221&quot;:[0,1],&quot;118356&quot;:[0,0],&quot;118517&quot;:[2,1],&quot;118893&quot;:[1,1],&quot;119612&quot;:[1,0],&quot;119829&quot;:[1,1],&quot;119965&quot;:[1,0],&quot;120164&quot;:[1,1],&quot;120653&quot;:[1,0],&quot;120709&quot;:[2,1],&quot;120860&quot;:[0,1],&quot;121524&quot;:[0,0]},&quot;punkteAt&quot;:{&quot;20376&quot;:1,&quot;24285&quot;:2,&quot;30111&quot;:3,&quot;31582&quot;:4,&quot;32446&quot;:5,&quot;33254&quot;:6,&quot;34166&quot;:7,&quot;47458&quot;:8,&quot;51886&quot;:9,&quot;53318&quot;:10,&quot;54430&quot;:20,&quot;54431&quot;:21,&quot;69791&quot;:42,&quot;84128&quot;:43,&quot;97477&quot;:44,&quot;113859&quot;:45,&quot;118517&quot;:46,&quot;120709&quot;:47,&quot;121726&quot;:48,&quot;NaN&quot;:0},&quot;died&quot;:121726},&quot;3&quot;:{&quot;punkte&quot;:218,&quot;buttonAt&quot;:{&quot;6366&quot;:[0,1],&quot;6461&quot;:[0,0],&quot;6526&quot;:[0,1],&quot;6619&quot;:[0,0],&quot;6691&quot;:[0,1],&quot;6771&quot;:[0,0],&quot;6858&quot;:[0,1],&quot;6937&quot;:[0,0],&quot;7003&quot;:[0,1],&quot;7081&quot;:[0,0],&quot;7359&quot;:[0,1],&quot;7423&quot;:[0,0],&quot;7525&quot;:[0,1],&quot;7605&quot;:[0,0],&quot;7702&quot;:[0,1],&quot;7772&quot;:[0,0],&quot;7851&quot;:[0,1],&quot;7924&quot;:[0,0],&quot;7997&quot;:[0,1],&quot;8081&quot;:[0,0],&quot;8760&quot;:[2,1],&quot;9402&quot;:[1,1],&quot;9481&quot;:[1,0],&quot;9560&quot;:[1,1],&quot;9639&quot;:[1,0],&quot;9817&quot;:[2,1],&quot;14521&quot;:[1,1],&quot;14532&quot;:[1,0],&quot;14533&quot;:[1,1],&quot;14616&quot;:[1,0],&quot;14957&quot;:[1,1],&quot;15083&quot;:[1,0],&quot;18409&quot;:[2,1],&quot;18416&quot;:[2,1],&quot;19598&quot;:[0,1],&quot;19646&quot;:[0,0],&quot;19948&quot;:[3,1],&quot;36999&quot;:[0,1],&quot;37078&quot;:[0,0],&quot;37463&quot;:[0,1],&quot;37878&quot;:[0,0],&quot;39887&quot;:[2,1],&quot;40367&quot;:[1,1],&quot;40454&quot;:[1,0],&quot;40631&quot;:[3,1],&quot;40790&quot;:[3,1],&quot;40991&quot;:[0,1],&quot;41054&quot;:[0,0],&quot;41327&quot;:[2,1],&quot;41783&quot;:[1,1],&quot;41887&quot;:[1,0],&quot;42256&quot;:[3,1],&quot;42423&quot;:[3,1],&quot;42558&quot;:[3,1],&quot;42751&quot;:[1,1],&quot;42870&quot;:[1,0],&quot;43039&quot;:[2,1],&quot;43510&quot;:[1,1],&quot;43598&quot;:[1,0],&quot;43758&quot;:[3,1],&quot;44310&quot;:[2,1],&quot;45974&quot;:[3,1],&quot;45979&quot;:[3,1],&quot;46518&quot;:[1,1],&quot;46614&quot;:[1,0],&quot;58632&quot;:[0,1],&quot;59078&quot;:[0,0],&quot;61671&quot;:[2,1],&quot;67998&quot;:[1,1],&quot;68486&quot;:[1,0],&quot;68710&quot;:[1,1],&quot;68990&quot;:[1,0],&quot;69222&quot;:[1,1],&quot;69510&quot;:[3,1],&quot;69949&quot;:[1,0],&quot;74432&quot;:[0,1],&quot;74853&quot;:[0,0],&quot;75006&quot;:[3,1],&quot;75262&quot;:[0,1],&quot;75341&quot;:[0,0],&quot;75446&quot;:[0,1],&quot;75550&quot;:[0,0],&quot;75702&quot;:[3,1],&quot;76071&quot;:[2,1],&quot;76918&quot;:[1,1],&quot;77166&quot;:[3,1],&quot;77693&quot;:[1,0],&quot;77966&quot;:[2,1],&quot;78382&quot;:[0,1],&quot;78590&quot;:[0,0],&quot;78823&quot;:[0,1],&quot;78981&quot;:[0,0],&quot;79526&quot;:[2,1],&quot;80222&quot;:[1,1],&quot;80285&quot;:[1,0],&quot;80374&quot;:[3,1],&quot;80479&quot;:[1,1],&quot;80782&quot;:[1,0],&quot;81302&quot;:[2,1],&quot;81750&quot;:[0,1],&quot;81941&quot;:[0,0],&quot;82158&quot;:[0,1],&quot;82461&quot;:[0,0],&quot;82838&quot;:[0,1],&quot;82935&quot;:[0,0],&quot;83150&quot;:[2,1],&quot;83381&quot;:[0,1],&quot;83694&quot;:[0,0],&quot;84190&quot;:[1,1],&quot;84510&quot;:[3,1],&quot;85005&quot;:[1,0],&quot;85476&quot;:[3,1],&quot;85637&quot;:[1,1],&quot;85813&quot;:[3,1],&quot;86277&quot;:[1,0],&quot;91222&quot;:[0,1],&quot;91558&quot;:[0,0],&quot;91709&quot;:[3,1],&quot;91885&quot;:[3,1],&quot;92069&quot;:[0,1],&quot;92165&quot;:[0,0],&quot;92253&quot;:[0,1],&quot;92365&quot;:[0,0],&quot;92525&quot;:[2,1],&quot;96318&quot;:[0,1],&quot;96469&quot;:[0,0],&quot;96565&quot;:[0,1],&quot;96669&quot;:[0,0],&quot;97414&quot;:[2,1],&quot;97965&quot;:[0,1],&quot;98101&quot;:[0,0],&quot;98454&quot;:[3,1],&quot;98717&quot;:[1,1],&quot;98885&quot;:[1,0],&quot;99030&quot;:[1,1],&quot;99157&quot;:[1,0],&quot;99237&quot;:[1,1],&quot;99333&quot;:[1,0],&quot;99397&quot;:[1,1],&quot;99501&quot;:[1,0],&quot;99646&quot;:[2,1],&quot;103118&quot;:[0,1],&quot;103582&quot;:[0,0],&quot;103921&quot;:[1,1],&quot;104029&quot;:[1,0],&quot;104318&quot;:[2,1],&quot;106590&quot;:[1,1],&quot;106869&quot;:[1,0],&quot;107357&quot;:[1,1],&quot;107475&quot;:[1,0],&quot;107566&quot;:[1,1],&quot;107660&quot;:[1,0],&quot;107741&quot;:[1,1],&quot;107861&quot;:[1,0],&quot;107917&quot;:[1,1],&quot;108013&quot;:[1,0],&quot;108087&quot;:[1,1],&quot;108181&quot;:[1,0],&quot;108245&quot;:[1,1],&quot;108348&quot;:[1,0],&quot;108525&quot;:[2,1],&quot;108997&quot;:[0,1],&quot;109564&quot;:[0,0],&quot;110117&quot;:[3,1],&quot;110253&quot;:[3,1],&quot;162221&quot;:[0,1],&quot;162980&quot;:[0,0],&quot;178100&quot;:[1,1],&quot;178163&quot;:[1,0],&quot;178260&quot;:[3,1],&quot;178429&quot;:[3,1],&quot;178947&quot;:[3,1],&quot;179180&quot;:[0,1],&quot;179291&quot;:[0,0],&quot;195028&quot;:[1,1],&quot;195235&quot;:[1,0],&quot;196395&quot;:[3,1],&quot;196876&quot;:[1,1],&quot;197595&quot;:[1,0],&quot;197819&quot;:[0,1],&quot;197876&quot;:[0,0],&quot;198155&quot;:[1,1],&quot;198259&quot;:[1,0],&quot;198524&quot;:[2,1],&quot;200492&quot;:[3,1],&quot;200916&quot;:[1,1],&quot;200995&quot;:[1,0],&quot;201115&quot;:[1,1],&quot;201155&quot;:[1,0],&quot;201189&quot;:[3,1],&quot;201371&quot;:[3,1],&quot;201627&quot;:[1,1],&quot;201741&quot;:[1,0],&quot;201948&quot;:[3,1],&quot;202123&quot;:[3,1],&quot;202283&quot;:[3,1],&quot;202748&quot;:[2,1],&quot;203107&quot;:[0,1],&quot;203347&quot;:[0,0],&quot;203507&quot;:[3,1],&quot;203835&quot;:[1,1],&quot;203938&quot;:[1,0],&quot;204036&quot;:[2,1],&quot;204380&quot;:[0,1],&quot;205179&quot;:[0,0],&quot;205387&quot;:[1,1],&quot;205475&quot;:[1,0],&quot;205580&quot;:[2,1],&quot;206243&quot;:[1,1],&quot;206307&quot;:[1,0],&quot;206323&quot;:[3,1],&quot;206636&quot;:[1,1],&quot;206675&quot;:[1,0],&quot;206907&quot;:[0,1],&quot;207003&quot;:[0,0],&quot;207132&quot;:[2,1],&quot;208099&quot;:[0,1],&quot;208235&quot;:[0,0],&quot;208795&quot;:[0,1],&quot;208875&quot;:[0,0],&quot;208988&quot;:[2,1],&quot;209843&quot;:[0,1],&quot;209947&quot;:[0,0],&quot;210188&quot;:[1,1],&quot;210667&quot;:[1,0],&quot;210915&quot;:[1,1],&quot;211011&quot;:[1,0],&quot;211227&quot;:[2,1],&quot;216260&quot;:[1,1],&quot;216674&quot;:[1,0],&quot;216779&quot;:[3,1],&quot;217227&quot;:[2,1],&quot;217700&quot;:[1,1],&quot;217802&quot;:[1,0],&quot;217891&quot;:[1,1],&quot;217979&quot;:[1,0],&quot;218100&quot;:[2,1],&quot;218339&quot;:[0,1],&quot;218698&quot;:[0,0],&quot;219075&quot;:[0,1],&quot;219234&quot;:[0,0],&quot;219347&quot;:[3,1],&quot;219563&quot;:[0,1],&quot;219658&quot;:[0,0],&quot;219779&quot;:[2,1],&quot;220563&quot;:[1,1],&quot;220834&quot;:[1,0],&quot;220899&quot;:[3,1],&quot;221051&quot;:[3,1],&quot;221235&quot;:[1,1],&quot;221330&quot;:[1,0],&quot;221467&quot;:[2,1],&quot;221667&quot;:[0,1],&quot;222147&quot;:[0,0],&quot;222363&quot;:[0,1],&quot;222507&quot;:[0,0],&quot;222683&quot;:[3,1],&quot;222899&quot;:[1,1],&quot;222979&quot;:[1,0],&quot;223091&quot;:[2,1],&quot;223435&quot;:[1,1],&quot;223739&quot;:[1,0],&quot;224146&quot;:[3,1],&quot;224283&quot;:[1,1],&quot;224715&quot;:[1,0],&quot;225035&quot;:[2,1],&quot;225525&quot;:[0,1],&quot;225890&quot;:[0,0],&quot;226203&quot;:[3,1],&quot;226531&quot;:[0,1],&quot;226554&quot;:[0,0],&quot;226875&quot;:[1,1],&quot;226979&quot;:[1,0],&quot;227035&quot;:[2,1],&quot;227690&quot;:[1,1],&quot;227779&quot;:[1,0],&quot;228235&quot;:[1,1],&quot;228323&quot;:[1,0],&quot;228523&quot;:[1,1],&quot;228611&quot;:[1,0],&quot;228707&quot;:[2,1],&quot;229467&quot;:[0,1],&quot;230010&quot;:[0,0],&quot;230107&quot;:[3,1],&quot;230291&quot;:[3,1],&quot;230580&quot;:[0,1],&quot;230659&quot;:[0,0],&quot;230771&quot;:[2,1],&quot;231490&quot;:[1,1],&quot;231682&quot;:[1,0],&quot;231811&quot;:[1,1],&quot;231938&quot;:[1,0],&quot;232115&quot;:[1,1],&quot;232234&quot;:[1,0],&quot;232315&quot;:[2,1],&quot;232770&quot;:[0,1],&quot;232882&quot;:[0,0],&quot;233010&quot;:[0,1],&quot;233130&quot;:[0,0],&quot;233323&quot;:[2,1],&quot;233851&quot;:[1,1],&quot;233954&quot;:[1,0],&quot;234154&quot;:[1,1],&quot;234474&quot;:[1,0],&quot;234635&quot;:[0,1],&quot;235402&quot;:[0,0],&quot;235603&quot;:[1,1],&quot;235723&quot;:[1,0],&quot;235810&quot;:[1,1],&quot;235922&quot;:[1,0],&quot;236029&quot;:[2,1],&quot;236571&quot;:[0,1],&quot;236706&quot;:[0,0],&quot;236818&quot;:[3,1],&quot;236962&quot;:[3,1],&quot;237147&quot;:[0,1],&quot;237330&quot;:[0,0],&quot;237491&quot;:[2,1],&quot;238555&quot;:[1,1],&quot;239042&quot;:[1,0],&quot;239243&quot;:[3,1],&quot;239403&quot;:[3,1],&quot;239531&quot;:[1,1],&quot;239986&quot;:[1,0],&quot;240266&quot;:[0,1],&quot;240306&quot;:[0,0],&quot;240538&quot;:[1,1],&quot;240642&quot;:[1,0],&quot;240707&quot;:[2,1],&quot;241218&quot;:[0,1],&quot;241635&quot;:[0,0],&quot;241779&quot;:[3,1],&quot;244916&quot;:[2,1],&quot;245546&quot;:[0,1],&quot;245819&quot;:[0,0],&quot;245955&quot;:[3,1],&quot;247019&quot;:[2,1],&quot;247603&quot;:[1,1],&quot;248194&quot;:[1,0],&quot;248266&quot;:[3,1],&quot;248443&quot;:[3,1],&quot;248634&quot;:[1,1],&quot;248762&quot;:[1,0],&quot;248874&quot;:[1,1],&quot;248978&quot;:[1,0],&quot;249082&quot;:[1,1],&quot;249162&quot;:[1,0],&quot;249307&quot;:[2,1],&quot;249882&quot;:[0,1],&quot;250170&quot;:[0,0],&quot;250603&quot;:[2,1],&quot;251226&quot;:[0,1],&quot;251346&quot;:[0,0],&quot;251514&quot;:[1,1],&quot;251601&quot;:[1,0],&quot;251771&quot;:[0,1],&quot;252434&quot;:[0,0],&quot;252770&quot;:[3,1],&quot;252970&quot;:[0,1],&quot;253034&quot;:[0,0],&quot;253122&quot;:[0,1],&quot;253194&quot;:[0,0],&quot;253387&quot;:[2,1],&quot;253819&quot;:[1,1],&quot;254058&quot;:[1,0],&quot;254186&quot;:[0,1],&quot;254298&quot;:[0,0],&quot;254411&quot;:[0,1],&quot;254906&quot;:[0,0],&quot;256115&quot;:[2,1],&quot;256826&quot;:[1,1],&quot;257546&quot;:[1,0],&quot;257898&quot;:[2,1],&quot;258282&quot;:[0,1],&quot;258898&quot;:[0,0],&quot;259466&quot;:[1,1],&quot;259595&quot;:[1,0],&quot;259754&quot;:[1,1],&quot;259858&quot;:[1,0],&quot;259938&quot;:[1,1],&quot;260034&quot;:[1,0],&quot;261899&quot;:[0,1],&quot;262466&quot;:[0,0],&quot;262546&quot;:[2,1],&quot;262875&quot;:[1,1],&quot;263242&quot;:[1,0],&quot;263338&quot;:[0,1],&quot;263666&quot;:[0,0],&quot;263762&quot;:[1,1],&quot;264506&quot;:[1,0],&quot;264770&quot;:[3,1],&quot;264930&quot;:[1,1],&quot;265041&quot;:[1,0],&quot;265114&quot;:[1,1],&quot;265210&quot;:[1,0],&quot;265298&quot;:[2,1],&quot;265667&quot;:[1,1],&quot;265779&quot;:[1,0],&quot;265842&quot;:[1,1],&quot;265946&quot;:[1,0],&quot;266042&quot;:[2,1],&quot;266258&quot;:[0,1],&quot;266761&quot;:[0,0],&quot;266914&quot;:[3,1],&quot;267466&quot;:[3,1],&quot;267754&quot;:[0,1],&quot;268242&quot;:[0,0],&quot;268690&quot;:[0,1],&quot;268834&quot;:[0,0],&quot;269346&quot;:[1,1],&quot;269618&quot;:[1,0],&quot;269842&quot;:[3,1],&quot;270130&quot;:[0,1],&quot;270241&quot;:[0,0],&quot;270354&quot;:[0,1],&quot;270450&quot;:[0,0],&quot;270538&quot;:[0,1],&quot;270657&quot;:[0,0],&quot;270858&quot;:[0,1],&quot;271001&quot;:[0,0],&quot;272103&quot;:[2,1],&quot;273090&quot;:[1,1],&quot;273617&quot;:[1,0],&quot;273730&quot;:[3,1],&quot;280690&quot;:[2,1],&quot;281026&quot;:[0,1],&quot;281474&quot;:[0,0],&quot;281762&quot;:[0,1],&quot;281857&quot;:[0,0],&quot;281938&quot;:[0,1],&quot;282025&quot;:[0,0],&quot;282098&quot;:[0,1],&quot;282193&quot;:[0,0],&quot;282306&quot;:[2,1],&quot;282858&quot;:[1,1],&quot;283225&quot;:[1,0],&quot;283562&quot;:[2,1],&quot;284226&quot;:[0,1],&quot;284537&quot;:[0,0],&quot;284658&quot;:[3,1],&quot;284834&quot;:[3,1],&quot;284994&quot;:[3,1],&quot;285434&quot;:[2,1],&quot;285770&quot;:[1,1],&quot;285906&quot;:[1,0],&quot;286002&quot;:[1,1],&quot;286105&quot;:[1,0],&quot;286314&quot;:[3,1],&quot;286538&quot;:[0,1],&quot;286625&quot;:[0,0],&quot;286818&quot;:[2,1],&quot;287386&quot;:[1,1],&quot;287633&quot;:[1,0],&quot;287938&quot;:[2,1],&quot;288395&quot;:[3,1],&quot;288554&quot;:[3,1],&quot;289009&quot;:[1,1],&quot;289130&quot;:[1,0],&quot;289209&quot;:[3,1],&quot;289377&quot;:[3,1],&quot;289569&quot;:[1,1],&quot;289681&quot;:[1,0],&quot;290050&quot;:[0,1],&quot;290145&quot;:[0,0],&quot;290234&quot;:[2,1],&quot;290521&quot;:[1,1],&quot;290689&quot;:[1,0],&quot;290969&quot;:[1,1],&quot;291065&quot;:[1,0],&quot;291202&quot;:[2,1],&quot;291698&quot;:[0,1],&quot;291905&quot;:[0,0],&quot;292025&quot;:[1,1],&quot;292241&quot;:[1,0],&quot;292354&quot;:[3,1],&quot;292514&quot;:[3,1],&quot;292665&quot;:[3,1],&quot;292818&quot;:[1,1],&quot;292929&quot;:[1,0],&quot;293066&quot;:[2,1],&quot;293409&quot;:[1,1],&quot;293642&quot;:[1,0],&quot;293842&quot;:[2,1],&quot;294449&quot;:[1,1],&quot;294529&quot;:[1,0],&quot;294617&quot;:[3,1],&quot;294777&quot;:[3,1],&quot;295162&quot;:[2,1],&quot;295570&quot;:[0,1],&quot;296281&quot;:[0,0],&quot;296706&quot;:[1,1],&quot;296833&quot;:[1,0],&quot;297265&quot;:[1,1],&quot;297401&quot;:[1,0],&quot;297762&quot;:[1,1],&quot;298737&quot;:[1,0],&quot;298802&quot;:[2,1],&quot;299113&quot;:[0,1],&quot;299665&quot;:[0,0],&quot;300658&quot;:[0,1],&quot;300898&quot;:[0,0],&quot;301089&quot;:[3,1],&quot;301297&quot;:[1,1],&quot;301402&quot;:[1,0],&quot;301481&quot;:[1,1],&quot;301569&quot;:[1,0],&quot;301715&quot;:[2,1],&quot;301946&quot;:[0,1],&quot;302289&quot;:[0,0],&quot;302393&quot;:[3,1],&quot;302546&quot;:[3,1],&quot;303106&quot;:[1,1],&quot;303193&quot;:[1,0],&quot;303257&quot;:[2,1],&quot;303721&quot;:[0,1],&quot;303945&quot;:[0,0],&quot;304057&quot;:[3,1],&quot;304209&quot;:[3,1],&quot;304489&quot;:[0,1],&quot;304561&quot;:[0,0],&quot;304682&quot;:[2,1],&quot;305106&quot;:[0,1],&quot;305361&quot;:[0,0],&quot;305602&quot;:[1,1],&quot;305953&quot;:[1,0],&quot;306297&quot;:[1,1],&quot;306417&quot;:[1,0],&quot;307377&quot;:[0,1],&quot;307505&quot;:[0,0],&quot;307649&quot;:[3,1],&quot;308057&quot;:[1,1],&quot;308145&quot;:[1,0],&quot;308243&quot;:[2,1],&quot;308458&quot;:[0,1],&quot;308881&quot;:[0,0],&quot;308993&quot;:[1,1],&quot;309170&quot;:[1,0],&quot;309289&quot;:[1,1],&quot;309409&quot;:[1,0],&quot;309506&quot;:[2,1],&quot;309874&quot;:[1,1],&quot;309961&quot;:[1,0],&quot;310497&quot;:[3,1],&quot;310657&quot;:[3,1],&quot;310801&quot;:[3,1],&quot;310953&quot;:[1,1],&quot;311057&quot;:[1,0],&quot;311138&quot;:[1,1],&quot;311257&quot;:[1,0],&quot;311650&quot;:[2,1],&quot;313442&quot;:[0,1],&quot;313553&quot;:[0,0],&quot;313681&quot;:[3,1],&quot;314103&quot;:[2,1],&quot;314394&quot;:[0,1],&quot;314793&quot;:[0,0],&quot;315049&quot;:[1,1],&quot;315145&quot;:[1,0],&quot;315218&quot;:[2,1],&quot;316305&quot;:[3,1],&quot;316481&quot;:[3,1],&quot;316641&quot;:[1,1],&quot;316753&quot;:[1,0],&quot;316914&quot;:[2,1],&quot;317257&quot;:[0,1],&quot;317585&quot;:[0,0],&quot;317665&quot;:[3,1],&quot;317841&quot;:[3,1],&quot;317993&quot;:[3,1],&quot;318217&quot;:[0,1],&quot;318329&quot;:[0,0],&quot;318434&quot;:[2,1],&quot;318825&quot;:[1,1],&quot;319304&quot;:[1,0],&quot;320129&quot;:[0,1],&quot;320457&quot;:[0,0],&quot;320753&quot;:[1,1],&quot;321145&quot;:[1,0],&quot;321401&quot;:[3,1],&quot;321793&quot;:[1,1],&quot;321904&quot;:[1,0],&quot;324506&quot;:[2,1],&quot;325409&quot;:[0,1],&quot;325745&quot;:[0,0],&quot;325961&quot;:[3,1],&quot;326321&quot;:[0,1],&quot;326416&quot;:[0,0],&quot;326521&quot;:[2,1],&quot;327161&quot;:[0,1],&quot;327481&quot;:[0,0],&quot;327657&quot;:[1,1],&quot;328161&quot;:[3,1],&quot;328330&quot;:[3,1],&quot;328467&quot;:[1,0],&quot;328802&quot;:[2,1],&quot;329441&quot;:[3,1],&quot;329881&quot;:[2,1],&quot;330217&quot;:[0,1],&quot;330464&quot;:[0,0],&quot;330801&quot;:[0,1],&quot;330889&quot;:[0,0],&quot;330993&quot;:[2,1],&quot;331273&quot;:[0,1],&quot;331865&quot;:[0,0],&quot;332193&quot;:[1,1],&quot;332296&quot;:[1,0],&quot;332393&quot;:[2,1],&quot;332689&quot;:[0,1],&quot;332928&quot;:[0,0],&quot;333017&quot;:[3,1],&quot;333225&quot;:[0,1],&quot;333328&quot;:[0,0],&quot;335738&quot;:[2,1],&quot;336065&quot;:[1,1],&quot;336584&quot;:[1,0],&quot;336977&quot;:[1,1],&quot;337089&quot;:[1,0],&quot;342449&quot;:[2,1],&quot;343240&quot;:[1,1],&quot;343360&quot;:[1,0],&quot;343468&quot;:[1,1],&quot;343560&quot;:[1,0],&quot;343640&quot;:[1,1],&quot;343744&quot;:[1,0],&quot;344081&quot;:[1,1],&quot;344192&quot;:[1,0],&quot;347201&quot;:[2,1],&quot;351225&quot;:[2,1],&quot;351616&quot;:[0,1],&quot;352128&quot;:[0,0],&quot;352249&quot;:[3,1],&quot;352424&quot;:[3,1],&quot;352984&quot;:[3,1],&quot;353369&quot;:[2,1],&quot;355849&quot;:[3,1],&quot;356033&quot;:[0,1],&quot;356401&quot;:[0,0],&quot;356537&quot;:[3,1],&quot;356802&quot;:[1,1],&quot;356920&quot;:[1,0]},&quot;punkteAt&quot;:{&quot;8759&quot;:1,&quot;9815&quot;:2,&quot;18407&quot;:3,&quot;18416&quot;:4,&quot;33752&quot;:5,&quot;39886&quot;:6,&quot;41326&quot;:7,&quot;43039&quot;:8,&quot;44310&quot;:9,&quot;57614&quot;:10,&quot;61670&quot;:11,&quot;73952&quot;:12,&quot;76070&quot;:13,&quot;77965&quot;:14,&quot;79526&quot;:15,&quot;81301&quot;:16,&quot;83149&quot;:17,&quot;89302&quot;:18,&quot;92525&quot;:19,&quot;97413&quot;:20,&quot;99645&quot;:21,&quot;104317&quot;:52,&quot;108525&quot;:53,&quot;124907&quot;:64,&quot;142306&quot;:65,&quot;159736&quot;:66,&quot;175140&quot;:87,&quot;191509&quot;:88,&quot;198524&quot;:89,&quot;202748&quot;:90,&quot;204035&quot;:91,&quot;205579&quot;:92,&quot;207131&quot;:93,&quot;208987&quot;:104,&quot;211227&quot;:105,&quot;217227&quot;:106,&quot;218099&quot;:107,&quot;219779&quot;:108,&quot;221467&quot;:109,&quot;223091&quot;:110,&quot;225035&quot;:111,&quot;227035&quot;:112,&quot;228707&quot;:113,&quot;230771&quot;:114,&quot;232314&quot;:115,&quot;233323&quot;:116,&quot;236029&quot;:117,&quot;237490&quot;:128,&quot;240706&quot;:129,&quot;244916&quot;:130,&quot;247018&quot;:141,&quot;249306&quot;:142,&quot;250602&quot;:143,&quot;253386&quot;:154,&quot;256114&quot;:155,&quot;257898&quot;:156,&quot;262546&quot;:157,&quot;265298&quot;:158,&quot;266042&quot;:159,&quot;272103&quot;:160,&quot;280690&quot;:161,&quot;282306&quot;:162,&quot;283562&quot;:183,&quot;285433&quot;:184,&quot;286818&quot;:185,&quot;287937&quot;:186,&quot;290234&quot;:187,&quot;291201&quot;:188,&quot;293065&quot;:189,&quot;293841&quot;:190,&quot;295161&quot;:191,&quot;298802&quot;:192,&quot;301714&quot;:193,&quot;303257&quot;:194,&quot;304681&quot;:195,&quot;308242&quot;:196,&quot;309506&quot;:197,&quot;311650&quot;:198,&quot;314103&quot;:199,&quot;315217&quot;:200,&quot;316914&quot;:201,&quot;318433&quot;:202,&quot;324505&quot;:203,&quot;326521&quot;:204,&quot;328802&quot;:205,&quot;329881&quot;:206,&quot;330993&quot;:207,&quot;332393&quot;:208,&quot;335738&quot;:209,&quot;342448&quot;:210,&quot;347201&quot;:211,&quot;351225&quot;:212,&quot;353368&quot;:213,&quot;360557&quot;:214,&quot;367781&quot;:215,&quot;372944&quot;:216,&quot;375006&quot;:217,&quot;376040&quot;:218,&quot;NaN&quot;:0},&quot;died&quot;:376040},&quot;30&quot;:{&quot;punkte&quot;:206,&quot;buttonAt&quot;:{&quot;10351&quot;:[1,1],&quot;10361&quot;:[1,0],&quot;10362&quot;:[1,1],&quot;10425&quot;:[1,0],&quot;10497&quot;:[1,1],&quot;10569&quot;:[1,0],&quot;10641&quot;:[1,1],&quot;10711&quot;:[1,0],&quot;11056&quot;:[2,1],&quot;16030&quot;:[0,1],&quot;16039&quot;:[0,0],&quot;16040&quot;:[0,1],&quot;16109&quot;:[0,0],&quot;48000&quot;:[0,1],&quot;48238&quot;:[0,0],&quot;48358&quot;:[3,1],&quot;48798&quot;:[0,1],&quot;48901&quot;:[0,0],&quot;48998&quot;:[0,1],&quot;49085&quot;:[0,0],&quot;62542&quot;:[1,1],&quot;62933&quot;:[1,0],&quot;63174&quot;:[1,1],&quot;63278&quot;:[1,0],&quot;63366&quot;:[1,1],&quot;63461&quot;:[1,0],&quot;63575&quot;:[2,1],&quot;63774&quot;:[0,1],&quot;64053&quot;:[0,0],&quot;64374&quot;:[0,1],&quot;64485&quot;:[0,0],&quot;64542&quot;:[0,1],&quot;64653&quot;:[0,0],&quot;64726&quot;:[0,1],&quot;64805&quot;:[0,0],&quot;64909&quot;:[0,1],&quot;64997&quot;:[0,0],&quot;65126&quot;:[3,1],&quot;65478&quot;:[2,1],&quot;65910&quot;:[1,1],&quot;66013&quot;:[1,0],&quot;66109&quot;:[1,1],&quot;66205&quot;:[1,0],&quot;66382&quot;:[2,1],&quot;66678&quot;:[1,1],&quot;66781&quot;:[1,0],&quot;67022&quot;:[1,1],&quot;67173&quot;:[1,0],&quot;67342&quot;:[1,1],&quot;67453&quot;:[1,0],&quot;87037&quot;:[0,1],&quot;87453&quot;:[0,0],&quot;88046&quot;:[0,1],&quot;88181&quot;:[0,0],&quot;88381&quot;:[0,1],&quot;88509&quot;:[0,0],&quot;90486&quot;:[2,1],&quot;94038&quot;:[1,1],&quot;94692&quot;:[1,0],&quot;95029&quot;:[1,1],&quot;95133&quot;:[1,0],&quot;95254&quot;:[2,1],&quot;111453&quot;:[3,1],&quot;111637&quot;:[1,1],&quot;111804&quot;:[1,0],&quot;111925&quot;:[1,1],&quot;112044&quot;:[1,0],&quot;112310&quot;:[2,1],&quot;112981&quot;:[3,1],&quot;113140&quot;:[1,1],&quot;113261&quot;:[1,0],&quot;113357&quot;:[2,1],&quot;113941&quot;:[1,1],&quot;114004&quot;:[1,0],&quot;114077&quot;:[3,1],&quot;114293&quot;:[1,1],&quot;114436&quot;:[1,0],&quot;114589&quot;:[2,1],&quot;114853&quot;:[0,1],&quot;115220&quot;:[0,0],&quot;115413&quot;:[1,1],&quot;115532&quot;:[1,0],&quot;115621&quot;:[1,1],&quot;115708&quot;:[1,0],&quot;115781&quot;:[1,1],&quot;115876&quot;:[1,0],&quot;124239&quot;:[0,1],&quot;124605&quot;:[0,0],&quot;124788&quot;:[3,1],&quot;124973&quot;:[1,1],&quot;125076&quot;:[1,0],&quot;125150&quot;:[1,1],&quot;125252&quot;:[1,0],&quot;125597&quot;:[1,1],&quot;125708&quot;:[1,0],&quot;125877&quot;:[2,1],&quot;126477&quot;:[0,1],&quot;126516&quot;:[0,0],&quot;126877&quot;:[0,1],&quot;126981&quot;:[0,0],&quot;127100&quot;:[0,1],&quot;127188&quot;:[0,0],&quot;127365&quot;:[2,1],&quot;128149&quot;:[0,1],&quot;128652&quot;:[0,0],&quot;128932&quot;:[1,1],&quot;129036&quot;:[1,0],&quot;129181&quot;:[2,1],&quot;130164&quot;:[0,1],&quot;130252&quot;:[0,0],&quot;130517&quot;:[2,1],&quot;130855&quot;:[0,1],&quot;131108&quot;:[0,0],&quot;131308&quot;:[3,1],&quot;131693&quot;:[2,1],&quot;132044&quot;:[0,1],&quot;132396&quot;:[0,0],&quot;132501&quot;:[2,1],&quot;133164&quot;:[1,1],&quot;133300&quot;:[1,0],&quot;133396&quot;:[1,1],&quot;133476&quot;:[1,0],&quot;133596&quot;:[3,1],&quot;133948&quot;:[2,1],&quot;134605&quot;:[1,1],&quot;134724&quot;:[1,0],&quot;134900&quot;:[1,1],&quot;135264&quot;:[1,0],&quot;135549&quot;:[1,1],&quot;135676&quot;:[1,0],&quot;135812&quot;:[3,1],&quot;136124&quot;:[1,1],&quot;136212&quot;:[1,0],&quot;136301&quot;:[2,1],&quot;137108&quot;:[1,1],&quot;137564&quot;:[1,0],&quot;137852&quot;:[0,1],&quot;137932&quot;:[0,0],&quot;138109&quot;:[2,1],&quot;138668&quot;:[0,1],&quot;138972&quot;:[0,0],&quot;139445&quot;:[1,1],&quot;139708&quot;:[1,0],&quot;140101&quot;:[2,1],&quot;140764&quot;:[3,1],&quot;140924&quot;:[3,1],&quot;141244&quot;:[0,1],&quot;141332&quot;:[0,0],&quot;141453&quot;:[2,1],&quot;142044&quot;:[1,1],&quot;142180&quot;:[1,0],&quot;142292&quot;:[1,1],&quot;142388&quot;:[1,0],&quot;142486&quot;:[2,1],&quot;142956&quot;:[0,1],&quot;143228&quot;:[0,0],&quot;143412&quot;:[3,1],&quot;143588&quot;:[3,1],&quot;143741&quot;:[1,1],&quot;143876&quot;:[1,0],&quot;144004&quot;:[1,1],&quot;144116&quot;:[1,0],&quot;144215&quot;:[2,1],&quot;144469&quot;:[0,1],&quot;144620&quot;:[0,0],&quot;144956&quot;:[0,1],&quot;145084&quot;:[0,0],&quot;145604&quot;:[3,1],&quot;145764&quot;:[3,1],&quot;146061&quot;:[0,1],&quot;146164&quot;:[0,0],&quot;146460&quot;:[2,1],&quot;147284&quot;:[3,1],&quot;147524&quot;:[0,1],&quot;147628&quot;:[0,0],&quot;147740&quot;:[0,1],&quot;147940&quot;:[0,0],&quot;148156&quot;:[0,1],&quot;148469&quot;:[0,0],&quot;148804&quot;:[0,1],&quot;148939&quot;:[0,0],&quot;149380&quot;:[1,1],&quot;149716&quot;:[1,0],&quot;150109&quot;:[2,1],&quot;150620&quot;:[1,1],&quot;150732&quot;:[1,0],&quot;151166&quot;:[0,1],&quot;151660&quot;:[0,0],&quot;152092&quot;:[1,1],&quot;152397&quot;:[1,0],&quot;152596&quot;:[0,1],&quot;152924&quot;:[0,0],&quot;153268&quot;:[2,1],&quot;153564&quot;:[1,1],&quot;153971&quot;:[1,0],&quot;154206&quot;:[0,1],&quot;154259&quot;:[0,0],&quot;154444&quot;:[1,1],&quot;154540&quot;:[1,0],&quot;154621&quot;:[2,1],&quot;155412&quot;:[1,1],&quot;155732&quot;:[1,0],&quot;155988&quot;:[0,1],&quot;156644&quot;:[0,0],&quot;156805&quot;:[3,1],&quot;157004&quot;:[1,1],&quot;157116&quot;:[1,0],&quot;157292&quot;:[2,1],&quot;157644&quot;:[1,1],&quot;157868&quot;:[1,0],&quot;158292&quot;:[2,1],&quot;158628&quot;:[1,1],&quot;158908&quot;:[1,0],&quot;159452&quot;:[2,1],&quot;159780&quot;:[0,1],&quot;159987&quot;:[0,0],&quot;160188&quot;:[3,1],&quot;160436&quot;:[0,1],&quot;160523&quot;:[0,0],&quot;160812&quot;:[1,1],&quot;160907&quot;:[1,0],&quot;161110&quot;:[2,1],&quot;163732&quot;:[1,1],&quot;163964&quot;:[1,0],&quot;164116&quot;:[3,1],&quot;164268&quot;:[3,1],&quot;164438&quot;:[0,1],&quot;164507&quot;:[0,0],&quot;164644&quot;:[2,1],&quot;165324&quot;:[0,1],&quot;165571&quot;:[0,0],&quot;165908&quot;:[0,1],&quot;165987&quot;:[0,0],&quot;166089&quot;:[2,1],&quot;166380&quot;:[1,1],&quot;166771&quot;:[1,0],&quot;167116&quot;:[0,1],&quot;167619&quot;:[0,0],&quot;167979&quot;:[0,1],&quot;168059&quot;:[0,0],&quot;168188&quot;:[2,1],&quot;168500&quot;:[1,1],&quot;169004&quot;:[3,1],&quot;169164&quot;:[3,1],&quot;169267&quot;:[1,0],&quot;169492&quot;:[0,1],&quot;169611&quot;:[0,0],&quot;169764&quot;:[0,1],&quot;169875&quot;:[0,0],&quot;169980&quot;:[2,1],&quot;170884&quot;:[1,1],&quot;170979&quot;:[1,0],&quot;171012&quot;:[3,1],&quot;171348&quot;:[1,1],&quot;171459&quot;:[1,0],&quot;171556&quot;:[2,1],&quot;171884&quot;:[0,1],&quot;172083&quot;:[0,0],&quot;172244&quot;:[0,1],&quot;172427&quot;:[0,0],&quot;172636&quot;:[3,1],&quot;172859&quot;:[0,1],&quot;172939&quot;:[0,0],&quot;173052&quot;:[2,1],&quot;173755&quot;:[1,1],&quot;173875&quot;:[1,0],&quot;174428&quot;:[1,1],&quot;174539&quot;:[1,0],&quot;174619&quot;:[1,1],&quot;174675&quot;:[1,0],&quot;174700&quot;:[3,1],&quot;175147&quot;:[0,1],&quot;175244&quot;:[0,0],&quot;175356&quot;:[2,1],&quot;176412&quot;:[0,1],&quot;176691&quot;:[0,0],&quot;177180&quot;:[2,1],&quot;180172&quot;:[3,1],&quot;180364&quot;:[3,1],&quot;180571&quot;:[1,1],&quot;180675&quot;:[1,0],&quot;180756&quot;:[1,1],&quot;180835&quot;:[1,0],&quot;181028&quot;:[3,1],&quot;181333&quot;:[2,1],&quot;181684&quot;:[1,1],&quot;181779&quot;:[1,0],&quot;182147&quot;:[3,1],&quot;182564&quot;:[3,1],&quot;182740&quot;:[3,1],&quot;182884&quot;:[3,1],&quot;183067&quot;:[0,1],&quot;183507&quot;:[0,0],&quot;183884&quot;:[2,1],&quot;184099&quot;:[1,1],&quot;184539&quot;:[1,0],&quot;185403&quot;:[0,1],&quot;185651&quot;:[0,0],&quot;185827&quot;:[0,1],&quot;185923&quot;:[0,0],&quot;186076&quot;:[2,1],&quot;186483&quot;:[1,1],&quot;186627&quot;:[1,0],&quot;186723&quot;:[0,1],&quot;186875&quot;:[0,0],&quot;187075&quot;:[1,1],&quot;187211&quot;:[1,0],&quot;187307&quot;:[1,1],&quot;187411&quot;:[1,0],&quot;187531&quot;:[3,1],&quot;187892&quot;:[2,1],&quot;188332&quot;:[1,1],&quot;188595&quot;:[1,0],&quot;188771&quot;:[1,1],&quot;188859&quot;:[1,0],&quot;189235&quot;:[0,1],&quot;189323&quot;:[0,0],&quot;189429&quot;:[2,1],&quot;190307&quot;:[0,1],&quot;190443&quot;:[0,0],&quot;190564&quot;:[3,1],&quot;190731&quot;:[3,1],&quot;190875&quot;:[3,1],&quot;191284&quot;:[2,1],&quot;192451&quot;:[0,1],&quot;192803&quot;:[0,0],&quot;192923&quot;:[3,1],&quot;193100&quot;:[3,1],&quot;193283&quot;:[0,1],&quot;193379&quot;:[0,0],&quot;193475&quot;:[0,1],&quot;193605&quot;:[0,0],&quot;194004&quot;:[2,1],&quot;199083&quot;:[0,1],&quot;199890&quot;:[0,0],&quot;212227&quot;:[3,1],&quot;212811&quot;:[1,1],&quot;213165&quot;:[1,0],&quot;213532&quot;:[1,1],&quot;213867&quot;:[1,0],&quot;214531&quot;:[0,1],&quot;214826&quot;:[0,0],&quot;214939&quot;:[3,1],&quot;215107&quot;:[3,1],&quot;215339&quot;:[0,1],&quot;215418&quot;:[0,0],&quot;243827&quot;:[0,1],&quot;244531&quot;:[0,0],&quot;260403&quot;:[1,1],&quot;260481&quot;:[1,0],&quot;260610&quot;:[1,1],&quot;260706&quot;:[1,0],&quot;260802&quot;:[3,1],&quot;261106&quot;:[1,1],&quot;261218&quot;:[1,0],&quot;275114&quot;:[1,1],&quot;275675&quot;:[1,0],&quot;276082&quot;:[1,1],&quot;276513&quot;:[1,0],&quot;276826&quot;:[0,1],&quot;276930&quot;:[0,0],&quot;277066&quot;:[2,1],&quot;277466&quot;:[0,1],&quot;277665&quot;:[0,0],&quot;277818&quot;:[3,1],&quot;277977&quot;:[1,1],&quot;278089&quot;:[1,0],&quot;278154&quot;:[1,1],&quot;278233&quot;:[1,0],&quot;278490&quot;:[0,1],&quot;278537&quot;:[0,0],&quot;278866&quot;:[1,1],&quot;278961&quot;:[1,0],&quot;279050&quot;:[2,1],&quot;279225&quot;:[0,1],&quot;279561&quot;:[0,0],&quot;279850&quot;:[0,1],&quot;279897&quot;:[0,0],&quot;280106&quot;:[1,1],&quot;280209&quot;:[1,0],&quot;299947&quot;:[0,1],&quot;300033&quot;:[0,0],&quot;312497&quot;:[0,1],&quot;312600&quot;:[0,0],&quot;323097&quot;:[0,1],&quot;323384&quot;:[0,0],&quot;323553&quot;:[0,1],&quot;323656&quot;:[0,0],&quot;323800&quot;:[0,1],&quot;323913&quot;:[0,0],&quot;334209&quot;:[1,1],&quot;334745&quot;:[1,0],&quot;345777&quot;:[3,1],&quot;346072&quot;:[1,1],&quot;346168&quot;:[1,0],&quot;346409&quot;:[2,1],&quot;347865&quot;:[0,1],&quot;348624&quot;:[0,0],&quot;349064&quot;:[1,1],&quot;349192&quot;:[1,0],&quot;349272&quot;:[1,1],&quot;349416&quot;:[1,0],&quot;349496&quot;:[1,1],&quot;349576&quot;:[1,0],&quot;349600&quot;:[3,1],&quot;349800&quot;:[1,1],&quot;349912&quot;:[1,0],&quot;350008&quot;:[1,1],&quot;350104&quot;:[1,0],&quot;350160&quot;:[1,1],&quot;350280&quot;:[1,0],&quot;350433&quot;:[2,1],&quot;354249&quot;:[0,1],&quot;354416&quot;:[0,0],&quot;354512&quot;:[0,1],&quot;354601&quot;:[0,0],&quot;354697&quot;:[0,1],&quot;354808&quot;:[0,0],&quot;355009&quot;:[2,1],&quot;357272&quot;:[1,1],&quot;357775&quot;:[1,0],&quot;357936&quot;:[1,1],&quot;358328&quot;:[3,1],&quot;358368&quot;:[1,0],&quot;358520&quot;:[1,1],&quot;358768&quot;:[1,0],&quot;358928&quot;:[2,1],&quot;359442&quot;:[0,1],&quot;359719&quot;:[0,0],&quot;359832&quot;:[3,1],&quot;359992&quot;:[3,1],&quot;360280&quot;:[0,1],&quot;360375&quot;:[0,0],&quot;360681&quot;:[2,1],&quot;360904&quot;:[0,1],&quot;361463&quot;:[0,0],&quot;361664&quot;:[0,1],&quot;361792&quot;:[0,0],&quot;361904&quot;:[0,1],&quot;362024&quot;:[0,0],&quot;362153&quot;:[2,1],&quot;362328&quot;:[1,1],&quot;362664&quot;:[1,0],&quot;362896&quot;:[1,1],&quot;363016&quot;:[1,0],&quot;363097&quot;:[2,1],&quot;363656&quot;:[1,1],&quot;363768&quot;:[1,0],&quot;363928&quot;:[2,1],&quot;364344&quot;:[0,1],&quot;364591&quot;:[0,0],&quot;364976&quot;:[2,1],&quot;365216&quot;:[0,1],&quot;365392&quot;:[0,0],&quot;365488&quot;:[0,1],&quot;365991&quot;:[0,0],&quot;366064&quot;:[1,1],&quot;366264&quot;:[1,0],&quot;366368&quot;:[3,1],&quot;366528&quot;:[3,1],&quot;366920&quot;:[0,1],&quot;367263&quot;:[0,0],&quot;367352&quot;:[3,1],&quot;367544&quot;:[0,1],&quot;367767&quot;:[0,0],&quot;368176&quot;:[2,1],&quot;368423&quot;:[1,1],&quot;368728&quot;:[1,0],&quot;368848&quot;:[1,1],&quot;368968&quot;:[1,0],&quot;369088&quot;:[1,1],&quot;369192&quot;:[1,0],&quot;369288&quot;:[2,1],&quot;369576&quot;:[1,1],&quot;370040&quot;:[1,0],&quot;370264&quot;:[3,1],&quot;370440&quot;:[3,1],&quot;370608&quot;:[3,1],&quot;371032&quot;:[0,1],&quot;371143&quot;:[0,0],&quot;371288&quot;:[1,1],&quot;371408&quot;:[1,0],&quot;371464&quot;:[2,1],&quot;371696&quot;:[1,1],&quot;371960&quot;:[1,0],&quot;372392&quot;:[1,1],&quot;372471&quot;:[1,0],&quot;372641&quot;:[2,1],&quot;372856&quot;:[0,1],&quot;373025&quot;:[0,0],&quot;373121&quot;:[0,1],&quot;373231&quot;:[0,0],&quot;373345&quot;:[0,1],&quot;373448&quot;:[0,0],&quot;373808&quot;:[1,1],&quot;373919&quot;:[1,0],&quot;374832&quot;:[2,1],&quot;375256&quot;:[0,1],&quot;375375&quot;:[0,0],&quot;375441&quot;:[0,1],&quot;375967&quot;:[0,0],&quot;376208&quot;:[0,1],&quot;376312&quot;:[0,0],&quot;376592&quot;:[2,1],&quot;376897&quot;:[1,1],&quot;377192&quot;:[1,0],&quot;377352&quot;:[3,1],&quot;377528&quot;:[3,1],&quot;377672&quot;:[3,1],&quot;378032&quot;:[1,1],&quot;378128&quot;:[1,0],&quot;378208&quot;:[2,1],&quot;378608&quot;:[1,1],&quot;379360&quot;:[1,0],&quot;379433&quot;:[2,1],&quot;379632&quot;:[0,1],&quot;379895&quot;:[0,0],&quot;380008&quot;:[3,1],&quot;380401&quot;:[2,1],&quot;380632&quot;:[0,1],&quot;381111&quot;:[0,0],&quot;381392&quot;:[3,1],&quot;381552&quot;:[1,1],&quot;381655&quot;:[1,0],&quot;381688&quot;:[1,1],&quot;381839&quot;:[1,0],&quot;381928&quot;:[1,1],&quot;382063&quot;:[1,0],&quot;382160&quot;:[3,1],&quot;382391&quot;:[1,1],&quot;382503&quot;:[1,0],&quot;382889&quot;:[2,1],&quot;383072&quot;:[0,1],&quot;383504&quot;:[0,0],&quot;383736&quot;:[0,1],&quot;383808&quot;:[0,0],&quot;384055&quot;:[1,1],&quot;384151&quot;:[1,0],&quot;384224&quot;:[2,1],&quot;384584&quot;:[1,1],&quot;385471&quot;:[1,0],&quot;385488&quot;:[2,1],&quot;385672&quot;:[1,1],&quot;386031&quot;:[1,0],&quot;386225&quot;:[2,1],&quot;386457&quot;:[0,1]},&quot;punkteAt&quot;:{&quot;11054&quot;:1,&quot;28433&quot;:2,&quot;43774&quot;:3,&quot;59133&quot;:4,&quot;63574&quot;:5,&quot;65478&quot;:6,&quot;66382&quot;:7,&quot;82757&quot;:8,&quot;90485&quot;:9,&quot;95253&quot;:20,&quot;108556&quot;:21,&quot;112309&quot;:22,&quot;113357&quot;:23,&quot;114589&quot;:24,&quot;123792&quot;:25,&quot;125876&quot;:26,&quot;127364&quot;:27,&quot;129181&quot;:38,&quot;130516&quot;:39,&quot;131692&quot;:40,&quot;132500&quot;:41,&quot;133948&quot;:42,&quot;136301&quot;:43,&quot;138108&quot;:44,&quot;140100&quot;:45,&quot;141452&quot;:46,&quot;142485&quot;:47,&quot;144214&quot;:48,&quot;146460&quot;:49,&quot;150108&quot;:50,&quot;153268&quot;:51,&quot;154620&quot;:71,&quot;154621&quot;:72,&quot;157292&quot;:73,&quot;158292&quot;:74,&quot;159452&quot;:75,&quot;161110&quot;:76,&quot;164644&quot;:77,&quot;166088&quot;:78,&quot;168188&quot;:79,&quot;169980&quot;:90,&quot;171555&quot;:91,&quot;173052&quot;:102,&quot;175356&quot;:103,&quot;177179&quot;:104,&quot;181332&quot;:105,&quot;183883&quot;:106,&quot;186075&quot;:107,&quot;187891&quot;:108,&quot;189428&quot;:109,&quot;191283&quot;:120,&quot;194003&quot;:121,&quot;208328&quot;:132,&quot;224705&quot;:133,&quot;241111&quot;:144,&quot;256114&quot;:145,&quot;271863&quot;:156,&quot;277065&quot;:157,&quot;279050&quot;:158,&quot;295421&quot;:159,&quot;308760&quot;:160,&quot;321093&quot;:161,&quot;332403&quot;:162,&quot;341650&quot;:163,&quot;346408&quot;:164,&quot;350432&quot;:165,&quot;355008&quot;:166,&quot;358928&quot;:167,&quot;360680&quot;:168,&quot;362152&quot;:169,&quot;363097&quot;:180,&quot;363928&quot;:181,&quot;364976&quot;:182,&quot;368176&quot;:183,&quot;369288&quot;:184,&quot;371464&quot;:185,&quot;372640&quot;:186,&quot;374832&quot;:187,&quot;376592&quot;:188,&quot;378208&quot;:199,&quot;379432&quot;:200,&quot;380400&quot;:201,&quot;382889&quot;:202,&quot;384224&quot;:203,&quot;385488&quot;:204,&quot;386224&quot;:205,&quot;386905&quot;:206,&quot;NaN&quot;:0},&quot;died&quot;:386905}},&quot;gameStarts&quot;:0,&quot;gameEnds&quot;:386906}}&#x27;);
+</pre>
+
+</div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/js/tabs.js"></script>
+</body>
+</html>
