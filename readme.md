@@ -9,7 +9,7 @@ Um das Projekt starten zu können, benötigen Sie <strong>Node.js</strong>, sowi
 Die Konfigurationsdatei der Datenbank befindet sich im Verzeichnis <code>Development/public/global/db.js</code>. Hier kann auch angegeben werden, ob die Datenbank inkl. einiger vieler Beispieldatensätzten, beim Serverstart, erstellt werden soll. </p><p>Auch wenn man es an dem Pfad denken könnte, is die Datei über den Server von außern nicht aufrufbar. Die Benennung des Verzeichnisses <code>public</code> hat allein historische Gründe.
 
 ### Weitere Konfigurationsmöglichkeiten
-Weitere Möglichkeiten der Konfiguration des Projekt, bietet die Datei <code>config.js</code> im Verzeichnis <code>/Development/public/global/config.js</code><
+Weitere Möglichkeiten der Konfiguration des Projekt, bietet die Datei <code>config.js</code> im Verzeichnis <code>/Development/public/global/config.js</code>
 
 ## Start
 ### Der Server
